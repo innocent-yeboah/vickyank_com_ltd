@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling for in-page anchors (services deep links),
+   disabled for users who prefer reduced motion. */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .tech-mesh-image,
+  .group:hover .tech-mesh-image {
+    transition: none !important;
+  }
+}
+
+/* Offset anchor targets below the sticky 80px navbar. */
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+body {
+  @apply bg-white font-body text-charcoal antialiased;
+}
+
+@layer components {
+  /* Engineering blueprint grid overlay — sits behind page content. */
+  .industrial-grid {
+    background-image:
+      linear-gradient(to right, rgba(31, 41, 55, 0.35) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(31, 41, 55, 0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Subtle horizontal engineering rule used between major bands. */
+  .industrial-rule {
+    @apply border-t border-gray-800/60;
+  }
+
+  /* Precision corner anchors — blueprint aesthetic on cards & listings. */
+  .tech-frame {
+    @apply relative;
+  }
+
+  .tech-frame::before,
+  .tech-frame::after {
+    content: "";
+    @apply pointer-events-none absolute z-10 h-0.5 w-0.5 bg-[#FFC107];
+  }
+
+  .tech-frame::before {
+    @apply left-1.5 top-1.5;
+    box-shadow: 8px 0 0 0 #ffc107, 0 8px 0 0 #ffc107;
+  }
+
+  .tech-frame::after {
+    @apply right-1.5 top-1.5;
+    box-shadow: -8px 0 0 0 #ffc107, 0 8px 0 0 #ffc107;
+  }
+
+  .tech-frame > .tech-anchor-br,
+  .tech-frame > .tech-anchor-bl {
+    @apply pointer-events-none absolute z-10 h-0.5 w-0.5 bg-[#FFC107];
+  }
+
+  .tech-frame > .tech-anchor-br {
+    @apply bottom-1.5 right-1.5;
+    box-shadow: -8px 0 0 0 #ffc107, 0 -8px 0 0 #ffc107;
+  }
+
+  .tech-frame > .tech-anchor-bl {
+    @apply bottom-1.5 left-1.5;
+    box-shadow: 8px 0 0 0 #ffc107, 0 -8px 0 0 #ffc107;
+  }
+
+  /* Softened grayscale mesh treatment for industrial photography. */
+  .tech-mesh-image {
+    @apply grayscale contrast-125 opacity-30 transition-all duration-500 ease-out;
+  }
+
+  .group:hover .tech-mesh-image {
+    @apply opacity-75 grayscale-0;
+  }
+
+  /* Contact form apparatus — dark industrial input baseline. */
+  .form-apparatus {
+    @apply w-full border border-gray-800/80 bg-[#151515] px-4 py-3 text-white outline-none transition-all placeholder:text-gray-500 focus:border-[#FFC107] focus:bg-[#1C1C1C] focus:ring-1 focus:ring-[#FFC107]/30;
+  }
+}
