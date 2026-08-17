@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-navy py-24 sm:py-28">
+      <section className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="kicker">{aboutCopy.kicker}</p>
           <h1 className="page-title mt-3">{aboutCopy.title}</h1>
-          <div className="mt-10 grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="space-y-5 text-lg leading-relaxed text-white/80">
+          <div className="mt-10 grid items-start gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+            <div className="space-y-5 text-base leading-relaxed text-white/80 sm:text-lg">
               {aboutCopy.paragraphs.map((p) => (
                 <p key={p.slice(0, 40)}>{p}</p>
               ))}

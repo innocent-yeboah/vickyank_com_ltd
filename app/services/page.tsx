@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 export default function ServicesHubPage() {
   return (
     <>
-      <section className="bg-navy py-24 sm:py-28">
+      <section className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="kicker text-center">Portfolio</p>
           <h1 className="page-title mt-3 text-center">Our Services</h1>
-          <p className="mx-auto mt-5 max-w-2xl text-center text-lg text-white/80">
+          <p className="mx-auto mt-5 max-w-2xl text-center text-base text-white/80 sm:text-lg">
             Five industrial and executive service lines, plus an online parts and
             equipment shop. One standard of excellence.
             {` ${site.tagline}`}
@@ -27,7 +27,7 @@ export default function ServicesHubPage() {
               <Link
                 key={service.num}
                 href={service.href}
-                className="brochure-card flex min-h-[240px] flex-col transition-colors hover:border-gold"
+                className="brochure-card flex min-h-0 flex-col transition-colors hover:border-gold sm:min-h-[220px]"
               >
                 <span className="font-heading text-2xl text-gold">{service.num}</span>
                 <h2 className="mt-4 font-heading text-2xl text-white">{service.title}</h2>
@@ -38,7 +38,7 @@ export default function ServicesHubPage() {
             ))}
             <Link
               href="/services/shop"
-              className="flex min-h-[240px] flex-col justify-center border border-gold bg-gold p-6 sm:p-8"
+              className="flex min-h-0 flex-col justify-center border border-gold bg-gold p-5 sm:min-h-[220px] sm:p-8"
             >
               <span className="font-heading text-2xl text-navy">06</span>
               <h2 className="mt-4 font-heading text-2xl text-navy">

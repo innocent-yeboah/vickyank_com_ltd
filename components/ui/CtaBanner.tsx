@@ -16,13 +16,13 @@ export default function CtaBanner({
 }: CtaBannerProps) {
   return (
     <section className="bg-navy-cover">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 py-20 text-center sm:px-6 lg:flex-row lg:justify-between lg:text-left lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col items-stretch gap-8 px-4 py-14 text-center sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between lg:text-left lg:px-8">
         <div className="max-w-2xl">
           <p className="kicker">Contact</p>
           <h2 className="page-title mt-3">{title}</h2>
-          <p className="mt-4 font-heading text-xl italic text-white/85">{description}</p>
+          <p className="mt-4 font-heading text-lg italic text-white/85 sm:text-xl">{description}</p>
         </div>
-        <div className="flex flex-col gap-4 sm:flex-row">
+        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4">
           <Link href="/contact" className="btn-gold">
             Request a Quote
             <ArrowRightIcon className="h-4 w-4" />

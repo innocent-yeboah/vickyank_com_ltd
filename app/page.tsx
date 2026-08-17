@@ -30,12 +30,12 @@ export default function HomePage() {
     <>
       <CoverHero />
 
-      <section className="bg-navy py-24">
+      <section className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="kicker">{aboutCopy.kicker}</p>
           <h2 className="page-title mt-3">{aboutCopy.title}</h2>
-          <div className="mt-10 grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="space-y-5 text-lg leading-relaxed text-white/80">
+          <div className="mt-10 grid items-start gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+            <div className="space-y-5 text-base leading-relaxed text-white/80 sm:text-lg">
               {aboutCopy.paragraphs.map((p) => (
                 <p key={p.slice(0, 40)}>{p}</p>
               ))}
@@ -61,7 +61,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-navy-ink py-24">
+      <section className="bg-navy-ink page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             align="center"
@@ -74,7 +74,7 @@ export default function HomePage() {
               <Link
                 key={service.num}
                 href={service.href}
-                className="brochure-card flex min-h-[240px] flex-col transition-colors hover:border-gold"
+                className="brochure-card flex min-h-0 flex-col transition-colors hover:border-gold sm:min-h-[220px]"
               >
                 <span className="font-heading text-2xl text-gold">{service.num}</span>
                 <h3 className="mt-4 font-heading text-2xl text-white">{service.title}</h3>
@@ -85,7 +85,7 @@ export default function HomePage() {
             ))}
             <Link
               href="/contact"
-              className="flex min-h-[240px] flex-col justify-center border border-gold bg-gold p-6 sm:p-8"
+              className="flex min-h-0 flex-col justify-center border border-gold bg-gold p-5 sm:min-h-[220px] sm:p-8"
             >
               <span className="font-heading text-2xl text-navy">06</span>
               <h3 className="mt-4 font-heading text-2xl text-navy">Contact Us Today</h3>
@@ -97,7 +97,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-navy py-24">
+      <section className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Trading Desk"
@@ -113,7 +113,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-navy-ink py-24">
+      <section className="bg-navy-ink page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Fleet"
@@ -149,7 +149,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-navy py-24">
+      <section className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Executive Mobility"
@@ -165,7 +165,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-navy-ink py-24">
+      <section className="bg-navy-ink page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             align="center"
@@ -174,16 +174,16 @@ export default function HomePage() {
           />
           <div className="mt-14 grid gap-5 md:grid-cols-2">
             {whyPillars.map((pillar) => (
-              <article key={pillar.title} className="brochure-card min-h-[180px]">
+              <article key={pillar.title} className="brochure-card">
                 <h3 className="font-heading text-2xl text-gold">{pillar.title}</h3>
                 <p className="mt-3 leading-relaxed text-white/80">{pillar.body}</p>
               </article>
             ))}
           </div>
-          <p className="mt-10 text-center font-heading text-xl italic text-gold">
+          <p className="mt-10 text-center font-heading text-lg italic text-gold sm:text-xl">
             Serious projects demand serious partners. {site.tagline}
           </p>
-          <div className="relative mt-12 aspect-[21/7] overflow-hidden bg-navy">
+          <div className="relative mt-12 aspect-[16/9] overflow-hidden bg-navy md:aspect-[21/7]">
             <Image
               src="/images/volvo-ec550e.png"
               alt="Volvo EC550E excavator in operation"

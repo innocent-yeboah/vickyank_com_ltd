@@ -29,7 +29,7 @@ const featuredParts = products.filter((p) => p.category === "spare-parts").slice
 export default function SparePartsServicePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-navy-darker py-28">
+      <section className="page-hero bg-navy-darker">
         <Image
           src="/images/spare-parts-inventory.png"
           alt="Hydraulic pumps and excavator spare parts inventory"
@@ -41,7 +41,7 @@ export default function SparePartsServicePage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="kicker">Service 04</p>
           <h1 className="page-title mt-3">Excavator Spare Parts</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">
             Genuine parts sourced through trusted channels — because we know
             exactly what a parked machine costs you.
           </p>
@@ -57,7 +57,7 @@ export default function SparePartsServicePage() {
         </div>
       </section>
 
-      <section className="bg-navy-dark py-24">
+      <section className="bg-navy-dark page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             dark
@@ -83,7 +83,7 @@ export default function SparePartsServicePage() {
         </div>
       </section>
 
-      <section className="industrial-rule bg-navy py-24">
+      <section className="industrial-rule bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <SectionHeading
@@ -130,8 +130,8 @@ export default function SparePartsServicePage() {
         </div>
       </section>
 
-      <section id="enquire" className="bg-navy-darker py-24">
-        <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section id="enquire" className="bg-navy-darker page-section">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-gold">
               Parts Enquiry
@@ -139,12 +139,12 @@ export default function SparePartsServicePage() {
             <h2 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-white">
               Need a Specific Part?
             </h2>
-            <p className="mt-6 text-lg text-gray-300">
+            <p className="mt-6 text-base text-gray-300 sm:text-lg">
               Tell us the machine model and part number — we will confirm stock
               or source it fast.
             </p>
           </div>
-          <div className="tech-frame border border-white/10 bg-base-panel p-8 sm:p-10">
+          <div className="tech-frame border border-white/10 bg-base-panel p-5 sm:p-10">
             <span className="tech-anchor-bl" aria-hidden="true" />
             <span className="tech-anchor-br" aria-hidden="true" />
             <InquiryForm

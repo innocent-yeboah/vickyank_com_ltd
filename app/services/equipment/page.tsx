@@ -29,11 +29,11 @@ const partsCategories = [
 export default function EquipmentPage() {
   return (
     <>
-      <section className="bg-navy py-24 sm:py-28">
+      <section className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="kicker">Fleet</p>
           <h1 className="page-title mt-3">Heavy Equipment &amp; Machinery</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
             Our excavator fleet serves mining operations, construction firms, and
             contractors nationwide. Every machine is inspected and serviced before
             deployment. Site delivery and operators are arranged on request.
@@ -49,7 +49,7 @@ export default function EquipmentPage() {
         </div>
       </section>
 
-      <section className="bg-navy-dark py-24">
+      <section className="bg-navy-dark page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="On Site"
@@ -77,7 +77,7 @@ export default function EquipmentPage() {
                     {machine.status}
                   </span>
                 </div>
-                <div className="flex flex-1 flex-col p-7">
+                <div className="flex flex-1 flex-col p-5 sm:p-7">
                   <h3 className="font-heading text-lg font-bold uppercase tracking-wide text-white">
                     {machine.name}
                   </h3>
@@ -108,9 +108,9 @@ export default function EquipmentPage() {
         </div>
       </section>
 
-      <section className="industrial-rule bg-navy py-24">
+      <section className="industrial-rule bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-14 lg:grid-cols-2">
+          <div className="grid items-center gap-8 lg:gap-14 lg:grid-cols-2">
             <div className="relative aspect-[4/3] overflow-hidden border border-white/10 bg-navy-dark">
               <Image
                 src="/images/spare-parts-inventory.png"
@@ -127,7 +127,7 @@ export default function EquipmentPage() {
               <h2 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">
                 Genuine Parts. Minimal Downtime.
               </h2>
-              <p className="mt-6 text-lg leading-relaxed text-gray-300">
+              <p className="mt-6 text-base leading-relaxed text-gray-300 sm:text-lg">
                 Order online from our shop or request a custom parts quote. We
                 know which components fail — because we run our own fleet.
               </p>
@@ -155,8 +155,8 @@ export default function EquipmentPage() {
         </div>
       </section>
 
-      <section id="enquire" className="industrial-rule bg-navy-dark py-24">
-        <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section id="enquire" className="industrial-rule bg-navy-dark page-section">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-gold">
               Equipment Enquiry
@@ -164,12 +164,12 @@ export default function EquipmentPage() {
             <h2 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">
               Tell Us What You Need On Site
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-gray-300">
+            <p className="mt-6 text-base leading-relaxed text-gray-300 sm:text-lg">
               Machine class, hire duration, location, and whether you need an
               operator — we respond with availability and a clear proposal.
             </p>
           </div>
-          <div className="tech-frame border border-white/10 bg-base-panel p-8 sm:p-10">
+          <div className="tech-frame border border-white/10 bg-base-panel p-5 sm:p-10">
             <span className="tech-anchor-bl" aria-hidden="true" />
             <span className="tech-anchor-br" aria-hidden="true" />
             <InquiryForm

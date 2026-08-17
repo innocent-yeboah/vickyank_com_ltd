@@ -64,7 +64,7 @@ export default function CheckoutClient() {
 
   if (lines.length === 0 && status !== "loading") {
     return (
-      <div className="mx-auto max-w-xl px-4 py-24 text-center sm:px-6">
+      <div className="mx-auto max-w-xl px-4 py-14 text-center sm:px-6 sm:py-24">
         <h1 className="font-heading text-3xl font-bold uppercase text-white">
           Your Cart Is Empty
         </h1>
@@ -79,7 +79,7 @@ export default function CheckoutClient() {
   }
 
   return (
-    <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-24">
+    <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:px-8 lg:py-24">
       <div>
         <p className="text-sm font-bold uppercase tracking-[0.25em] text-gold">
           Secure Checkout

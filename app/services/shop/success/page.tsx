@@ -16,8 +16,8 @@ export default function ShopSuccessPage({
   const reference = searchParams.reference;
 
   return (
-    <section className="flex min-h-[70vh] items-center bg-navy px-4 py-24">
-      <div className="mx-auto max-w-xl border border-gold/30 bg-base-panel p-10 text-center">
+    <section className="flex min-h-[70vh] items-center bg-navy px-4 py-14 sm:py-24">
+      <div className="mx-auto max-w-xl border border-gold/30 bg-base-panel p-6 text-center sm:p-10">
         <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 text-gold">
           <CheckIcon className="h-8 w-8" />
         </span>

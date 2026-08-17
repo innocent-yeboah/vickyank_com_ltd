@@ -53,14 +53,16 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#1A1A2E",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="flex min-h-screen flex-col bg-navy">
+    <html lang="en" className={`${playfair.variable} ${inter.variable} overflow-x-hidden`}>
+      <body className="flex min-h-screen flex-col overflow-x-hidden bg-navy">
         <JsonLd />
         <CartProvider>
           <Navbar />

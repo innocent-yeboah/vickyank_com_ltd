@@ -18,21 +18,28 @@ export default function Navbar() {
     setOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-navy/80 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="group flex shrink-0 items-center gap-3">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
+        <Link href="/" className="group flex min-w-0 shrink items-center gap-3">
           <Image
             src="/images/vickyank-logo.png"
             alt={site.name}
             width={180}
             height={56}
-            className="h-12 w-auto drop-shadow-[0_0_12px_rgba(212,175,55,0.35)]"
+            className="h-8 w-auto sm:h-12 drop-shadow-[0_0_12px_rgba(212,175,55,0.35)]"
             priority
           />
         </Link>
 
-        <nav className="hidden items-center gap-5 xl:flex" aria-label="Main">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Main">
           {navLinks.map((link) => {
             const active =
               pathname === link.href ||
@@ -52,10 +59,10 @@ export default function Navbar() {
           })}
         </nav>
 
-        <div className="flex items-center gap-3 xl:hidden">
+        <div className="flex items-center lg:hidden">
           <button
             type="button"
-            className="text-white"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center text-white"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
@@ -67,7 +74,7 @@ export default function Navbar() {
 
       {open && (
         <nav
-          className="border-t border-white/[0.06] bg-navy/95 backdrop-blur-md xl:hidden"
+          className="max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-white/[0.06] bg-navy/95 backdrop-blur-md lg:hidden"
           aria-label="Mobile"
         >
           <div className="space-y-1 px-4 py-4">
@@ -79,7 +86,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block px-3 py-3 text-base font-medium uppercase tracking-wide ${
+                  className={`block min-h-11 px-3 py-3 text-base font-medium uppercase tracking-wide ${
                     active
                       ? "bg-white/5 text-gold"
                       : "text-gray-300 hover:bg-white/5 hover:text-white"

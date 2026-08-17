@@ -60,7 +60,7 @@ const steps = [
 export default function GoldTradingPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-navy-darker py-28">
+      <section className="page-hero bg-navy-darker">
         <Image
           src="/images/gold-bars.jpg"
           alt="Refined 999.9 fine gold bars"
@@ -72,7 +72,7 @@ export default function GoldTradingPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="kicker">Trading Desk</p>
           <h1 className="page-title mt-3">Gold Trading — Trusted &amp; Transparent</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
             In gold, reputation is collateral. Buy and sell raw and refined gold with
             confidence. {site.tagline}
           </p>
@@ -127,7 +127,7 @@ export default function GoldTradingPage() {
         </div>
       </section>
 
-      <section className="bg-navy py-24">
+      <section className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Why VickYank"
@@ -148,7 +148,7 @@ export default function GoldTradingPage() {
         </div>
       </section>
 
-      <section className="industrial-rule bg-navy py-24">
+      <section className="industrial-rule bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             dark
@@ -160,7 +160,7 @@ export default function GoldTradingPage() {
             {steps.map((s) => (
               <div
                 key={s.step}
-                className="tech-frame border border-white/10 bg-base-panel p-7"
+                className="tech-frame border border-white/10 bg-base-panel p-5 sm:p-7"
               >
                 <span className="tech-anchor-bl" aria-hidden="true" />
                 <span className="tech-anchor-br" aria-hidden="true" />
@@ -196,12 +196,12 @@ export default function GoldTradingPage() {
         </div>
       </section>
 
-      <section id="enquire" className="bg-navy py-24">
-        <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section id="enquire" className="bg-navy page-section">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <p className="kicker">Confidential Enquiry</p>
             <h2 className="page-title mt-3">Speak With Our Trading Desk</h2>
-            <p className="mt-6 text-lg leading-relaxed text-gray-300">
+            <p className="mt-6 text-base leading-relaxed text-gray-300 sm:text-lg">
               Share your intent and approximate volume. A specialist will respond
               within one business day — or reach us instantly on WhatsApp.
             </p>

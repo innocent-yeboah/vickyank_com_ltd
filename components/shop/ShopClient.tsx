@@ -32,7 +32,7 @@ export default function ShopClient() {
   }
 
   return (
-    <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-3 lg:px-8 lg:py-24">
+    <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-3 lg:px-8 lg:py-24">
       <div className="lg:col-span-2">
         <div className="flex flex-wrap gap-3">
           {(
@@ -46,7 +46,7 @@ export default function ShopClient() {
               key={value}
               type="button"
               onClick={() => setFilter(value)}
-              className={`px-5 py-2.5 text-sm font-bold uppercase tracking-wider transition-colors ${
+              className={`min-h-11 px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors sm:px-5 sm:text-sm ${
                 filter === value
                   ? "bg-gold text-navy"
                   : "border border-white/20 text-white hover:border-gold hover:text-gold"
@@ -114,7 +114,7 @@ export default function ShopClient() {
         </div>
       </div>
 
-      <aside className="tech-frame h-fit border border-white/10 bg-base-panel p-7 lg:sticky lg:top-28">
+      <aside className="tech-frame h-fit border border-white/10 bg-base-panel p-5 sm:p-7 lg:sticky lg:top-28">
         <span className="tech-anchor-bl" aria-hidden="true" />
         <span className="tech-anchor-br" aria-hidden="true" />
         <h2 className="font-heading text-xl font-bold uppercase tracking-wide text-white">

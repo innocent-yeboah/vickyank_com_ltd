@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ShopPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-navy-darker py-28">
+      <section className="page-hero bg-navy-darker">
         <Image
           src="/images/spare-parts-inventory.png"
           alt="Hydraulic pumps and excavator spare parts inventory"
@@ -24,7 +24,7 @@ export default function ShopPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="kicker">Our Business</p>
           <h1 className="page-title mt-3">Spare Parts &amp; Equipment Shop</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">
             Order genuine excavator parts and select equipment online.
             Secure payment in GHS via Paystack. {site.tagline}
           </p>

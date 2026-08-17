@@ -23,7 +23,7 @@ const capabilities = [
 export default function MiningServicePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-navy-cover py-28">
+      <section className="page-hero bg-navy-cover">
         <Image
           src="/images/cat-loading-haul.png"
           alt="CAT excavator loading a haul truck"
@@ -35,19 +35,19 @@ export default function MiningServicePage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="kicker">Service 01</p>
           <h1 className="page-title mt-3">Mining Operations</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
             Professional extraction with experienced crews and modern heavy machinery.
             Safety-first site management from ground to gold.
           </p>
         </div>
       </section>
 
-      <section className="bg-navy py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section className="bg-navy page-section">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 lg:gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <p className="kicker">Capabilities</p>
             <h2 className="page-title mt-3">Industrial Mining. Accountable Delivery.</h2>
-            <p className="mt-6 text-lg leading-relaxed text-white/80">
+            <p className="mt-6 text-base leading-relaxed text-white/80 sm:text-lg">
               Whether you are a landowner seeking an operating partner or an
               investor evaluating opportunities, VickYank brings the equipment,
               expertise, and discipline to move projects forward.
@@ -81,12 +81,12 @@ export default function MiningServicePage() {
         </div>
       </section>
 
-      <section className="bg-navy-ink py-24">
-        <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section className="bg-navy-ink page-section">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <p className="kicker">Project Enquiry</p>
             <h2 className="page-title mt-3">Discuss a Mining Project</h2>
-            <p className="mt-5 text-lg text-white/80">
+            <p className="mt-5 text-base text-white/80 sm:text-lg">
               Share site context, timeline, and partnership model. Our operations
               team responds within one business day.
             </p>

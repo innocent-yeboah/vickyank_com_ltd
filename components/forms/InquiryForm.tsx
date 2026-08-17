@@ -67,7 +67,7 @@ export default function InquiryForm({
 
   if (state === "success") {
     return (
-      <div className="flex flex-col items-center justify-center border border-gold/30 bg-navy-dark p-10 text-center">
+      <div className="flex flex-col items-center justify-center border border-gold/30 bg-navy-dark p-6 text-center sm:p-10">
         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 text-gold">
           <CheckIcon className="h-8 w-8" />
         </span>

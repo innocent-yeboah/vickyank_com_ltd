@@ -25,7 +25,7 @@ const terms = [
 export default function LuxuryCarsPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-navy-darker py-28">
+      <section className="page-hero bg-navy-darker">
         <Image
           src="/images/jaguar-xe.png"
           alt="Jaguar XE executive sedan"
@@ -37,7 +37,7 @@ export default function LuxuryCarsPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="kicker">Executive Mobility</p>
           <h1 className="page-title mt-3">Luxury Car Rental — Drive in Style</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
             Jaguar XE, Land Cruiser, Escalade, Mercedes GLE, Jetour, and Ram TRX
             — maintained to showroom standard for business, events, and VIP travel.
           </p>
@@ -47,7 +47,7 @@ export default function LuxuryCarsPage() {
         </div>
       </section>
 
-      <section className="industrial-rule bg-navy py-24">
+      <section className="industrial-rule bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             dark
@@ -59,7 +59,7 @@ export default function LuxuryCarsPage() {
             {luxuryFleet.map((car) => (
               <div
                 key={car.id}
-                className="group tech-frame relative aspect-[4/5] overflow-hidden border border-white/10 bg-navy-dark"
+                className="group tech-frame relative aspect-[16/10] overflow-hidden border border-white/10 bg-navy-dark md:aspect-[4/5]"
               >
                 <span className="tech-anchor-bl" aria-hidden="true" />
                 <span className="tech-anchor-br" aria-hidden="true" />
@@ -71,7 +71,7 @@ export default function LuxuryCarsPage() {
                   sizes="(min-width: 768px) 33vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 z-20 p-7">
+                <div className="absolute inset-x-0 bottom-0 z-20 p-4 sm:p-7">
                   <span className="bg-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-navy">
                     {car.status}
                   </span>
@@ -90,7 +90,7 @@ export default function LuxuryCarsPage() {
         </div>
       </section>
 
-      <section className="bg-navy-ink py-24">
+      <section className="bg-navy-ink page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Rental Terms"
@@ -110,12 +110,12 @@ export default function LuxuryCarsPage() {
         </div>
       </section>
 
-      <section id="enquire" className="bg-navy py-24">
-        <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section id="enquire" className="bg-navy page-section">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <p className="kicker">Book Your Hire</p>
             <h2 className="page-title mt-3">Request Availability</h2>
-            <p className="mt-6 text-lg leading-relaxed text-gray-300">
+            <p className="mt-6 text-base leading-relaxed text-gray-300 sm:text-lg">
               Share your preferred class, dates, and whether you need a chauffeur.
               We confirm availability and rates within one business day.
             </p>
@@ -139,7 +139,7 @@ export default function LuxuryCarsPage() {
               .
             </p>
           </div>
-          <div className="tech-frame border border-white/10 bg-base-panel p-8 sm:p-10">
+          <div className="tech-frame border border-white/10 bg-base-panel p-5 sm:p-10">
             <span className="tech-anchor-bl" aria-hidden="true" />
             <span className="tech-anchor-br" aria-hidden="true" />
             <InquiryForm
