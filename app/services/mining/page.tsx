@@ -102,6 +102,7 @@ export default function MiningServicePage() {
       </section>
 
       <CtaBanner
+        className="hidden md:block"
         title="Ready to Move From Ground to Gold?"
         description="Partner with an industrial operator that holds global standards and local expertise."
       />

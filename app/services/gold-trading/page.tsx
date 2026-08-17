@@ -246,6 +246,7 @@ export default function GoldTradingPage() {
       </section>
 
       <CtaBanner
+        className="hidden md:block"
         title="Ready to Move Gold Professionally?"
         description="High-value trades deserve institutional discipline. Start with a confidential enquiry today."
       />

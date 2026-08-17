@@ -158,6 +158,7 @@ export default function SparePartsServicePage() {
       </section>
 
       <CtaBanner
+        className="hidden md:block"
         title="Keep Your Fleet Earning"
         description="Shop online or speak with our parts desk for urgent turnaround."
       />

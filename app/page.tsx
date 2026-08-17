@@ -2,17 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CoverHero from "@/components/home/CoverHero";
-import PhotoGrid from "@/components/ui/PhotoGrid";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CtaBanner from "@/components/ui/CtaBanner";
-import {
-  aboutCopy,
-  brochureServices,
-  equipmentGallery,
-  goldGallery,
-  whyPillars,
-} from "@/content/brochure";
-import { luxuryFleet } from "@/lib/catalog";
+import { aboutCopy, brochureServices, whyPillars } from "@/content/brochure";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -21,11 +13,6 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const carGallery = luxuryFleet.map((car) => ({
-    src: car.image,
-    alt: car.name,
-  }));
-
   return (
     <>
       <CoverHero />
@@ -98,74 +85,6 @@ export default function HomePage() {
       </section>
 
       <section className="bg-navy page-section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Trading Desk"
-            title="Gold Trading — Trusted & Transparent"
-            description="In gold, reputation is collateral. VickYank buys and sells raw and refined gold with the transparency serious counterparties demand."
-          />
-          <PhotoGrid images={goldGallery} className="mt-10" />
-          <div className="mt-8">
-            <Link href="/services/gold-trading" className="text-sm font-semibold uppercase tracking-wider text-gold hover:text-gold-soft">
-              Visit the trading desk →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-navy-ink page-section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Fleet"
-            title="Heavy Equipment & Machinery"
-            description="Our excavator fleet serves mining operations, construction firms, and contractors nationwide. Every machine is inspected and serviced before deployment."
-          />
-          <PhotoGrid images={equipmentGallery} className="mt-10" />
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            <article className="brochure-card">
-              <h3 className="font-heading text-xl text-gold">Renting</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/80">
-                Daily, weekly, and monthly terms. Volvo EC550E and other classes available for hire.
-              </p>
-            </article>
-            <article className="brochure-card">
-              <h3 className="font-heading text-xl text-gold">Selling</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/80">
-                CAT 330 and select machines available for outright purchase. Confirm current stock and delivery.
-              </p>
-            </article>
-            <article className="brochure-card">
-              <h3 className="font-heading text-xl text-gold">Spare Parts</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/80">
-                Undercarriage, hydraulics, filters, GET, pins, bushings, and attachments.
-              </p>
-            </article>
-          </div>
-          <div className="mt-8">
-            <Link href="/services/equipment" className="text-sm font-semibold uppercase tracking-wider text-gold hover:text-gold-soft">
-              View equipment →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-navy page-section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Executive Mobility"
-            title="Luxury Car Rental — Drive in Style"
-            description="Premium vehicles maintained to showroom standard for executives, events, and VIP travel."
-          />
-          <PhotoGrid images={carGallery} className="mt-10" />
-          <div className="mt-8">
-            <Link href="/services/luxury-cars" className="text-sm font-semibold uppercase tracking-wider text-gold hover:text-gold-soft">
-              View the fleet →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-navy-ink page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             align="center"

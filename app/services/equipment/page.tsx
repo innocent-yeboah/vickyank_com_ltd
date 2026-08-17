@@ -183,6 +183,7 @@ export default function EquipmentPage() {
       </section>
 
       <CtaBanner
+        className="hidden md:block"
         title="Need a Machine Tomorrow?"
         description="Contact us for current availability, rates, and delivery arrangements anywhere in Ghana."
       />

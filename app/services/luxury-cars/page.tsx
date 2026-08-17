@@ -155,6 +155,7 @@ export default function LuxuryCarsPage() {
       </section>
 
       <CtaBanner
+        className="hidden md:block"
         title="Need Executive Transport?"
         description="Discreet, punctual, and presentation-ready — reserve your vehicle with VickYank."
       />

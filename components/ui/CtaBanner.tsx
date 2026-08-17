@@ -5,6 +5,7 @@ import { ArrowRightIcon, WhatsAppIcon } from "@/components/ui/Icons";
 type CtaBannerProps = {
   title?: string;
   description?: string;
+  className?: string;
 };
 
 /**
@@ -13,9 +14,10 @@ type CtaBannerProps = {
 export default function CtaBanner({
   title = "Get in Touch",
   description = "Let’s discuss your needs.",
+  className = "",
 }: CtaBannerProps) {
   return (
-    <section className="bg-navy-cover">
+    <section className={`bg-navy-cover ${className}`.trim()}>
       <div className="mx-auto flex max-w-7xl flex-col items-stretch gap-8 px-4 py-14 text-center sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between lg:text-left lg:px-8">
         <div className="max-w-2xl">
           <p className="kicker">Contact</p>

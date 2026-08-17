@@ -111,7 +111,7 @@ body {
 
   /* Contact form apparatus — 16px text avoids iOS input zoom. */
   .form-apparatus {
-    @apply w-full border border-white/15 bg-navy-dark px-4 py-3 text-base text-white outline-none transition-all placeholder:text-gray-500 focus:border-gold focus:bg-navy-light focus:ring-1 focus:ring-gold/30;
+    @apply w-full border border-white/15 bg-navy-dark px-3 py-2.5 text-base text-white outline-none transition-all placeholder:text-gray-500 focus:border-gold focus:bg-navy-light focus:ring-1 focus:ring-gold/30 sm:px-4 sm:py-3;
   }
 
   .btn-gold {

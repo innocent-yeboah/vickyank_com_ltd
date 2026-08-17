@@ -17,6 +17,9 @@ type InquiryFormProps = {
   variant?: "default" | "gold" | "rental" | "equipment";
 };
 
+const labelClass =
+  "mb-1 block text-xs font-medium text-gray-300 sm:mb-2 sm:text-sm";
+
 /**
  * Reusable lead-capture form for VickYank Limited.
  * Posts to /api/contact (Supabase when configured, otherwise logged).
@@ -87,12 +90,15 @@ export default function InquiryForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-5">
       <input type="hidden" name="context" value={context} />
+      {defaultService ? (
+        <input type="hidden" name="service" value={defaultService} />
+      ) : null}
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-2 gap-3 sm:gap-5">
         <div>
-          <label htmlFor="inq-name" className="mb-2 block text-sm font-medium text-gray-300">
+          <label htmlFor="inq-name" className={labelClass}>
             Full Name *
           </label>
           <input
@@ -101,13 +107,13 @@ export default function InquiryForm({
             type="text"
             required
             autoComplete="name"
-            placeholder="Your full name"
+            placeholder="Full name"
             className="form-apparatus"
           />
         </div>
         <div>
-          <label htmlFor="inq-phone" className="mb-2 block text-sm font-medium text-gray-300">
-            Phone Number *
+          <label htmlFor="inq-phone" className={labelClass}>
+            Phone *
           </label>
           <input
             id="inq-phone"
@@ -121,25 +127,41 @@ export default function InquiryForm({
         </div>
       </div>
 
-      <div>
-        <label htmlFor="inq-email" className="mb-2 block text-sm font-medium text-gray-300">
-          Email Address *
-        </label>
-        <input
-          id="inq-email"
-          name="email"
-          type="email"
-          required
-          autoComplete="email"
-          placeholder="you@company.com"
-          className="form-apparatus"
-        />
+      <div className={variant === "equipment" ? "grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5" : ""}>
+        <div>
+          <label htmlFor="inq-email" className={labelClass}>
+            Email *
+          </label>
+          <input
+            id="inq-email"
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            placeholder="you@company.com"
+            className="form-apparatus"
+          />
+        </div>
+        {variant === "equipment" && (
+          <div>
+            <label htmlFor="inq-machine" className={labelClass}>
+              Machine / Part
+            </label>
+            <input
+              id="inq-machine"
+              name="machine"
+              type="text"
+              placeholder="e.g. 20T excavator"
+              className="form-apparatus"
+            />
+          </div>
+        )}
       </div>
 
       {variant === "gold" && (
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5">
           <div>
-            <label htmlFor="inq-trade-type" className="mb-2 block text-sm font-medium text-gray-300">
+            <label htmlFor="inq-trade-type" className={labelClass}>
               Trade Type *
             </label>
             <select
@@ -160,14 +182,14 @@ export default function InquiryForm({
             </select>
           </div>
           <div>
-            <label htmlFor="inq-quantity" className="mb-2 block text-sm font-medium text-gray-300">
-              Approximate Quantity
+            <label htmlFor="inq-quantity" className={labelClass}>
+              Quantity
             </label>
             <input
               id="inq-quantity"
               name="quantity"
               type="text"
-              placeholder="e.g. 2 kg raw gold"
+              placeholder="e.g. 2 kg"
               className="form-apparatus"
             />
           </div>
@@ -175,63 +197,39 @@ export default function InquiryForm({
       )}
 
       {variant === "rental" && (
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5">
           <div>
-            <label htmlFor="inq-vehicle" className="mb-2 block text-sm font-medium text-gray-300">
-              Preferred Vehicle
+            <label htmlFor="inq-vehicle" className={labelClass}>
+              Vehicle
             </label>
             <input
               id="inq-vehicle"
               name="vehicle"
               type="text"
-              placeholder="e.g. Executive Sedan"
+              placeholder="e.g. Jaguar XE"
               className="form-apparatus"
             />
           </div>
           <div>
-            <label htmlFor="inq-dates" className="mb-2 block text-sm font-medium text-gray-300">
+            <label htmlFor="inq-dates" className={labelClass}>
               Hire Dates
             </label>
             <input
               id="inq-dates"
               name="dates"
               type="text"
-              placeholder="e.g. 20–22 Sep 2026"
+              placeholder="e.g. 20–22 Sep"
               className="form-apparatus"
             />
           </div>
         </div>
       )}
 
-      {variant === "equipment" && (
+      {!defaultService && (
         <div>
-          <label htmlFor="inq-machine" className="mb-2 block text-sm font-medium text-gray-300">
-            Machine / Part Needed
+          <label htmlFor="inq-service" className={labelClass}>
+            Service / Interest *
           </label>
-          <input
-            id="inq-machine"
-            name="machine"
-            type="text"
-            placeholder="e.g. 20T excavator or track roller"
-            className="form-apparatus"
-          />
-        </div>
-      )}
-
-      <div>
-        <label htmlFor="inq-service" className="mb-2 block text-sm font-medium text-gray-300">
-          Service / Interest *
-        </label>
-        {defaultService ? (
-          <input
-            id="inq-service"
-            name="service"
-            type="text"
-            required
-            defaultValue={defaultService}
-            className="form-apparatus"
-          />
-        ) : (
           <select
             id="inq-service"
             name="service"
@@ -248,20 +246,20 @@ export default function InquiryForm({
             <option value="Luxury Cars">Luxury Cars</option>
             <option value="Other">Other</option>
           </select>
-        )}
-      </div>
+        </div>
+      )}
 
       <div>
-        <label htmlFor="inq-message" className="mb-2 block text-sm font-medium text-gray-300">
+        <label htmlFor="inq-message" className={labelClass}>
           Message *
         </label>
         <textarea
           id="inq-message"
           name="message"
           required
-          rows={5}
-          placeholder="Share requirements, timeline, and location…"
-          className="form-apparatus resize-y"
+          rows={3}
+          placeholder="Requirements, timeline, location…"
+          className="form-apparatus min-h-[5.5rem] resize-y sm:min-h-[7rem]"
         />
       </div>
 
@@ -275,7 +273,7 @@ export default function InquiryForm({
         {state === "submitting" ? "Sending…" : submitLabel}
       </button>
 
-      <p className="text-xs text-gray-500">
+      <p className="text-[11px] leading-snug text-gray-500 sm:text-xs">
         By submitting, you agree to be contacted by VickYank Limited Company regarding your
         enquiry.
       </p>
