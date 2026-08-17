@@ -1,5 +1,5 @@
 type SectionHeadingProps = {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   description?: string;
   /** Use light text on dark section backgrounds. */
@@ -23,8 +23,8 @@ export default function SectionHeading({
         align === "center" ? "mx-auto text-center" : "text-left"
       }`}
     >
-      <p className="kicker">{eyebrow}</p>
-      <h2 className="page-title mt-3">{title}</h2>
+      {eyebrow ? <p className="kicker">{eyebrow}</p> : null}
+      <h2 className={`page-title ${eyebrow ? "mt-3" : ""}`}>{title}</h2>
       {description && (
         <p
           className={`mt-5 text-base leading-relaxed sm:text-lg ${

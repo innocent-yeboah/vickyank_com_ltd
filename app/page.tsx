@@ -4,6 +4,7 @@ import Link from "next/link";
 import CoverHero from "@/components/home/CoverHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CtaBanner from "@/components/ui/CtaBanner";
+import { ArrowRightIcon } from "@/components/ui/Icons";
 import { aboutCopy, brochureServices, whyPillars } from "@/content/brochure";
 import { site } from "@/lib/site";
 
@@ -52,8 +53,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             align="center"
-            eyebrow="Portfolio"
-            title="Our Services"
+            title="Our Business"
             description="Five industrial and executive service lines. One standard of excellence."
           />
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -68,17 +68,25 @@ export default function HomePage() {
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-white/75">
                   {service.body}
                 </p>
+                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-xs font-semibold uppercase tracking-wider text-gold">
+                  Explore More
+                  <ArrowRightIcon className="h-3.5 w-3.5" />
+                </span>
               </Link>
             ))}
             <Link
               href="/contact"
-              className="flex min-h-0 flex-col justify-center border border-gold bg-gold p-5 sm:min-h-[220px] sm:p-8"
+              className="flex min-h-0 flex-col border border-gold bg-gold p-5 sm:min-h-[220px] sm:p-8"
             >
               <span className="font-heading text-2xl text-navy">06</span>
               <h3 className="mt-4 font-heading text-2xl text-navy">Contact Us Today</h3>
               <p className="mt-3 text-sm leading-relaxed text-charcoal">
                 Tell us your requirement. A specialist responds within one business day.
               </p>
+              <span className="mt-auto inline-flex items-center gap-2 pt-5 text-xs font-semibold uppercase tracking-wider text-navy">
+                Explore More
+                <ArrowRightIcon className="h-3.5 w-3.5" />
+              </span>
             </Link>
           </div>
         </div>
