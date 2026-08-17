@@ -26,15 +26,16 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-navy/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
+    <>
+      <header className="fixed inset-x-0 top-0 z-[60] border-b border-white/[0.06] bg-navy/90 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="group flex min-w-0 shrink items-center gap-3">
           <Image
             src="/images/vickyank-logo.png"
             alt={site.name}
-            width={180}
-            height={56}
-            className="h-8 w-auto sm:h-12 drop-shadow-[0_0_12px_rgba(212,175,55,0.35)]"
+            width={220}
+            height={68}
+            className="h-14 w-auto drop-shadow-[0_0_12px_rgba(212,175,55,0.35)]"
             priority
           />
         </Link>
@@ -74,7 +75,7 @@ export default function Navbar() {
 
       {open && (
         <nav
-          className="max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-white/[0.06] bg-navy/95 backdrop-blur-md lg:hidden"
+          className="max-h-[calc(100svh-5rem)] overflow-y-auto border-t border-white/[0.06] bg-navy/95 backdrop-blur-md lg:hidden"
           aria-label="Mobile"
         >
           <div className="space-y-1 px-4 py-4">
@@ -101,5 +102,7 @@ export default function Navbar() {
         </nav>
       )}
     </header>
+      <div className="h-20" aria-hidden="true" />
+    </>
   );
 }

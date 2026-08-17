@@ -20,7 +20,7 @@ export default function Footer() {
                 alt={site.name}
                 width={180}
                 height={54}
-                className="h-9 w-auto drop-shadow-[0_0_12px_rgba(212,175,55,0.35)] md:h-12"
+                className="h-12 w-auto drop-shadow-[0_0_12px_rgba(212,175,55,0.35)] md:h-12"
               />
             </Link>
             <p className="mt-3 text-sm leading-snug text-white/70 md:mt-5 md:leading-relaxed">

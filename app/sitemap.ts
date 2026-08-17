@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/spare-parts",
     "/services/luxury-cars",
     "/services/shop",
+    "/newsletter",
     "/contact",
   ];
 
