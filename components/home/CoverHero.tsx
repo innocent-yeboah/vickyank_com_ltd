@@ -26,8 +26,7 @@ export default function CoverHero() {
         className="pointer-events-none absolute inset-0 shadow-[inset_0_0_140px_rgba(0,12,36,0.55)]"
       />
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 py-12 sm:px-10 sm:py-16 lg:px-[80px] xl:px-[130px]">
-        <p className="kicker">On Site in Ghana</p>
-        <h1 className="mt-4 max-w-[700px] font-heading text-[1.85rem] font-semibold leading-[1.12] text-white sm:mt-5 sm:text-5xl lg:text-[70px] lg:leading-[1.05]">
+        <h1 className="max-w-[700px] font-heading text-[1.85rem] font-semibold leading-[1.12] text-white sm:text-5xl lg:text-[70px] lg:leading-[1.05]">
           {site.tagline}
         </h1>
         <p className="mt-5 max-w-[560px] text-sm leading-relaxed text-white/90 sm:mt-8 sm:text-lg">

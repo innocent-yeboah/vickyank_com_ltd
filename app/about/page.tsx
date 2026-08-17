@@ -14,8 +14,7 @@ export default function AboutPage() {
     <>
       <section className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="kicker">{aboutCopy.kicker}</p>
-          <h1 className="page-title mt-3">{aboutCopy.title}</h1>
+          <h1 className="page-title">{aboutCopy.title}</h1>
           <div className="mt-10 grid items-start gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
             <div className="space-y-5 text-base leading-relaxed text-white/80 sm:text-lg">
               {aboutCopy.paragraphs.map((p) => (

@@ -2,7 +2,6 @@
  * Brochure-aligned copy and galleries for the VickYank website.
  */
 export const aboutCopy = {
-  kicker: "Company",
   title: "About VickYank Limited Company",
   paragraphs: [
     "VickYank Limited Company is a diversified industrial enterprise serving high-net-worth principals, contractors, and investors across Ghana and the diaspora. We operate five disciplined service lines — mining operations, gold trading, excavator rental and sales, genuine spare parts, and luxury car rental.",

@@ -5,7 +5,7 @@ import CoverHero from "@/components/home/CoverHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CtaBanner from "@/components/ui/CtaBanner";
 import { ArrowRightIcon } from "@/components/ui/Icons";
-import { aboutCopy, brochureServices, whyPillars } from "@/content/brochure";
+import { brochureServices, whyPillars } from "@/content/brochure";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -18,37 +18,6 @@ export default function HomePage() {
     <>
       <CoverHero />
 
-      <section className="bg-navy page-section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="kicker">{aboutCopy.kicker}</p>
-          <h2 className="page-title mt-3">{aboutCopy.title}</h2>
-          <div className="mt-10 grid items-start gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
-            <div className="space-y-5 text-base leading-relaxed text-white/80 sm:text-lg">
-              {aboutCopy.paragraphs.map((p) => (
-                <p key={p.slice(0, 40)}>{p}</p>
-              ))}
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden bg-navy-ink">
-              <Image
-                src="/images/volvo-ec550e.png"
-                alt="Volvo EC550E excavator on site"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 40vw, 100vw"
-              />
-            </div>
-          </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {aboutCopy.differentiators.map((item) => (
-              <article key={item.title} className="brochure-card">
-                <h3 className="font-heading text-xl text-gold">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/80">{item.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-navy-ink page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -56,36 +25,40 @@ export default function HomePage() {
             title="Our Business"
             description="Five industrial and executive service lines. One standard of excellence."
           />
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-5 lg:grid-cols-3">
             {brochureServices.map((service) => (
               <Link
                 key={service.num}
                 href={service.href}
-                className="brochure-card flex min-h-0 flex-col transition-colors hover:border-gold sm:min-h-[220px]"
+                className="brochure-card flex min-h-0 flex-col p-3 transition-colors hover:border-gold sm:min-h-[220px] sm:p-8"
               >
-                <span className="font-heading text-2xl text-gold">{service.num}</span>
-                <h3 className="mt-4 font-heading text-2xl text-white">{service.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-white/75">
+                <span className="font-heading text-lg text-gold sm:text-2xl">{service.num}</span>
+                <h3 className="mt-2 font-heading text-base leading-snug text-white sm:mt-4 sm:text-2xl">
+                  {service.title}
+                </h3>
+                <p className="mt-2 line-clamp-3 flex-1 text-xs leading-relaxed text-white/75 sm:mt-3 sm:line-clamp-none sm:text-sm">
                   {service.body}
                 </p>
-                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-xs font-semibold uppercase tracking-wider text-gold">
+                <span className="mt-auto inline-flex items-center gap-1 pt-3 text-[10px] font-semibold uppercase tracking-wider text-gold sm:gap-2 sm:pt-5 sm:text-xs">
                   Explore More
-                  <ArrowRightIcon className="h-3.5 w-3.5" />
+                  <ArrowRightIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                 </span>
               </Link>
             ))}
             <Link
               href="/contact"
-              className="flex min-h-0 flex-col border border-gold bg-gold p-5 sm:min-h-[220px] sm:p-8"
+              className="flex min-h-0 flex-col border border-gold bg-gold p-3 sm:min-h-[220px] sm:p-8"
             >
-              <span className="font-heading text-2xl text-navy">06</span>
-              <h3 className="mt-4 font-heading text-2xl text-navy">Contact Us Today</h3>
-              <p className="mt-3 text-sm leading-relaxed text-charcoal">
+              <span className="font-heading text-lg text-navy sm:text-2xl">06</span>
+              <h3 className="mt-2 font-heading text-base leading-snug text-navy sm:mt-4 sm:text-2xl">
+                Contact Us Today
+              </h3>
+              <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-charcoal sm:mt-3 sm:line-clamp-none sm:text-sm">
                 Tell us your requirement. A specialist responds within one business day.
               </p>
-              <span className="mt-auto inline-flex items-center gap-2 pt-5 text-xs font-semibold uppercase tracking-wider text-navy">
+              <span className="mt-auto inline-flex items-center gap-1 pt-3 text-[10px] font-semibold uppercase tracking-wider text-navy sm:gap-2 sm:pt-5 sm:text-xs">
                 Explore More
-                <ArrowRightIcon className="h-3.5 w-3.5" />
+                <ArrowRightIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
               </span>
             </Link>
           </div>
