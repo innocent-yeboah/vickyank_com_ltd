@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VickYank Limited Company — Corporate Brochure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #d4af37;
+      --navy: #1a1a2e;
+      --navy-2: #151528;
+      --white: #ffffff;
+      --charcoal: #2d2d2d;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: #0b0b14; }
+    body {
+      font-family: Inter, "Segoe UI", sans-serif;
+      color: var(--white);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      position: relative;
+      page-break-after: always;
+      break-after: page;
+      background: var(--navy);
+    }
+    .page:last-child { page-break-after: auto; }
+    h1, h2, .serif { font-family: "Playfair Display", Georgia, serif; }
+    p, li { font-size: 10.5pt; line-height: 1.55; color: rgba(255,255,255,0.86); }
+    .gold { color: var(--gold); }
+    img.fit { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .pad { padding: 16mm 16mm 18mm; }
+    .foot {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      height: 11mm; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 16mm; font-size: 7.5pt; letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(212,175,55,0.7); border-top: 0.5pt solid rgba(212,175,55,0.28);
+    }
+
+    /* PAGE 1 COVER — this artwork, one navy field, updated contacts */
+    .cover {
+      background: #000c24;
+      padding: 0;
+    }
+    .cover-art {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .cover .contact-list {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 50mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 3.2mm;
+      background: #000c24;
+      padding: 6mm 18mm 14mm;
+    }
+    .cover .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 4mm;
+      color: #d4af37;
+      font-size: 11pt;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+    }
+    .cover .ico {
+      width: 7.2mm;
+      height: 7.2mm;
+      flex-shrink: 0;
+      border: 0.7pt solid #d4af37;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cover .ico svg {
+      width: 3.5mm;
+      height: 3.5mm;
+      fill: none;
+      stroke: #d4af37;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Shared inner pages */
+    .kicker {
+      font-size: 8.5pt; font-weight: 600; letter-spacing: 0.32em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    h1.page-title {
+      font-size: 26pt; font-weight: 700; color: var(--gold);
+      margin: 3mm 0 6mm; line-height: 1.15;
+    }
+    h1.center { text-align: center; }
+
+    /* PAGE 2 ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 8mm; margin-top: 2mm; }
+    .about-grid .photo { height: 78mm; overflow: hidden; }
+    .diffs { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5mm; margin-top: 8mm; }
+    .diff {
+      border: 0.6pt solid rgba(212,175,55,0.4);
+      padding: 5.5mm 5mm;
+      background: rgba(255,255,255,0.03);
+    }
+    .diff h3 { font-family: "Playfair Display", Georgia, serif; font-size: 12pt; color: var(--gold); margin-bottom: 2mm; }
+    .diff p { font-size: 9.5pt; }
+
+    /* PAGE 3 SERVICES */
+    .svc-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; margin-top: 8mm; }
+    .svc {
+      min-height: 78mm;
+      padding: 7mm 6mm;
+      background: var(--navy-2);
+      border: 0.6pt solid rgba(212,175,55,0.28);
+    }
+    .svc .num { font-family: "Playfair Display", Georgia, serif; color: var(--gold); font-size: 16pt; }
+    .svc h3 { font-size: 13pt; margin: 4mm 0 3mm; color: #fff; font-weight: 700; }
+    .svc p { font-size: 9.5pt; }
+    .svc.cta {
+      background: var(--gold);
+      border-color: var(--gold);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .svc.cta h3, .svc.cta p, .svc.cta .num { color: var(--navy); }
+    .svc.cta p { color: var(--charcoal); }
+
+    /* PAGE 4 GOLD */
+    .gold-gallery { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 6mm 0 7mm; }
+    .gold-gallery .shot { height: 48mm; overflow: hidden; background: #111; position: relative; }
+    .gold-gallery .cap {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.2mm 3.5mm;
+      background: linear-gradient(transparent, rgba(10,12,28,0.88));
+      font-size: 8pt; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); font-weight: 600;
+    }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; margin-top: 6mm; }
+    .step { background: var(--navy-2); border-top: 2.2pt solid var(--gold); padding: 5mm 4.5mm; min-height: 38mm; }
+    .step .n { font-family: "Playfair Display", Georgia, serif; color: var(--gold); font-size: 16pt; }
+    .step h3 { font-size: 11pt; margin: 1.5mm 0; color: #fff; }
+    .step p { font-size: 9pt; }
+    .badge {
+      margin-top: 6mm;
+      border: 0.8pt solid var(--gold);
+      padding: 5mm 6mm;
+      display: flex; justify-content: space-between; align-items: center; gap: 8mm;
+    }
+    .badge h3 { font-family: "Playfair Display", Georgia, serif; color: var(--gold); font-size: 13pt; }
+    .why3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4.5mm; margin-top: 5mm; }
+    .why3 article { border-left: 2pt solid var(--gold); padding-left: 4.5mm; }
+    .why3 h3 { color: var(--gold); font-size: 11pt; margin-bottom: 2mm; font-family: "Playfair Display", Georgia, serif; }
+
+    /* PAGE 5–6 galleries */
+    .gallery { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 7mm 0; }
+    .gallery .shot { height: 52mm; overflow: hidden; background: #111; }
+    .gallery.equip { margin: 5mm 0 6mm; }
+    .gallery.equip .shot { height: 42mm; }
+    .gallery.cars { margin: 5mm 0 6mm; }
+    .gallery.cars .shot { height: 42mm; }
+    .feats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4.5mm; }
+    .feat { background: var(--navy-2); padding: 6mm 5.5mm; border: 0.6pt solid rgba(212,175,55,0.25); }
+    .feat h3 { font-family: "Playfair Display", Georgia, serif; color: var(--gold); font-size: 12pt; margin-bottom: 2mm; }
+
+    /* PAGE 7 */
+    .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-top: 8mm; }
+    .pillar { min-height: 52mm; padding: 8mm 7mm; background: var(--navy-2); border: 0.6pt solid rgba(212,175,55,0.35); }
+    .pillar h3 { font-family: "Playfair Display", Georgia, serif; color: var(--gold); font-size: 15pt; margin-bottom: 3mm; }
+    .close { margin-top: 7mm; text-align: center; font-family: "Playfair Display", Georgia, serif; font-style: italic; font-size: 13pt; color: var(--gold); }
+    .wide-photo { position: absolute; left: 0; right: 0; bottom: 11mm; height: 48mm; overflow: hidden; }
+    .wide-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--navy), transparent 40%); }
+
+    /* PAGE 8 */
+    .contact-page { text-align: center; padding-top: 22mm; }
+    .contact-page h1 { font-size: 32pt; }
+    .cta-line { margin: 4mm 0 12mm; font-size: 14pt; font-family: "Playfair Display", Georgia, serif; font-style: italic; }
+    .clist { display: grid; gap: 5mm; max-width: 130mm; margin: 0 auto; text-align: left; }
+    .crow { display: flex; gap: 5mm; align-items: center; border: 0.6pt solid rgba(212,175,55,0.35); padding: 5mm 6mm; }
+    .crow strong { display: block; color: var(--gold); font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; }
+    .crow span { font-size: 12pt; color: #fff; }
+    .end-logo { width: 52mm; margin: 12mm auto 0; mix-blend-mode: multiply; filter: brightness(1.1); }
+
+    @page { size: A4; margin: 0; }
+    @media print {
+      html, body { background: none; }
+      .page { box-shadow: none; margin: 0; }
+    }
+    @media screen {
+      body { padding: 10mm 0; }
+      .page { margin: 0 auto 8mm; box-shadow: 0 10px 40px rgba(0,0,0,.45); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1 COVER -->
+  <section class="page cover">
+    <img class="cover-art" src="cover-page.png" alt="VickYank Limited Company" />
+    <div class="contact-list">
+      <div class="contact-row">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        </span>
+        024 411 2193 / 055 700 4112
+      </div>
+      <div class="contact-row">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>
+        </span>
+        www.vickyanltdcompany.com
+      </div>
+      <div class="contact-row">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+        </span>
+        info@vickyankltdcompany.com
+      </div>
+      <div class="contact-row">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </span>
+        Headquarters, Agona-Nkwanta, Ghana
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 ABOUT -->
+  <section class="page">
+    <div class="pad">
+      <p class="kicker">Company</p>
+      <h1 class="page-title">About VickYank Limited Company</h1>
+      <div class="about-grid">
+        <div>
+          <p>VickYank Limited Company is a diversified industrial enterprise serving high-net-worth principals, contractors, and investors across Ghana and the diaspora. We operate five disciplined service lines — mining operations, gold trading, excavator rental and sales, genuine spare parts, and luxury car rental.</p>
+          <p style="margin-top:4mm;">Our mission is to deliver industrial capability with the accountability of a Fortune-class partner: documented transactions, maintained fleets, and relationships that outlast any single contract.</p>
+          <p style="margin-top:4mm;">Our vision is to be West Africa’s most trusted multi-service industrial enterprise — the first name called for projects of consequence.</p>
+        </div>
+        <div class="photo"><img class="fit" alt="Volvo EC550E excavator on site" src="volvo-ec550e.png" /></div>
+      </div>
+      <div class="diffs">
+        <article class="diff"><h3>Global Standards, Local Expertise</h3><p>International operating discipline grounded in Ghana’s industrial landscape.</p></article>
+        <article class="diff"><h3>Trusted by High-Net-Worth Clients</h3><p>Discreet service for principals, executives, and serious counterparties.</p></article>
+        <article class="diff"><h3>Full-Service Industrial Solutions</h3><p>Mining, gold, machines, parts, and mobility under one accountable name.</p></article>
+        <article class="diff"><h3>Commitment to Excellence</h3><p>Inspected equipment, transparent trading, and delivery you can measure.</p></article>
+      </div>
+    </div>
+    <footer class="foot"><span>VickYank Limited Company</span><span>02</span></footer>
+  </section>
+
+  <!-- 3 SERVICES -->
+  <section class="page">
+    <div class="pad">
+      <p class="kicker" style="text-align:center;">Portfolio</p>
+      <h1 class="page-title center">Our Services</h1>
+      <p style="text-align:center; max-width:150mm; margin:0 auto 2mm;">Five industrial and executive service lines. One standard of excellence.</p>
+      <div class="svc-grid">
+        <article class="svc"><div class="num">01</div><h3>Mining Operations</h3><p>Professional extraction with experienced crews and modern heavy machinery. Safety-first site management from ground to gold.</p></article>
+        <article class="svc"><div class="num">02</div><h3>Gold Trading</h3><p>Buy and sell raw and refined gold with transparent weighing, market-aligned valuation, and full documentation.</p></article>
+        <article class="svc"><div class="num">03</div><h3>Excavator Machines</h3><p>Flexible rental and outright sale of excavators for mining and construction — inspected before every deployment.</p></article>
+        <article class="svc"><div class="num">04</div><h3>Spare Parts</h3><p>Genuine undercarriage, hydraulics, filters, and ground-engaging tools sourced to minimise fleet downtime.</p></article>
+        <article class="svc"><div class="num">05</div><h3>Luxury Car Rental</h3><p>Executive sedans, SUVs, and statement vehicles — chauffeured or self-drive for business, events, and VIP travel.</p></article>
+        <article class="svc cta"><div class="num">06</div><h3>Contact Us Today</h3><p>Tell us your requirement. A specialist responds within one business day.</p></article>
+      </div>
+    </div>
+    <footer class="foot"><span>VickYank Limited Company</span><span>03</span></footer>
+  </section>
+
+  <!-- 4 GOLD -->
+  <section class="page">
+    <div class="pad">
+      <p class="kicker">Trading Desk</p>
+      <h1 class="page-title">Gold Trading — Trusted &amp; Transparent</h1>
+      <p>In gold, reputation is collateral. VickYank buys and sells raw and refined gold with the transparency serious counterparties demand — professional weighing, market-referenced valuation, and settlement records built for principals and repeat partners.</p>
+      <div class="gold-gallery">
+        <div class="shot">
+          <img class="fit" alt="Refined 999.9 fine gold bars" src="gold-bars.jpg" />
+          <span class="cap">Refined Gold</span>
+        </div>
+        <div class="shot">
+          <img class="fit" alt="Gold bullion ingots" src="gold-ingots.jpg" />
+          <span class="cap">Bullion</span>
+        </div>
+        <div class="shot">
+          <img class="fit" alt="Gold bars prepared for trade" src="https://images.unsplash.com/photo-1643656350988-a39ad266a178?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" />
+          <span class="cap">Raw &amp; Refined</span>
+        </div>
+      </div>
+      <div class="why3">
+        <article><h3>Why VickYank</h3><p>Documented every step. Private handling. Prompt settlement.</p></article>
+        <article><h3>Trust Signals</h3><p>Witnessed weighing, clear provenance notes, full transaction files.</p></article>
+        <article><h3>For Principals</h3><p>Structured for high-value trades — local presence, global discipline.</p></article>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3>Inquiry</h3><p>Share intent, approximate quantity, and preferred timeline.</p></div>
+        <div class="step"><div class="n">2</div><h3>Verification</h3><p>Professional weighing and assessment you can witness.</p></div>
+        <div class="step"><div class="n">3</div><h3>Agreement</h3><p>Clear valuation against market conditions before commitment.</p></div>
+        <div class="step"><div class="n">4</div><h3>Transaction</h3><p>Secure settlement with complete documentation.</p></div>
+      </div>
+      <div class="badge">
+        <div>
+          <h3>Trust &amp; Compliance Badge</h3>
+          <p style="margin-top:2mm;">Certification and partnership marks — placeholders pending official credentials.</p>
+        </div>
+        <p style="color:var(--gold); letter-spacing:0.16em; text-transform:uppercase; font-size:8pt;">Raw &amp; Refined Gold</p>
+      </div>
+    </div>
+    <footer class="foot"><span>VickYank Limited Company</span><span>04</span></footer>
+  </section>
+
+  <!-- 5 EQUIPMENT -->
+  <section class="page">
+    <div class="pad">
+      <p class="kicker">Fleet</p>
+      <h1 class="page-title">Heavy Equipment &amp; Machinery</h1>
+      <p>Our excavator fleet serves mining operations, construction firms, and contractors nationwide. Every machine is inspected and serviced before deployment. Site delivery and operators are arranged on request.</p>
+      <div class="gallery equip">
+        <div class="shot"><img class="fit" alt="CAT 390F L excavator on site" src="cat-390fl.png" /></div>
+        <div class="shot"><img class="fit" alt="CAT excavator loading a haul truck" src="cat-loading-haul.png" /></div>
+        <div class="shot"><img class="fit" alt="Volvo L250H wheel loader loading a dump truck" src="volvo-l250h.png" /></div>
+        <div class="shot"><img class="fit" alt="Volvo EC550E excavator for rent" src="volvo-ec550e.png" /></div>
+        <div class="shot"><img class="fit" alt="CAT 330 excavator for sale" src="cat-330-sale.png" style="object-position: 38% 48%;" /></div>
+        <div class="shot"><img class="fit" alt="Hydraulic spare parts inventory" src="spare-parts-inventory.png" /></div>
+      </div>
+      <div class="feats">
+        <article class="feat"><h3>Renting</h3><p>Daily, weekly, and monthly terms. Volvo EC550E and other classes available for hire.</p></article>
+        <article class="feat"><h3>Selling</h3><p>CAT 330 and select machines available for outright purchase. Confirm current stock and delivery.</p></article>
+        <article class="feat"><h3>Spare Parts</h3><p>Undercarriage, hydraulics, filters, GET, pins, bushings, and attachments.</p></article>
+      </div>
+    </div>
+    <footer class="foot"><span>VickYank Limited Company</span><span>05</span></footer>
+  </section>
+
+  <!-- 6 CARS -->
+  <section class="page">
+    <div class="pad">
+      <p class="kicker">Executive Mobility</p>
+      <h1 class="page-title">Luxury Car Rental — Drive in Style</h1>
+      <p>Premium vehicles maintained to showroom standard for executives, events, and VIP travel. Chauffeured service is preferred for discreet, punctual transport; self-drive is available where licensed.</p>
+      <div class="gallery cars">
+        <div class="shot"><img class="fit" alt="Jaguar XE executive sedan" src="jaguar-xe.png" /></div>
+        <div class="shot"><img class="fit" alt="Jetour luxury SUV" src="jetour-suv.png" /></div>
+        <div class="shot"><img class="fit" alt="Toyota Land Cruiser" src="land-cruiser.png" /></div>
+        <div class="shot"><img class="fit" alt="Ram 1500 TRX" src="ram-trx.png" /></div>
+        <div class="shot"><img class="fit" alt="Cadillac Escalade" src="cadillac-escalade.png" /></div>
+        <div class="shot"><img class="fit" alt="Mercedes-AMG GLE Coupe" src="mercedes-gle.png" style="object-position: 50% 40%;" /></div>
+      </div>
+      <div class="feats">
+        <article class="feat"><h3>Premium Fleet</h3><p>Jaguar XE, Land Cruiser, Escalade, Mercedes GLE, Jetour, and Ram TRX — detailed before every hire.</p></article>
+        <article class="feat"><h3>Flexible Terms</h3><p>Daily and weekly packages, airport transfers, and multi-day corporate retainers.</p></article>
+        <article class="feat"><h3>Discreet Service</h3><p>Professional chauffeurs, punctual delivery, and presentation-ready vehicles.</p></article>
+      </div>
+    </div>
+    <footer class="foot"><span>VickYank Limited Company</span><span>06</span></footer>
+  </section>
+
+  <!-- 7 WHY -->
+  <section class="page">
+    <div class="pad" style="padding-bottom: 58mm;">
+      <p class="kicker" style="text-align:center;">Partnership</p>
+      <h1 class="page-title center">Why Choose VickYank?</h1>
+      <div class="pillars">
+        <article class="pillar"><h3>Experience</h3><p>Deep industry knowledge across Ghana’s most demanding mining and industrial environments — operational memory that keeps projects moving.</p></article>
+        <article class="pillar"><h3>Global Standards</h3><p>World-class service delivery: documented processes, maintained fleets, and the accountability expected by international counterparties.</p></article>
+        <article class="pillar"><h3>Trust &amp; Transparency</h3><p>Honest business practice. Clear pricing, witnessed gold procedures, and delivery you can measure.</p></article>
+        <article class="pillar"><h3>Local Expertise</h3><p>Deep understanding of the Ghanaian market, with corridors that serve regional partners and diaspora principals.</p></article>
+      </div>
+      <p class="close">Serious projects demand serious partners. Global standards. Local expertise.</p>
+    </div>
+    <div class="wide-photo">
+      <img class="fit" alt="Volvo EC550E excavator in operation" src="volvo-ec550e.png" />
+    </div>
+    <footer class="foot"><span>VickYank Limited Company</span><span>07</span></footer>
+  </section>
+
+  <!-- 8 CONTACT -->
+  <section class="page contact-page">
+    <p class="kicker">Contact</p>
+    <h1 class="page-title center">Get in Touch</h1>
+    <p class="cta-line">Let’s Discuss Your Needs</p>
+    <div class="clist">
+      <div class="crow"><div><strong>Phone</strong><span>024 411 2193 / 055 700 4112</span></div></div>
+      <div class="crow"><div><strong>Website</strong><span>www.vickyanltdcompany.com</span></div></div>
+      <div class="crow"><div><strong>Email</strong><span>info@vickyankltdcompany.com</span></div></div>
+      <div class="crow"><div><strong>WhatsApp</strong><span>024 411 2193</span></div></div>
+      <div class="crow"><div><strong>Location</strong><span>Headquarters, Agona-Nkwanta, Ghana</span></div></div>
+    </div>
+    <img class="end-logo" src="vickyank-logo.png" alt="VickYank Limited Company" />
+    <p style="margin-top:5mm; letter-spacing:0.14em; text-transform:uppercase; font-size:8.5pt; color:var(--gold);">Global Standards. Local Expertise.</p>
+    <footer class="foot"><span>VickYank Limited Company</span><span>08</span></footer>
+  </section>
+
+</body>
+</html>

@@ -2,20 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling for in-page anchors (services deep links),
-   disabled for users who prefer reduced motion. */
-html {
-  scroll-behavior: smooth;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   .tech-mesh-image,
   .group:hover .tech-mesh-image {
     transition: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
@@ -32,14 +30,14 @@ body {
   /* Engineering blueprint grid overlay — sits behind page content. */
   .industrial-grid {
     background-image:
-      linear-gradient(to right, rgba(31, 41, 55, 0.35) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(31, 41, 55, 0.35) 1px, transparent 1px);
+      linear-gradient(to right, rgba(212, 175, 55, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
     background-size: 48px 48px;
   }
 
   /* Subtle horizontal engineering rule used between major bands. */
   .industrial-rule {
-    @apply border-t border-gray-800/60;
+    @apply border-t border-white/10;
   }
 
   /* Precision corner anchors — blueprint aesthetic on cards & listings. */
@@ -50,45 +48,65 @@ body {
   .tech-frame::before,
   .tech-frame::after {
     content: "";
-    @apply pointer-events-none absolute z-10 h-0.5 w-0.5 bg-[#FFC107];
+    @apply pointer-events-none absolute z-10 h-0.5 w-0.5 bg-gold;
   }
 
   .tech-frame::before {
     @apply left-1.5 top-1.5;
-    box-shadow: 8px 0 0 0 #ffc107, 0 8px 0 0 #ffc107;
+    box-shadow: 8px 0 0 0 #d4af37, 0 8px 0 0 #d4af37;
   }
 
   .tech-frame::after {
     @apply right-1.5 top-1.5;
-    box-shadow: -8px 0 0 0 #ffc107, 0 8px 0 0 #ffc107;
+    box-shadow: -8px 0 0 0 #d4af37, 0 8px 0 0 #d4af37;
   }
 
   .tech-frame > .tech-anchor-br,
   .tech-frame > .tech-anchor-bl {
-    @apply pointer-events-none absolute z-10 h-0.5 w-0.5 bg-[#FFC107];
+    @apply pointer-events-none absolute z-10 h-0.5 w-0.5 bg-gold;
   }
 
   .tech-frame > .tech-anchor-br {
     @apply bottom-1.5 right-1.5;
-    box-shadow: -8px 0 0 0 #ffc107, 0 -8px 0 0 #ffc107;
+    box-shadow: -8px 0 0 0 #d4af37, 0 -8px 0 0 #d4af37;
   }
 
   .tech-frame > .tech-anchor-bl {
     @apply bottom-1.5 left-1.5;
-    box-shadow: 8px 0 0 0 #ffc107, 0 -8px 0 0 #ffc107;
+    box-shadow: 8px 0 0 0 #d4af37, 0 -8px 0 0 #d4af37;
   }
 
-  /* Softened grayscale mesh treatment for industrial photography. */
   .tech-mesh-image {
-    @apply grayscale contrast-125 opacity-30 transition-all duration-500 ease-out;
+    @apply object-cover transition-transform duration-500 ease-out;
   }
 
   .group:hover .tech-mesh-image {
-    @apply opacity-75 grayscale-0;
+    @apply scale-105;
+  }
+
+  .kicker {
+    @apply text-sm font-semibold uppercase tracking-[0.32em] text-gold;
+  }
+
+  .page-title {
+    @apply font-heading text-4xl font-bold leading-tight text-gold sm:text-5xl;
+  }
+
+  .brochure-card {
+    @apply border border-gold/40 p-6 sm:p-8;
+    background-color: #151528;
   }
 
   /* Contact form apparatus — dark industrial input baseline. */
   .form-apparatus {
-    @apply w-full border border-gray-800/80 bg-[#151515] px-4 py-3 text-white outline-none transition-all placeholder:text-gray-500 focus:border-[#FFC107] focus:bg-[#1C1C1C] focus:ring-1 focus:ring-[#FFC107]/30;
+    @apply w-full border border-white/15 bg-navy-dark px-4 py-3 text-white outline-none transition-all placeholder:text-gray-500 focus:border-gold focus:bg-navy-light focus:ring-1 focus:ring-gold/30;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 bg-gold px-8 py-4 font-body text-sm font-semibold uppercase tracking-wider text-navy transition-colors hover:bg-gold-dark disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 border border-gold/70 px-8 py-4 font-body text-sm font-semibold uppercase tracking-wider text-gold transition-colors hover:border-gold hover:bg-gold/10;
   }
 }

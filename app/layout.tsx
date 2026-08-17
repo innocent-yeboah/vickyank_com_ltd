@@ -1,18 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Montserrat } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import { Inter, Playfair_Display } from "next/font/google";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import { CartProvider } from "@/components/shop/CartProvider";
+import JsonLd from "@/components/seo/JsonLd";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-// Montserrat: structural industrial headings / data matrices.
-// Inter: smooth corporate body readability.
-const montserrat = Montserrat({
+const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-heading",
   display: "swap",
-  weight: ["500", "600", "700", "800"],
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const inter = Inter({
@@ -22,8 +23,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Mining • Equipment • Gold • Luxury`,
+    default: `${site.name} | ${site.tagline}`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -33,37 +35,45 @@ export const metadata: Metadata = {
     "excavator rental Ghana",
     "excavator spare parts",
     "luxury car rental Ghana",
-    "Vickyank Limited",
+    "VickYank Limited",
   ],
   openGraph: {
     title: site.name,
     description: site.description,
     type: "website",
     locale: "en_GH",
+    url: site.url,
+    siteName: site.name,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#111111",
+  themeColor: "#1A1A2E",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
-      <body className="flex min-h-screen flex-col bg-[#111111]">
-        <Navbar />
-        <main className="relative flex-1">
-          {/* Blueprint grid sits behind content as a faint engineering mesh. */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none fixed inset-0 z-0 industrial-grid opacity-[0.07]"
-          />
-          <div className="relative z-10">{children}</div>
-        </main>
-        <Footer />
-        <WhatsAppButton />
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+      <body className="flex min-h-screen flex-col bg-navy">
+        <JsonLd />
+        <CartProvider>
+          <Navbar />
+          <main className="relative flex-1">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none fixed inset-0 z-0 industrial-grid opacity-[0.07]"
+            />
+            <div className="relative z-10">{children}</div>
+          </main>
+          <Footer />
+          <WhatsAppButton />
+        </CartProvider>
       </body>
     </html>
   );

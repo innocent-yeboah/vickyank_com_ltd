@@ -8,37 +8,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Industrial corporate palette — Fortune 500 industrial stack
         navy: {
-          DEFAULT: "#1E3A5F",
-          dark: "#14293F",
-          darker: "#0C1B2A",
+          DEFAULT: "#1A1A2E",
+          dark: "#12121F",
+          darker: "#0D0D18",
+          light: "#252542",
+          ink: "#151528",
+          cover: "#000c24",
         },
+        "navy-ink": "#151528",
+        "navy-cover": "#000c24",
         charcoal: {
-          DEFAULT: "#1A1A1A",
-          light: "#2A2A2A",
+          DEFAULT: "#2D2D2D",
+          light: "#3D3D3D",
         },
         base: {
-          DEFAULT: "#111111",
-          deep: "#0E0E0E",
-          panel: "#151515",
+          DEFAULT: "#1A1A2E",
+          deep: "#12121F",
+          panel: "#22223A",
         },
         gold: {
-          DEFAULT: "#FFC107",
-          dark: "#E0A800",
-          soft: "#FFD54F",
+          DEFAULT: "#D4AF37",
+          dark: "#B8942D",
+          soft: "#E8C95A",
         },
       },
       fontFamily: {
-        heading: ["var(--font-heading)", "Montserrat", "sans-serif"],
+        heading: ["var(--font-heading)", "Playfair Display", "Georgia", "serif"],
         body: ["var(--font-body)", "Inter", "sans-serif"],
       },
       backgroundImage: {
-        // Very light left scrim — hero photo stays highly visible
         "hero-gradient":
-          "linear-gradient(105deg, rgba(17,17,17,0.40) 0%, rgba(17,17,17,0.18) 45%, rgba(17,17,17,0.05) 100%)",
+          "linear-gradient(105deg, rgba(26,26,46,0.55) 0%, rgba(26,26,46,0.28) 45%, rgba(26,26,46,0.08) 100%)",
         "section-gradient":
-          "linear-gradient(135deg, #111111 0%, #1A1A1A 100%)",
+          "linear-gradient(135deg, #1A1A2E 0%, #12121F 100%)",
       },
     },
   },

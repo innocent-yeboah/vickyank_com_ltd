@@ -2,7 +2,7 @@
   "name": "vickyank-limited",
   "version": "1.0.0",
   "private": true,
-  "description": "Corporate website for VICKYANK LIMITED COMPANY — Mining, Gold Trading, Heavy Equipment & Luxury Car Rental in Ghana",
+  "description": "Corporate website for VICKYANKK LIMITED COMPANY — Mining, Gold Trading, Heavy Equipment & Luxury Car Rental in Ghana",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,9 +10,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.112.3",
     "next": "14.2.15",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "resend": "^6.20.0"
   },
   "devDependencies": {
     "@types/node": "^20.16.10",
