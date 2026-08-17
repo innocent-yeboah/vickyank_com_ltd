@@ -102,9 +102,19 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-navy-ink page-section">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div className="mx-auto grid max-w-7xl items-start gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <div>
-            <p className="kicker">Enquiry</p>
+            <div className="relative mx-auto aspect-[3/4] max-w-sm overflow-hidden bg-white lg:mx-0">
+              <Image
+                src="/images/contact-specialist.png"
+                alt="VickYank specialist ready to take your enquiry"
+                fill
+                className="object-cover object-top"
+                sizes="(min-width: 1024px) 28vw, 80vw"
+                priority
+              />
+            </div>
+            <p className="kicker mt-8">Enquiry</p>
             <h2 className="page-title mt-3">Send a Message</h2>
             <p className="mt-5 text-base text-white/80 sm:text-lg">
               Complete the form and our team will respond within one business day.

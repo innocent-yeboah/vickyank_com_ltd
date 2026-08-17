@@ -19,14 +19,11 @@ export default function BusinessServiceGrid({ sixth }: { sixth: SixthCard }) {
     <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-5 lg:grid-cols-3">
       {brochureServices.map((service) => (
         <Link
-          key={service.num}
+          key={service.href}
           href={service.href}
           className="brochure-card flex min-h-0 flex-col p-3 transition-colors hover:border-gold sm:p-6"
         >
-          <span className="font-heading text-lg text-gold sm:text-2xl">
-            {service.num}
-          </span>
-          <h3 className="mt-2 font-heading text-base leading-snug text-white sm:mt-3 sm:text-2xl">
+          <h3 className="font-heading text-base leading-snug text-white sm:text-2xl">
             {service.title}
           </h3>
           <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-white/75 sm:mt-3 sm:line-clamp-none sm:text-sm">
@@ -51,19 +48,18 @@ export default function BusinessServiceGrid({ sixth }: { sixth: SixthCard }) {
         href={sixth.href}
         className="flex min-h-0 flex-col border border-gold bg-gold p-3 sm:p-6"
       >
-        <span className="font-heading text-lg text-navy sm:text-2xl">06</span>
-        <h3 className="mt-2 font-heading text-base leading-snug text-navy sm:mt-3 sm:text-2xl">
+        <h3 className="font-heading text-base leading-snug text-navy sm:text-2xl">
           {sixth.title}
         </h3>
         <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-charcoal sm:mt-3 sm:line-clamp-none sm:text-sm">
           {sixth.body}
         </p>
-        <div className="relative mt-3 aspect-square overflow-hidden sm:mt-4">
+        <div className="relative mt-3 aspect-square overflow-hidden bg-white sm:mt-4">
           <Image
             src={sixth.image}
             alt={sixth.imageAlt}
             fill
-            className="object-cover"
+            className="object-cover object-top"
             sizes="(min-width: 1024px) 30vw, 50vw"
           />
         </div>

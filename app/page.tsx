@@ -22,15 +22,15 @@ export default function HomePage() {
           <SectionHeading
             align="center"
             title="Our Business"
-            description="Five industrial and executive service lines. One standard of excellence."
+            description="Industrial and executive service lines. One standard of excellence."
           />
           <BusinessServiceGrid
             sixth={{
               href: "/contact",
               title: "Contact Us Today",
               body: "Tell us your requirement. A specialist responds within one business day.",
-              image: "/images/hero-site.png",
-              imageAlt: "VickYank industrial site in Ghana",
+              image: "/images/contact-specialist.png",
+              imageAlt: "VickYank specialist ready to take your enquiry",
             }}
           />
         </div>

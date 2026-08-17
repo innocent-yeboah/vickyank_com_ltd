@@ -16,7 +16,7 @@ export default function ServicesHubPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="page-title text-center">Our Business</h1>
           <p className="mx-auto mt-5 max-w-2xl text-center text-base text-white/80 sm:text-lg">
-            Five industrial and executive service lines, plus an online parts and
+            Industrial and executive service lines, plus an online parts and
             equipment shop. One standard of excellence.
             {` ${site.tagline}`}
           </p>
