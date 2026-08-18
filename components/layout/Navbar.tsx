@@ -28,10 +28,10 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-[60] border-b border-white/[0.06] bg-navy/90 backdrop-blur-md">
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:h-24 sm:gap-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex min-w-0 shrink items-center gap-2.5 sm:gap-3.5"
+          className="flex min-w-0 shrink items-center gap-2 sm:gap-3.5"
           aria-label={site.name}
         >
           <Image
@@ -39,14 +39,14 @@ export default function Navbar() {
             alt=""
             width={865}
             height={475}
-            className="h-[3.84rem] w-auto shrink-0 brightness-125 contrast-110 sm:h-[4.51rem]"
+            className="h-10 w-auto shrink-0 brightness-125 contrast-110 sm:h-[4.51rem]"
             priority
           />
           <span className="min-w-0 leading-tight">
-            <span className="block font-heading text-lg text-white sm:text-2xl">
+            <span className="block font-heading text-base text-white sm:text-2xl">
               {site.shortName}
             </span>
-            <span className="mt-0.5 block text-[11px] tracking-[0.06em] text-white/55 sm:text-sm">
+            <span className="mt-0.5 block text-[10px] tracking-[0.06em] text-white/55 sm:text-sm">
               Limited Company
             </span>
           </span>
@@ -93,7 +93,7 @@ export default function Navbar() {
 
       {open && (
         <nav
-          className="max-h-[calc(100svh-6rem)] overflow-y-auto border-t border-white/[0.06] bg-navy/95 backdrop-blur-md lg:hidden"
+          className="max-h-[calc(100svh-5rem)] overflow-y-auto border-t border-white/[0.06] bg-navy/95 backdrop-blur-md sm:max-h-[calc(100svh-6rem)] lg:hidden"
           aria-label="Mobile"
         >
           <div className="space-y-1 px-4 py-4">
@@ -126,7 +126,7 @@ export default function Navbar() {
         </nav>
       )}
     </header>
-      <div className="h-24" aria-hidden="true" />
+      <div className="h-20 sm:h-24" aria-hidden="true" />
     </>
   );
 }

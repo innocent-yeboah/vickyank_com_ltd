@@ -14,8 +14,7 @@ export default function CoverHero() {
         className="absolute inset-0 bg-gradient-to-t from-navy-cover via-navy-cover/50 to-navy-cover/20"
       />
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-24 sm:px-6 sm:pb-16 lg:px-8 lg:pb-24">
-        <p className="text-sm tracking-[0.04em] text-gold">{site.shortName}</p>
-        <h1 className="mt-3 max-w-3xl font-heading text-[2rem] font-medium leading-[1.12] text-white sm:mt-4 sm:text-5xl lg:text-6xl lg:leading-[1.08]">
+        <h1 className="max-w-3xl font-heading text-[2rem] font-medium leading-[1.12] text-white sm:text-5xl lg:text-6xl lg:leading-[1.08]">
           {site.tagline}
         </h1>
         <p className="mt-5 max-w-md text-sm leading-relaxed text-white/75 sm:mt-6 sm:text-base">
