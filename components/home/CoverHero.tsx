@@ -3,7 +3,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 /**
- * Full-bleed hero — photography first, restrained type, two clear actions.
+ * Arrival screen — make the house obvious, and Enquire the easy next step.
  */
 export default function CoverHero() {
   return (
@@ -22,19 +22,19 @@ export default function CoverHero() {
         className="absolute inset-0 bg-gradient-to-t from-navy-cover via-navy-cover/45 to-navy-cover/15"
       />
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-24 sm:px-6 sm:pb-16 lg:px-8 lg:pb-24">
-        <h1 className="max-w-3xl font-heading text-[2rem] font-medium leading-[1.12] text-white sm:text-5xl lg:text-6xl lg:leading-[1.08]">
+        <p className="text-sm tracking-[0.04em] text-gold">{site.shortName}</p>
+        <h1 className="mt-3 max-w-3xl font-heading text-[2rem] font-medium leading-[1.12] text-white sm:mt-4 sm:text-5xl lg:text-6xl lg:leading-[1.08]">
           {site.tagline}
         </h1>
-        <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/80 sm:mt-6 sm:text-base">
-          Mining, gold, machinery, and executive mobility — delivered from Ghana
-          with the care of a private house.
+        <p className="mt-5 max-w-md text-sm leading-relaxed text-white/75 sm:mt-6 sm:text-base">
+          Mining, gold, machines, and cars — one house in Ghana.
         </p>
         <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row">
-          <Link href="/services" className="btn-gold">
-            Our Business
-          </Link>
-          <Link href="/contact" className="btn-outline-light">
+          <Link href="/contact" className="btn-gold">
             Enquire
+          </Link>
+          <Link href="#houses" className="btn-outline-light">
+            Choose a house
           </Link>
         </div>
       </div>
