@@ -49,14 +49,14 @@ export default function HeroReel() {
             loop
             playsInline
             preload="auto"
-            poster="/images/hero-site.png"
+            poster="/images/jaguar-xe.png"
             onError={() => setFailed(true)}
           >
             <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
         ) : (
           <Image
-            src="/images/hero-site.png"
+            src="/images/jaguar-xe.png"
             alt=""
             fill
             priority
