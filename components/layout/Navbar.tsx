@@ -28,25 +28,25 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-[60] border-b border-white/[0.06] bg-navy/90 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
           className="flex min-w-0 shrink items-center gap-2.5 sm:gap-3.5"
           aria-label={site.name}
         >
           <Image
-            src="/images/vickyank-logo.png"
+            src="/images/vickyank-mark.png"
             alt=""
-            width={220}
-            height={68}
-            className="h-12 w-auto shrink-0 sm:h-14"
+            width={865}
+            height={475}
+            className="h-[4.04rem] w-auto shrink-0 brightness-125 contrast-110 sm:h-[4.75rem]"
             priority
           />
           <span className="min-w-0 leading-tight">
-            <span className="block font-heading text-base text-white sm:text-xl">
+            <span className="block font-heading text-lg text-white sm:text-2xl">
               {site.shortName}
             </span>
-            <span className="mt-0.5 block text-[10px] tracking-[0.04em] text-white/50 sm:text-xs">
+            <span className="mt-0.5 block text-[11px] tracking-[0.06em] text-white/55 sm:text-sm">
               Limited Company
             </span>
           </span>
@@ -93,7 +93,7 @@ export default function Navbar() {
 
       {open && (
         <nav
-          className="max-h-[calc(100svh-5rem)] overflow-y-auto border-t border-white/[0.06] bg-navy/95 backdrop-blur-md lg:hidden"
+          className="max-h-[calc(100svh-6rem)] overflow-y-auto border-t border-white/[0.06] bg-navy/95 backdrop-blur-md lg:hidden"
           aria-label="Mobile"
         >
           <div className="space-y-1 px-4 py-4">
@@ -126,7 +126,7 @@ export default function Navbar() {
         </nav>
       )}
     </header>
-      <div className="h-20" aria-hidden="true" />
+      <div className="h-24" aria-hidden="true" />
     </>
   );
 }

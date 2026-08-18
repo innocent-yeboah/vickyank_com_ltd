@@ -16,11 +16,11 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block">
               <Image
-                src="/images/vickyank-logo.png"
+                src="/images/vickyank-mark.png"
                 alt={site.name}
-                width={180}
-                height={54}
-                className="h-12 w-auto md:h-12"
+                width={865}
+                height={475}
+                className="h-14 w-auto brightness-125 contrast-110 md:h-16"
               />
             </Link>
             <p className="mt-3 text-sm leading-snug text-white/70 md:mt-5 md:leading-relaxed">

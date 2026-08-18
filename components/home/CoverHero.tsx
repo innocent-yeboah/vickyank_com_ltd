@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
  */
 export default function CoverHero() {
   return (
-    <section className="relative flex min-h-[78svh] items-end overflow-hidden bg-navy-cover sm:min-h-[70svh] lg:min-h-[calc(100svh-5rem)]">
+    <section className="relative flex min-h-[78svh] items-end overflow-hidden bg-navy-cover sm:min-h-[70svh] lg:min-h-[calc(100svh-6rem)]">
       <Image
         src="/images/hero-haul.png"
         alt="Haul truck and loader on a VickYank mining site"
