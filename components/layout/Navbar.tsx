@@ -29,15 +29,27 @@ export default function Navbar() {
     <>
       <header className="fixed inset-x-0 top-0 z-[60] border-b border-white/[0.06] bg-navy/90 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="group flex min-w-0 shrink items-center gap-3">
+        <Link
+          href="/"
+          className="flex min-w-0 shrink items-center gap-2.5 sm:gap-3.5"
+          aria-label={site.name}
+        >
           <Image
             src="/images/vickyank-logo.png"
-            alt={site.name}
+            alt=""
             width={220}
             height={68}
-            className="h-14 w-auto"
+            className="h-12 w-auto shrink-0 sm:h-14"
             priority
           />
+          <span className="min-w-0 leading-tight">
+            <span className="block font-heading text-base text-white sm:text-xl">
+              {site.shortName}
+            </span>
+            <span className="mt-0.5 block text-[10px] tracking-[0.04em] text-white/50 sm:text-xs">
+              Limited Company
+            </span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
