@@ -4,7 +4,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .tech-mesh-image,
-  .group:hover .tech-mesh-image {
+  .group:hover .tech-mesh-image,
+  .luxury-tile img {
     transition: none !important;
   }
 
@@ -17,7 +18,7 @@
   }
 }
 
-/* Offset anchor targets below the sticky navbar. */
+/* Offset anchor targets below the fixed navbar. */
 section[id] {
   scroll-margin-top: 5.5rem;
 }
@@ -27,61 +28,24 @@ html {
 }
 
 body {
-  @apply overflow-x-hidden bg-white font-body text-charcoal antialiased;
+  @apply overflow-x-hidden bg-navy font-body text-white/85 antialiased;
 }
 
 @layer components {
-  /* Engineering blueprint grid overlay — sits behind page content. */
   .industrial-grid {
-    background-image:
-      linear-gradient(to right, rgba(212, 175, 55, 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
-    background-size: 48px 48px;
+    display: none;
   }
 
-  /* Subtle horizontal engineering rule used between major bands. */
   .industrial-rule {
     @apply border-t border-white/10;
   }
 
-  /* Precision corner anchors — blueprint aesthetic on cards & listings. */
   .tech-frame {
     @apply relative;
   }
 
-  .tech-frame::before,
-  .tech-frame::after {
-    content: "";
-    @apply pointer-events-none absolute z-10 h-0.5 w-0.5 bg-gold;
-  }
-
-  .tech-frame::before {
-    @apply left-1.5 top-1.5;
-    box-shadow: 8px 0 0 0 #d4af37, 0 8px 0 0 #d4af37;
-  }
-
-  .tech-frame::after {
-    @apply right-1.5 top-1.5;
-    box-shadow: -8px 0 0 0 #d4af37, 0 8px 0 0 #d4af37;
-  }
-
-  .tech-frame > .tech-anchor-br,
-  .tech-frame > .tech-anchor-bl {
-    @apply pointer-events-none absolute z-10 h-0.5 w-0.5 bg-gold;
-  }
-
-  .tech-frame > .tech-anchor-br {
-    @apply bottom-1.5 right-1.5;
-    box-shadow: -8px 0 0 0 #d4af37, 0 -8px 0 0 #d4af37;
-  }
-
-  .tech-frame > .tech-anchor-bl {
-    @apply bottom-1.5 left-1.5;
-    box-shadow: 8px 0 0 0 #d4af37, 0 -8px 0 0 #d4af37;
-  }
-
   .tech-mesh-image {
-    @apply object-cover transition-transform duration-500 ease-out;
+    @apply object-cover transition-transform duration-700 ease-out;
   }
 
   .group:hover .tech-mesh-image {
@@ -89,36 +53,34 @@ body {
   }
 
   .kicker {
-    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-gold sm:text-sm sm:tracking-[0.32em];
+    @apply text-[11px] font-medium uppercase tracking-[0.22em] text-gold/90 sm:text-xs;
   }
 
   .page-title {
-    @apply font-heading text-[1.75rem] font-bold leading-tight text-gold sm:text-4xl md:text-5xl;
+    @apply font-heading text-[1.75rem] font-medium leading-[1.15] tracking-tight text-white sm:text-4xl md:text-[2.75rem];
   }
 
   .page-section {
-    @apply py-14 sm:py-20 lg:py-24;
+    @apply py-16 sm:py-24 lg:py-28;
   }
 
   .page-hero {
-    @apply relative overflow-hidden py-16 sm:py-24 lg:py-28;
+    @apply relative flex min-h-[52svh] items-end overflow-hidden py-20 sm:min-h-[58svh] sm:py-28 lg:min-h-[64svh] lg:py-32;
   }
 
   .brochure-card {
-    @apply border border-gold/40 p-5 sm:p-8;
-    background-color: #151528;
+    @apply border border-white/10 bg-white/[0.03] p-5 sm:p-8;
   }
 
-  /* Contact form apparatus — 16px text avoids iOS input zoom. */
   .form-apparatus {
-    @apply w-full border border-white/15 bg-navy-dark px-3 py-2.5 text-base text-white outline-none transition-all placeholder:text-gray-500 focus:border-gold focus:bg-navy-light focus:ring-1 focus:ring-gold/30 sm:px-4 sm:py-3;
+    @apply w-full border border-white/15 bg-navy-dark/80 px-3 py-2.5 text-base text-white outline-none transition-all placeholder:text-white/40 focus:border-gold/60 focus:ring-1 focus:ring-gold/20 sm:px-4 sm:py-3;
   }
 
   .btn-gold {
-    @apply inline-flex min-h-11 w-full items-center justify-center gap-2 bg-gold px-6 py-3.5 font-body text-sm font-semibold uppercase tracking-wider text-navy transition-colors hover:bg-gold-dark disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-8 sm:py-4;
+    @apply inline-flex min-h-11 w-full items-center justify-center gap-2 bg-gold px-7 py-3.5 font-body text-xs font-medium tracking-[0.16em] text-navy transition-colors hover:bg-gold-soft disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-8;
   }
 
   .btn-outline-light {
-    @apply inline-flex min-h-11 w-full items-center justify-center gap-2 border border-gold/70 px-6 py-3.5 font-body text-sm font-semibold uppercase tracking-wider text-gold transition-colors hover:border-gold hover:bg-gold/10 sm:w-auto sm:px-8 sm:py-4;
+    @apply inline-flex min-h-11 w-full items-center justify-center gap-2 border border-white/30 px-7 py-3.5 font-body text-xs font-medium tracking-[0.16em] text-white transition-colors hover:border-gold hover:text-gold sm:w-auto sm:px-8;
   }
 }

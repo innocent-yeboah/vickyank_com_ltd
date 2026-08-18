@@ -8,7 +8,7 @@ import { navLinks, site } from "@/lib/site";
 import { CloseIcon, MenuIcon } from "@/components/ui/Icons";
 
 /**
- * Sticky corporate navigation — dark navy with gold accents.
+ * Fixed site navigation — quiet type, gold only on Enquire.
  */
 export default function Navbar() {
   const pathname = usePathname();
@@ -35,12 +35,12 @@ export default function Navbar() {
             alt={site.name}
             width={220}
             height={68}
-            className="h-14 w-auto drop-shadow-[0_0_12px_rgba(212,175,55,0.35)]"
+            className="h-14 w-auto"
             priority
           />
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Main">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
           {navLinks.map((link) => {
             const active =
               pathname === link.href ||
@@ -49,8 +49,8 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`whitespace-nowrap text-xs font-medium uppercase tracking-wide transition-colors ${
-                  active ? "text-gold" : "text-gray-300 hover:text-white"
+                className={`whitespace-nowrap text-sm transition-colors ${
+                  active ? "text-white" : "text-white/60 hover:text-white"
                 }`}
                 aria-current={active ? "page" : undefined}
               >
@@ -58,6 +58,12 @@ export default function Navbar() {
               </Link>
             );
           })}
+          <Link
+            href="/contact"
+            className="whitespace-nowrap text-sm text-gold transition-colors hover:text-gold-soft"
+          >
+            Enquire
+          </Link>
         </nav>
 
         <div className="flex items-center lg:hidden">
@@ -87,10 +93,10 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block min-h-11 px-3 py-3 text-base font-medium uppercase tracking-wide ${
+                  className={`block min-h-11 px-3 py-3 text-base ${
                     active
-                      ? "bg-white/5 text-gold"
-                      : "text-gray-300 hover:bg-white/5 hover:text-white"
+                      ? "bg-white/5 text-white"
+                      : "text-white/70 hover:bg-white/5 hover:text-white"
                   }`}
                   aria-current={active ? "page" : undefined}
                 >
@@ -98,6 +104,12 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            <Link
+              href="/contact"
+              className="block min-h-11 px-3 py-3 text-base text-gold"
+            >
+              Enquire
+            </Link>
           </div>
         </nav>
       )}

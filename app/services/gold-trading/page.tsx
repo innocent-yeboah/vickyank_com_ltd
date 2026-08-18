@@ -66,12 +66,15 @@ export default function GoldTradingPage() {
           alt="Refined 999.9 fine gold bars"
           fill
           priority
-          className="object-cover opacity-20"
+          className="object-cover brightness-[0.65]"
           sizes="100vw"
         />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-navy-cover via-navy-cover/50 to-transparent"
+        />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="kicker">Trading Desk</p>
-          <h1 className="page-title mt-3">Gold Trading — Trusted &amp; Transparent</h1>
+          <h1 className="page-title">Gold Trading</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
             In gold, reputation is collateral. Buy and sell raw and refined gold with
             confidence. {site.tagline}
@@ -119,7 +122,7 @@ export default function GoldTradingPage() {
                 className="object-cover"
                 sizes="(min-width: 640px) 33vw, 100vw"
               />
-              <span className="absolute bottom-4 left-4 z-10 bg-gold px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-navy">
+              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-cover/90 to-transparent px-4 pb-4 pt-10 text-sm text-white">
                 {shot.label}
               </span>
             </div>
@@ -130,8 +133,7 @@ export default function GoldTradingPage() {
       <section className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Why VickYank"
-            title="Why Trade With Us"
+            title="Why trade with us"
             description="In gold, reputation is collateral. Here is how we protect yours — and ours."
           />
           <div className="mt-14 grid gap-5 md:grid-cols-3">
@@ -140,7 +142,7 @@ export default function GoldTradingPage() {
                 <span className="inline-flex h-14 w-14 items-center justify-center border border-gold/40 text-gold">
                   <item.icon className="h-7 w-7" />
                 </span>
-                <h3 className="mt-6 font-heading text-xl text-gold">{item.title}</h3>
+                <h3 className="mt-6 font-heading text-xl text-white">{item.title}</h3>
                 <p className="mt-3 leading-relaxed text-white/80">{item.description}</p>
               </article>
             ))}
@@ -151,9 +153,7 @@ export default function GoldTradingPage() {
       <section className="industrial-rule bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            dark
-            eyebrow="Process"
-            title="How a Trade Works"
+            title="How a trade works"
             description="Four clear steps from first contact to settled transaction."
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -199,8 +199,7 @@ export default function GoldTradingPage() {
       <section id="enquire" className="bg-navy page-section">
         <div className="mx-auto grid max-w-7xl gap-8 lg:gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <p className="kicker">Confidential Enquiry</p>
-            <h2 className="page-title mt-3">Speak With Our Trading Desk</h2>
+            <h2 className="page-title">Speak with our trading desk</h2>
             <p className="mt-6 text-base leading-relaxed text-gray-300 sm:text-lg">
               Share your intent and approximate volume. A specialist will respond
               within one business day — or reach us instantly on WhatsApp.
@@ -227,7 +226,7 @@ export default function GoldTradingPage() {
             </ul>
             <Link
               href="/contact"
-              className="mt-8 inline-block text-sm font-bold uppercase tracking-wider text-gold hover:text-gold-soft"
+              className="mt-8 inline-block text-sm text-gold hover:text-gold-soft"
             >
               Prefer the general contact form →
             </Link>

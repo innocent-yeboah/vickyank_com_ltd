@@ -31,12 +31,15 @@ export default function LuxuryCarsPage() {
           alt="Jaguar XE executive sedan"
           fill
           priority
-          className="object-cover opacity-25"
+          className="object-cover brightness-[0.7]"
           sizes="100vw"
         />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-navy-cover via-navy-cover/45 to-transparent"
+        />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="kicker">Executive Mobility</p>
-          <h1 className="page-title mt-3">Luxury Car Rental — Drive in Style</h1>
+          <h1 className="page-title">Luxury Car Rental</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
             Jaguar XE, Land Cruiser, Escalade, Mercedes GLE, Jetour, and Ram TRX
             — maintained to showroom standard for business, events, and VIP travel.
@@ -50,19 +53,15 @@ export default function LuxuryCarsPage() {
       <section className="industrial-rule bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            dark
-            eyebrow="Fleet Gallery"
-            title="Vehicles Ready to Impress"
-            description="Representative classes — contact us for current availability and exact models."
+            title="The fleet"
+            description="Representative classes — we confirm availability and exact models on enquiry."
           />
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {luxuryFleet.map((car) => (
               <div
                 key={car.id}
-                className="group tech-frame relative aspect-[16/10] overflow-hidden border border-white/10 bg-navy-dark md:aspect-[4/5]"
+                className="group relative aspect-[16/10] overflow-hidden bg-navy-dark md:aspect-[4/5]"
               >
-                <span className="tech-anchor-bl" aria-hidden="true" />
-                <span className="tech-anchor-br" aria-hidden="true" />
                 <Image
                   src={car.image}
                   alt={car.name}
@@ -72,7 +71,7 @@ export default function LuxuryCarsPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 z-20 p-4 sm:p-7">
-                  <span className="bg-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-navy">
+                  <span className="text-xs tracking-[0.14em] text-gold">
                     {car.status}
                   </span>
                   <h3 className="mt-3 font-heading text-xl text-white">{car.name}</h3>
@@ -93,8 +92,7 @@ export default function LuxuryCarsPage() {
       <section className="bg-navy-ink page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Rental Terms"
-            title="Clear Terms. No Surprises."
+            title="Clear terms"
             description="Summary of standard hire conditions — final terms confirmed on booking."
           />
           <ul className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
@@ -113,8 +111,7 @@ export default function LuxuryCarsPage() {
       <section id="enquire" className="bg-navy page-section">
         <div className="mx-auto grid max-w-7xl gap-8 lg:gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <p className="kicker">Book Your Hire</p>
-            <h2 className="page-title mt-3">Request Availability</h2>
+            <h2 className="page-title">Request availability</h2>
             <p className="mt-6 text-base leading-relaxed text-gray-300 sm:text-lg">
               Share your preferred class, dates, and whether you need a chauffeur.
               We confirm availability and rates within one business day.

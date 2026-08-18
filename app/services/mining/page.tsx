@@ -29,24 +29,34 @@ export default function MiningServicePage() {
           alt="CAT excavator loading a haul truck"
           fill
           priority
-          className="object-cover opacity-35"
+          className="object-cover brightness-[0.7]"
           sizes="100vw"
         />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-navy-cover via-navy-cover/40 to-transparent"
+        />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="kicker">Service 01</p>
-          <h1 className="page-title mt-3">Mining Operations</h1>
+          <h1 className="page-title">Mining Operations</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
             Professional extraction with experienced crews and modern heavy machinery.
             Safety-first site management from ground to gold.
           </p>
+          <div className="mt-10 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+            <a href="#enquire" className="btn-gold">
+              Enquire
+            </a>
+            <Link href="/services/equipment" className="btn-outline-light">
+              View fleet
+            </Link>
+          </div>
         </div>
       </section>
 
       <section className="bg-navy page-section">
         <div className="mx-auto grid max-w-7xl items-center gap-8 lg:gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <p className="kicker">Capabilities</p>
-            <h2 className="page-title mt-3">Industrial Mining. Accountable Delivery.</h2>
+            <h2 className="page-title">Industrial mining. Accountable delivery.</h2>
             <p className="mt-6 text-base leading-relaxed text-white/80 sm:text-lg">
               Whether you are a landowner seeking an operating partner or an
               investor evaluating opportunities, VickYank brings the equipment,
@@ -64,7 +74,7 @@ export default function MiningServicePage() {
             </ul>
             <Link
               href="/services/equipment"
-              className="mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-gold hover:text-gold-soft"
+              className="mt-8 inline-flex items-center gap-2 text-sm text-gold hover:text-gold-soft"
             >
               View Equipment Fleet →
             </Link>
@@ -81,11 +91,10 @@ export default function MiningServicePage() {
         </div>
       </section>
 
-      <section className="bg-navy-ink page-section">
+      <section id="enquire" className="bg-navy-ink page-section">
         <div className="mx-auto grid max-w-7xl gap-8 lg:gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <p className="kicker">Project Enquiry</p>
-            <h2 className="page-title mt-3">Discuss a Mining Project</h2>
+            <h2 className="page-title">Discuss a mining project</h2>
             <p className="mt-5 text-base text-white/80 sm:text-lg">
               Share site context, timeline, and partnership model. Our operations
               team responds within one business day.
@@ -102,9 +111,8 @@ export default function MiningServicePage() {
       </section>
 
       <CtaBanner
-        className="hidden md:block"
-        title="Ready to Move From Ground to Gold?"
-        description="Partner with an industrial operator that holds global standards and local expertise."
+        title="Begin a conversation"
+        description="Share the site, the timeline, and how you want to partner."
       />
     </>
   );

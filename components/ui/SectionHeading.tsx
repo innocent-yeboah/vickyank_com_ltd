@@ -8,7 +8,7 @@ type SectionHeadingProps = {
 };
 
 /**
- * Brochure section header: gold kicker, Playfair gold title.
+ * Editorial section header — white Playfair, optional quiet kicker.
  */
 export default function SectionHeading({
   eyebrow,

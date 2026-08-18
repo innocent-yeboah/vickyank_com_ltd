@@ -18,93 +18,15 @@ export default function ContactPage() {
   return (
     <>
       <section className="bg-navy page-section">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <p className="kicker">Contact</p>
-          <h1 className="page-title mt-3">Get in Touch</h1>
-          <p className="mt-4 font-heading text-lg italic text-white/85 sm:text-xl">
-            Let’s Discuss Your Needs
-          </p>
-          <div className="mx-auto mt-12 grid max-w-xl gap-4 text-left">
-            <a
-              href={`tel:${site.phoneInternational}`}
-              className="brochure-card flex min-w-0 items-center gap-3 hover:border-gold sm:gap-4"
-            >
-              <PhoneIcon className="h-5 w-5 shrink-0 text-gold" />
-              <span>
-                <strong className="block text-xs uppercase tracking-[0.2em] text-gold">
-                  Phone
-                </strong>
-                <span className="mt-1 block text-base text-white sm:text-lg">
-                  {site.phoneDisplay} / {site.phoneAltDisplay}
-                </span>
-              </span>
-            </a>
-            <div className="brochure-card flex min-w-0 items-center gap-3 sm:gap-4">
-              <span className="text-xs font-semibold uppercase tracking-widest text-gold">
-                www
-              </span>
-              <span>
-                <strong className="block text-xs uppercase tracking-[0.2em] text-gold">
-                  Website
-                </strong>
-                <span className="mt-1 block text-base text-white sm:text-lg">{site.website}</span>
-              </span>
-            </div>
-            <a
-              href={`mailto:${site.email}`}
-              className="brochure-card flex min-w-0 items-center gap-3 hover:border-gold sm:gap-4"
-            >
-              <MailIcon className="h-5 w-5 shrink-0 text-gold" />
-              <span>
-                <strong className="block text-xs uppercase tracking-[0.2em] text-gold">
-                  Email
-                </strong>
-                <span className="mt-1 block break-all text-base text-white sm:text-lg">
-                  {site.email}
-                </span>
-              </span>
-            </a>
-            <a
-              href={site.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="brochure-card flex min-w-0 items-center gap-3 hover:border-gold sm:gap-4"
-            >
-              <WhatsAppIcon className="h-5 w-5 shrink-0 text-gold" />
-              <span>
-                <strong className="block text-xs uppercase tracking-[0.2em] text-gold">
-                  WhatsApp
-                </strong>
-                <span className="mt-1 block text-base text-white sm:text-lg">{site.phoneDisplay}</span>
-              </span>
-            </a>
-            <div className="brochure-card flex min-w-0 items-center gap-3 sm:gap-4">
-              <MapPinIcon className="h-5 w-5 shrink-0 text-gold" />
-              <span>
-                <strong className="block text-xs uppercase tracking-[0.2em] text-gold">
-                  Location
-                </strong>
-                <span className="mt-1 block text-base text-white sm:text-lg">{site.location}</span>
-              </span>
-            </div>
-          </div>
-          <Image
-            src="/images/vickyank-logo.png"
-            alt={site.name}
-            width={220}
-            height={72}
-            className="mx-auto mt-12 h-16 w-auto drop-shadow-[0_0_12px_rgba(212,175,55,0.35)]"
-          />
-          <p className="mt-4 text-sm uppercase tracking-[0.14em] text-gold">
-            {site.tagline}
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-navy-ink page-section">
-        <div className="mx-auto grid max-w-7xl items-start gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
+        <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div>
-            <div className="relative mx-auto aspect-[3/4] max-w-sm overflow-hidden bg-white lg:mx-0">
+            <h1 className="page-title">Enquire</h1>
+            <p className="mt-5 max-w-md text-base leading-relaxed text-white/70 sm:text-lg">
+              A specialist replies within one business day. Call or WhatsApp if
+              you need us sooner.
+            </p>
+
+            <div className="relative mx-auto mt-10 aspect-[3/4] max-w-sm overflow-hidden bg-white lg:mx-0">
               <Image
                 src="/images/contact-specialist.png"
                 alt="VickYank specialist ready to take your enquiry"
@@ -114,25 +36,57 @@ export default function ContactPage() {
                 priority
               />
             </div>
-            <p className="kicker mt-8">Enquiry</p>
-            <h2 className="page-title mt-3">Send a Message</h2>
-            <p className="mt-5 text-base text-white/80 sm:text-lg">
-              Complete the form and our team will respond within one business day.
-            </p>
+
+            <ul className="mt-10 space-y-4 text-sm text-white/75">
+              <li>
+                <a
+                  href={`tel:${site.phoneInternational}`}
+                  className="inline-flex items-center gap-3 transition-colors hover:text-white"
+                >
+                  <PhoneIcon className="h-4 w-4 shrink-0 text-gold" />
+                  {site.phoneDisplay} / {site.phoneAltDisplay}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 transition-colors hover:text-white"
+                >
+                  <WhatsAppIcon className="h-4 w-4 shrink-0 text-gold" />
+                  WhatsApp {site.phoneDisplay}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="inline-flex items-center gap-3 break-all transition-colors hover:text-white"
+                >
+                  <MailIcon className="h-4 w-4 shrink-0 text-gold" />
+                  {site.email}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <MapPinIcon className="h-4 w-4 shrink-0 text-gold" />
+                {site.location}
+              </li>
+            </ul>
           </div>
+
           <div className="brochure-card">
             <InquiryForm context="contact" submitLabel="Send Message" />
           </div>
         </div>
       </section>
 
-      <section className="bg-navy page-section">
+      <section className="border-t border-white/10 bg-navy-darker page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-heading text-2xl text-gold sm:text-3xl">Find Us in Ghana</h2>
-          <p className="mx-auto mt-4 max-w-xl text-center text-white/70">
+          <h2 className="page-title">Find us</h2>
+          <p className="mt-4 max-w-xl text-white/65">
             Headquarters, Agona-Nkwanta, Ghana.
           </p>
-          <div className="mt-10 aspect-[4/3] w-full overflow-hidden border border-gold/35 sm:aspect-[16/9] lg:aspect-[16/7]">
+          <div className="mt-10 aspect-[4/3] w-full overflow-hidden border border-white/10 sm:aspect-[16/9] lg:aspect-[16/7]">
             <iframe
               title="VickYank Limited Company location map"
               src="https://maps.google.com/maps?q=Agona-Nkwanta,Ghana&z=13&output=embed"

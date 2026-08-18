@@ -29,10 +29,21 @@ const partsCategories = [
 export default function EquipmentPage() {
   return (
     <>
-      <section className="bg-navy page-section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="kicker">Fleet</p>
-          <h1 className="page-title mt-3">Heavy Equipment &amp; Machinery</h1>
+      <section className="page-hero bg-navy-cover">
+        <Image
+          src="/images/volvo-ec550e.png"
+          alt="Volvo EC550E excavator on site"
+          fill
+          priority
+          className="object-cover brightness-[0.7]"
+          sizes="100vw"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-navy-cover via-navy-cover/45 to-transparent"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h1 className="page-title">Heavy Equipment</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
             Our excavator fleet serves mining operations, construction firms, and
             contractors nationwide. Every machine is inspected and serviced before
@@ -52,8 +63,7 @@ export default function EquipmentPage() {
       <section className="bg-navy-dark page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="On Site"
-            title="Machines in Class"
+            title="Machines in class"
             description="Heavy excavators and loaders serving mining, quarry, and construction work across Ghana."
           />
           <PhotoGrid images={equipmentGallery} className="mt-14" />
@@ -61,10 +71,8 @@ export default function EquipmentPage() {
             {excavatorFleet.map((machine) => (
               <div
                 key={machine.id}
-                className="group tech-frame flex flex-col border border-white/10 bg-base-panel"
+                className="group flex flex-col overflow-hidden border border-white/10 bg-white/[0.03]"
               >
-                <span className="tech-anchor-bl" aria-hidden="true" />
-                <span className="tech-anchor-br" aria-hidden="true" />
                 <div className="relative aspect-[4/3] overflow-hidden bg-navy">
                   <Image
                     src={machine.image}
@@ -73,12 +81,12 @@ export default function EquipmentPage() {
                     className="tech-mesh-image object-cover"
                     sizes="(min-width: 768px) 33vw, 100vw"
                   />
-                  <span className="absolute left-0 top-4 z-20 bg-gold px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-navy">
+                  <span className="absolute bottom-3 left-3 text-xs tracking-[0.14em] text-gold">
                     {machine.status}
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-5 sm:p-7">
-                  <h3 className="font-heading text-lg font-bold uppercase tracking-wide text-white">
+                  <h3 className="font-heading text-lg text-white">
                     {machine.name}
                   </h3>
                   <ul className="mt-4 flex-1 space-y-2.5">
@@ -96,7 +104,7 @@ export default function EquipmentPage() {
                   </ul>
                   <a
                     href="#enquire"
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gold transition-colors hover:text-gold-soft"
+                    className="mt-6 inline-flex items-center gap-2 text-sm text-gold transition-colors hover:text-gold-soft"
                   >
                     Check Availability
                     <ArrowRightIcon className="h-4 w-4" />
@@ -121,12 +129,7 @@ export default function EquipmentPage() {
               />
             </div>
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.25em] text-gold">
-                Spare Parts Catalog
-              </p>
-              <h2 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">
-                Genuine Parts. Minimal Downtime.
-              </h2>
+              <h2 className="page-title">Genuine parts. Minimal downtime.</h2>
               <p className="mt-6 text-base leading-relaxed text-gray-300 sm:text-lg">
                 Order online from our shop or request a custom parts quote. We
                 know which components fail — because we run our own fleet.
@@ -158,12 +161,7 @@ export default function EquipmentPage() {
       <section id="enquire" className="industrial-rule bg-navy-dark page-section">
         <div className="mx-auto grid max-w-7xl gap-8 lg:gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-gold">
-              Equipment Enquiry
-            </p>
-            <h2 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">
-              Tell Us What You Need On Site
-            </h2>
+            <h2 className="page-title">Tell us what you need on site</h2>
             <p className="mt-6 text-base leading-relaxed text-gray-300 sm:text-lg">
               Machine class, hire duration, location, and whether you need an
               operator — we respond with availability and a clear proposal.

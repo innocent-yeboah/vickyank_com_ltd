@@ -20,7 +20,7 @@ export default function Footer() {
                 alt={site.name}
                 width={180}
                 height={54}
-                className="h-12 w-auto drop-shadow-[0_0_12px_rgba(212,175,55,0.35)] md:h-12"
+                className="h-12 w-auto md:h-12"
               />
             </Link>
             <p className="mt-3 text-sm leading-snug text-white/70 md:mt-5 md:leading-relaxed">
@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading text-xs font-bold uppercase tracking-widest text-gold md:text-sm">
+            <h3 className="text-xs font-medium tracking-[0.16em] text-white/45 md:text-sm">
               Company
             </h3>
             <ul className="mt-3 space-y-1.5 text-sm md:mt-5 md:space-y-3">
@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading text-xs font-bold uppercase tracking-widest text-gold md:text-sm">
+            <h3 className="text-xs font-medium tracking-[0.16em] text-white/45 md:text-sm">
               Our Business
             </h3>
             <ul className="mt-3 space-y-1.5 text-sm md:mt-5 md:space-y-3">
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
 
           <div className="col-span-2 lg:col-span-1">
-            <h3 className="font-heading text-xs font-bold uppercase tracking-widest text-gold md:text-sm">
+            <h3 className="text-xs font-medium tracking-[0.16em] text-white/45 md:text-sm">
               Contact
             </h3>
             <ul className="mt-3 space-y-2 text-sm md:mt-5 md:space-y-4">
@@ -116,9 +116,7 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p className="hidden uppercase tracking-widest md:block">
-            {site.tagline}
-          </p>
+          <p className="hidden md:block">{site.tagline}</p>
         </div>
       </div>
     </footer>

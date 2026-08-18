@@ -17,18 +17,17 @@ export default function HomePage() {
     <>
       <CoverHero />
 
-      <section className="bg-navy-ink page-section">
+      <section className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            align="center"
             title="Our Business"
-            description="Industrial and executive service lines. One standard of excellence."
+            description="Select a house. We handle the rest — from site to settlement, machine to motorcade."
           />
           <BusinessServiceGrid
             sixth={{
               href: "/contact",
-              title: "Contact Us Today",
-              body: "Tell us your requirement. A specialist responds within one business day.",
+              title: "Speak with us",
+              body: "A specialist responds within one business day.",
               image: "/images/contact-specialist.png",
               imageAlt: "VickYank specialist ready to take your enquiry",
             }}
@@ -36,40 +35,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-navy page-section">
+      <section className="border-t border-white/10 bg-navy-darker page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            align="center"
-            eyebrow="Partnership"
-            title="Why Choose VickYank?"
-          />
-          <div className="mt-14 grid gap-5 md:grid-cols-2">
+          <SectionHeading title="Why VickYank" />
+          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
             {whyPillars.map((pillar) => (
-              <article key={pillar.title} className="brochure-card">
-                <h3 className="font-heading text-2xl text-gold">{pillar.title}</h3>
-                <p className="mt-3 leading-relaxed text-white/80">{pillar.body}</p>
+              <article key={pillar.title}>
+                <span
+                  aria-hidden="true"
+                  className="mb-5 block h-px w-8 bg-gold"
+                />
+                <h3 className="font-heading text-xl text-white">{pillar.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/65">
+                  {pillar.body}
+                </p>
               </article>
             ))}
-          </div>
-          <p className="mt-10 text-center font-heading text-lg italic text-gold sm:text-xl">
-            Serious projects demand serious partners. {site.tagline}
-          </p>
-          <div className="relative mt-12 aspect-[16/9] overflow-hidden bg-navy md:aspect-[21/7]">
-            <Image
-              src="/images/volvo-ec550e.png"
-              alt="Volvo EC550E excavator in operation"
-              fill
-              className="object-cover"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-navy-ink via-transparent to-transparent" />
           </div>
         </div>
       </section>
 
+      <section className="relative min-h-[40vh] overflow-hidden lg:min-h-[50vh]">
+        <Image
+          src="/images/volvo-ec550e.png"
+          alt="Volvo EC550E excavator in operation"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-navy-cover/40"
+        />
+      </section>
+
       <CtaBanner
-        title="Get in Touch"
-        description="Let’s discuss your needs — mining, gold, equipment, spare parts, or luxury transport."
+        title="Begin a conversation"
+        description="Tell us what you need. We reply with a clear next step — not a brochure."
       />
     </>
   );

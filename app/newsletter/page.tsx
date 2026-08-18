@@ -50,7 +50,7 @@ export default function NewsletterPage() {
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {topics.map((topic) => (
                 <article key={topic.title} className="brochure-card p-4 sm:p-5">
-                  <h3 className="font-heading text-lg text-gold">{topic.title}</h3>
+                  <h3 className="font-heading text-lg text-white">{topic.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-white/75">
                     {topic.body}
                   </p>

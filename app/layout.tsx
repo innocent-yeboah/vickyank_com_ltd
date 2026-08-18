@@ -66,13 +66,7 @@ export default function RootLayout({
         <JsonLd />
         <CartProvider>
           <Navbar />
-          <main className="relative flex-1">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none fixed inset-0 z-0 industrial-grid opacity-[0.07]"
-            />
-            <div className="relative z-10">{children}</div>
-          </main>
+          <main className="relative flex-1">{children}</main>
           <Footer />
           <WhatsAppButton />
         </CartProvider>

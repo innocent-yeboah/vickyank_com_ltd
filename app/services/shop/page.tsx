@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import ShopClient from "@/components/shop/ShopClient";
-import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Parts & Equipment Shop",
@@ -18,20 +18,26 @@ export default function ShopPage() {
           alt="Hydraulic pumps and excavator spare parts inventory"
           fill
           priority
-          className="object-cover opacity-25"
+          className="object-cover brightness-[0.7]"
           sizes="100vw"
         />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-navy-cover via-navy-cover/45 to-transparent"
+        />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="kicker">Our Business</p>
-          <h1 className="page-title mt-3">Spare Parts &amp; Equipment Shop</h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">
+          <h1 className="page-title">Parts &amp; Equipment Shop</h1>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
             Order genuine excavator parts and select equipment online.
-            Secure payment in GHS via Paystack. {site.tagline}
+            Secure payment in GHS via Paystack.
           </p>
+          <Link href="#catalogue" className="btn-gold mt-10">
+            Browse the shop
+          </Link>
         </div>
       </section>
 
-      <section className="bg-navy">
+      <section id="catalogue" className="bg-navy">
         <ShopClient />
       </section>
     </>

@@ -3,39 +3,40 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 /**
- * Full-bleed aerial plant hero — graded for contrast, sharpness, and copy legibility.
+ * Full-bleed hero — photography first, restrained type, two clear actions.
  */
 export default function CoverHero() {
   return (
-    <section className="relative flex min-h-[70svh] items-center overflow-hidden bg-navy-cover sm:min-h-[620px] lg:min-h-[calc(100svh-5rem)]">
+    <section className="relative flex min-h-[78svh] items-end overflow-hidden bg-navy-cover sm:min-h-[70svh] lg:min-h-[calc(100svh-5rem)]">
       <Image
         src="/images/hero-haul.png"
         alt="Haul truck and loader on a VickYank mining site"
         fill
         priority
         quality={95}
-        className="object-cover object-[center_58%] contrast-[1.22] saturate-[1.18] brightness-[0.9] scale-105 motion-reduce:scale-100"
+        className="object-cover object-[center_58%] brightness-[0.85] contrast-[1.08] sm:object-center"
         sizes="100vw"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-navy-cover via-navy-cover/70 to-black/30 sm:via-navy-cover/55"
+        className="absolute inset-0 bg-gradient-to-t from-navy-cover via-navy-cover/45 to-navy-cover/15"
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 shadow-[inset_0_0_140px_rgba(0,12,36,0.55)]"
-      />
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 py-12 sm:px-10 sm:py-16 lg:px-[80px] xl:px-[130px]">
-        <h1 className="max-w-[700px] font-heading text-[1.85rem] font-semibold leading-[1.12] text-white sm:text-5xl lg:text-[70px] lg:leading-[1.05]">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-24 sm:px-6 sm:pb-16 lg:px-8 lg:pb-24">
+        <h1 className="max-w-3xl font-heading text-[2rem] font-medium leading-[1.12] text-white sm:text-5xl lg:text-6xl lg:leading-[1.08]">
           {site.tagline}
         </h1>
-        <p className="mt-5 max-w-[560px] text-sm leading-relaxed text-white/90 sm:mt-8 sm:text-lg">
-          Located in Ghana, West Africa, {site.name} delivers mining operations,
-          gold trading, heavy equipment, spare parts, and luxury car rental.
+        <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/80 sm:mt-6 sm:text-base">
+          Mining, gold, machinery, and executive mobility — delivered from Ghana
+          with the care of a private house.
         </p>
-        <Link href="/about" className="btn-gold mt-8 sm:mt-10">
-          Learn More
-        </Link>
+        <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row">
+          <Link href="/services" className="btn-gold">
+            Our Business
+          </Link>
+          <Link href="/contact" className="btn-outline-light">
+            Enquire
+          </Link>
+        </div>
       </div>
     </section>
   );

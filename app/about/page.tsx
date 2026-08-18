@@ -32,11 +32,12 @@ export default function AboutPage() {
               />
             </div>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:gap-12">
             {aboutCopy.differentiators.map((item) => (
-              <article key={item.title} className="brochure-card">
-                <h2 className="font-heading text-xl text-gold">{item.title}</h2>
-                <p className="mt-2 leading-relaxed text-white/80">{item.body}</p>
+              <article key={item.title}>
+                <span aria-hidden="true" className="mb-5 block h-px w-8 bg-gold" />
+                <h2 className="font-heading text-xl text-white">{item.title}</h2>
+                <p className="mt-3 leading-relaxed text-white/65">{item.body}</p>
               </article>
             ))}
           </div>
