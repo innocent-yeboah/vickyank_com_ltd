@@ -13,7 +13,11 @@ export default function CoverHero() {
       <HeroReel />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-navy-cover via-navy-cover/45 to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-navy-cover from-10% via-navy-cover/80 to-navy-cover/25"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-navy-cover/85 via-navy-cover/40 to-transparent sm:w-3/4 lg:w-1/2"
       />
       <div
         aria-hidden="true"
@@ -24,7 +28,7 @@ export default function CoverHero() {
           <span className="block">{taglineLead}</span>
           <span className="block">{taglineClose ?? ""}</span>
         </h1>
-        <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/75 sm:mt-6 sm:text-base">
+        <p className="mt-5 max-w-lg text-sm font-medium leading-relaxed text-white drop-shadow-[0_2px_12px_rgba(26,26,46,0.9)] sm:mt-6 sm:text-lg">
           Need gold, a machine, a site, or a car? Enquire once — a specialist
           replies within one business day.
         </p>
@@ -33,7 +37,7 @@ export default function CoverHero() {
             Enquire
           </Link>
           <Link href="#work" className="btn-outline-light">
-            Start with your outcome
+            Tell us what you need
           </Link>
         </div>
       </div>

@@ -20,10 +20,11 @@ export default function HomePage() {
 
       <section id="work" className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="page-title">Start with your outcome</h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/60">
-            You already know why you opened this page. Choose that line — we
-            take the next step with you.
+          <h2 className="page-title">Tell us what you need</h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
+            Gold, a machine, parts, a crew, or a car — pick the line that
+            matches. One enquiry reaches a specialist. You hear back within one
+            business day with availability and a clear next step.
           </p>
           <HomeHouses />
         </div>

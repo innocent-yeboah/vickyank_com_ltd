@@ -37,7 +37,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-3 px-4 sm:h-24 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2.5 rounded-md border border-white/15 bg-navy/45 px-2.5 py-1.5 backdrop-blur-md sm:gap-3.5 sm:px-3.5 sm:py-2"
+          className="flex min-w-0 items-center gap-2.5 rounded-md border border-white/15 bg-navy/45 px-2.5 py-1.5 backdrop-blur-md"
           aria-label={site.name}
         >
           <Image
@@ -45,14 +45,14 @@ export default function Navbar() {
             alt=""
             width={865}
             height={475}
-            className="h-[2.025rem] w-auto shrink-0 brightness-125 contrast-110 sm:h-[4.06rem]"
+            className="h-[2.025rem] w-auto shrink-0 brightness-125 contrast-110"
             priority
           />
           <span className="min-w-0 leading-none">
-            <span className="block font-lockup text-[1.35rem] font-bold tracking-[-0.02em] text-white sm:text-[1.85rem]">
+            <span className="block font-lockup text-[1.35rem] font-bold tracking-[-0.02em] text-white">
               {site.shortName}
             </span>
-            <span className="mt-1.5 block font-body text-[11px] font-medium uppercase tracking-[0.18em] text-white/65 sm:mt-1 sm:text-xs">
+            <span className="mt-1.5 block font-body text-[11px] font-medium uppercase tracking-[0.18em] text-white/65">
               Limited Company
             </span>
           </span>
