@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { CheckIcon } from "@/components/ui/Icons";
 
 const INTERESTS = [
   "Mining Operations",
@@ -74,15 +73,13 @@ export default function NewsletterForm({ compact = false }: NewsletterFormProps)
       );
     }
     return (
-      <div className="flex flex-col items-center justify-center border border-gold/30 bg-navy-dark p-6 text-center sm:p-10">
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 text-gold">
-          <CheckIcon className="h-8 w-8" />
-        </span>
-        <h3 className="mt-6 font-heading text-2xl font-bold uppercase text-white">
-          You Are Subscribed
+      <div role="status">
+        <p className="text-sm text-gold">The list</p>
+        <h3 className="mt-3 font-heading text-2xl font-medium text-white">
+          You are on the list
         </h3>
-        <p className="mt-3 max-w-sm text-gray-300">
-          Thank you. We will send considered updates — no pressure, no clutter.
+        <p className="mt-3 max-w-sm text-base leading-relaxed text-white/65">
+          Quiet notes, when they matter. No pressure. No clutter.
         </p>
       </div>
     );
