@@ -30,7 +30,7 @@ export default function CoverHero() {
             Enquire
           </Link>
           <Link href="#work" className="btn-outline-light">
-            What do you need?
+            Start with your outcome
           </Link>
         </div>
       </div>
