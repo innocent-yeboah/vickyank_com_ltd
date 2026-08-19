@@ -43,6 +43,20 @@ const config: Config = {
         "section-gradient":
           "linear-gradient(135deg, #1A1A2E 0%, #12121F 100%)",
       },
+      keyframes: {
+        filmstrip: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        "cinematic-still": {
+          from: { transform: "scale(1)" },
+          to: { transform: "scale(1.1)" },
+        },
+      },
+      animation: {
+        filmstrip: "filmstrip 55s linear infinite",
+        "cinematic-still": "cinematic-still 32s ease-out forwards",
+      },
     },
   },
   plugins: [],
