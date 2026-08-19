@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckIcon } from "@/components/ui/Icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Payment Successful",
+  title: "Payment received",
   robots: { index: false, follow: false },
 };
 
@@ -16,26 +15,24 @@ export default function ShopSuccessPage({
   const reference = searchParams.reference;
 
   return (
-    <section className="flex min-h-[70vh] items-center bg-navy px-4 py-14 sm:py-24">
-      <div className="mx-auto max-w-xl border border-gold/30 bg-base-panel p-6 text-center sm:p-10">
-        <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 text-gold">
-          <CheckIcon className="h-8 w-8" />
-        </span>
-        <h1 className="mt-6 font-heading text-3xl font-bold uppercase text-white">
-          Payment Received
+    <section className="flex min-h-[70vh] items-center bg-navy px-4 py-16 sm:py-24">
+      <div className="mx-auto max-w-xl text-center">
+        <p className="text-sm text-gold">The shop</p>
+        <h1 className="mt-3 font-heading text-3xl font-medium text-white sm:text-4xl">
+          We have the payment
         </h1>
-        <p className="mt-4 text-gray-300">
-          Thank you. Our team will confirm your order and arrange fulfilment
-          shortly.
+        <p className="mt-5 text-base leading-relaxed text-white/65">
+          Thank you. The desk will confirm the order and arrange fulfilment.
+          No rush language — just the next step, in writing.
         </p>
         {reference && (
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-6 text-sm text-white/45">
             Reference: <span className="text-gold">{reference}</span>
           </p>
         )}
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
+        <div className="mt-10 flex w-full flex-col gap-3 sm:flex-row sm:justify-center">
           <Link href="/services/shop" className="btn-gold">
-            Continue Shopping
+            Back to the shop
           </Link>
           <a
             href={site.whatsappUrl}
@@ -43,7 +40,7 @@ export default function ShopSuccessPage({
             rel="noopener noreferrer"
             className="btn-outline-light"
           >
-            WhatsApp Support
+            WhatsApp the desk
           </a>
         </div>
       </div>

@@ -6,6 +6,9 @@ import { useCart } from "@/components/shop/CartProvider";
 import { formatGhs } from "@/lib/catalog";
 import { site } from "@/lib/site";
 
+const labelClass =
+  "mb-1 block text-xs font-medium text-gray-300 sm:mb-2 sm:text-sm";
+
 export default function CheckoutClient() {
   const { lines, subtotalGhs, clear } = useCart();
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
@@ -49,62 +52,61 @@ export default function CheckoutClient() {
       if (!res.ok || !data.authorizationUrl) {
         throw new Error(
           data.error ??
-            "Payment could not be started. Contact us on WhatsApp to complete your order."
+            "Payment could not be started. WhatsApp the desk and we will finish the order together."
         );
       }
 
-      // Clear cart after redirect is initiated (success page confirms payment).
       clear();
       window.location.href = data.authorizationUrl;
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Checkout failed.");
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Let's try that again together?"
+      );
       setStatus("error");
     }
   }
 
   if (lines.length === 0 && status !== "loading") {
     return (
-      <div className="mx-auto max-w-xl px-4 py-14 text-center sm:px-6 sm:py-24">
-        <h1 className="font-heading text-3xl font-bold uppercase text-white">
-          Your Cart Is Empty
+      <div className="mx-auto max-w-xl px-4 py-20 text-center sm:px-6 sm:py-28">
+        <p className="text-sm text-gold">The shop</p>
+        <h1 className="mt-3 font-heading text-3xl font-medium text-white sm:text-4xl">
+          Nothing in the order yet
         </h1>
-        <p className="mt-4 text-gray-400">
-          Add spare parts or equipment from the shop to continue.
+        <p className="mt-4 text-base leading-relaxed text-white/60">
+          Choose a part or a piece of equipment, then come back to pay.
         </p>
-        <Link href="/services/shop" className="btn-gold mt-8">
-          Back to Shop
+        <Link href="/services/shop#catalogue" className="btn-gold mt-8">
+          Back to the shop
         </Link>
       </div>
     );
   }
 
   return (
-    <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:px-8 lg:py-24">
+    <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-28">
       <div>
-        <p className="text-sm font-bold uppercase tracking-[0.25em] text-gold">
-          Secure Checkout
-        </p>
-        <h1 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">
-          Complete Your Order
-        </h1>
-        <p className="mt-4 text-gray-400">
-          You will be redirected to Paystack to pay securely in Ghana Cedis
-          (GHS). Need help?{" "}
+        <p className="text-sm text-gold">Secure checkout</p>
+        <h1 className="mt-3 page-title">Complete the order</h1>
+        <p className="mt-5 max-w-md text-base leading-relaxed text-white/65">
+          You will go to Paystack to pay in Ghana Cedis. Need a person instead?{" "}
           <a
             href={site.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gold hover:underline"
+            className="text-gold hover:text-gold-soft"
           >
-            WhatsApp us
+            WhatsApp the desk
           </a>
           .
         </p>
 
         <form onSubmit={handleSubmit} className="mt-10 space-y-5">
           <div>
-            <label htmlFor="co-name" className="mb-2 block text-sm text-gray-300">
-              Full Name *
+            <label htmlFor="co-name" className={labelClass}>
+              Full name *
             </label>
             <input
               id="co-name"
@@ -115,7 +117,7 @@ export default function CheckoutClient() {
             />
           </div>
           <div>
-            <label htmlFor="co-email" className="mb-2 block text-sm text-gray-300">
+            <label htmlFor="co-email" className={labelClass}>
               Email *
             </label>
             <input
@@ -128,7 +130,7 @@ export default function CheckoutClient() {
             />
           </div>
           <div>
-            <label htmlFor="co-phone" className="mb-2 block text-sm text-gray-300">
+            <label htmlFor="co-phone" className={labelClass}>
               Phone *
             </label>
             <input
@@ -153,17 +155,15 @@ export default function CheckoutClient() {
             className="btn-gold w-full"
           >
             {status === "loading"
-              ? "Redirecting to Paystack…"
+              ? "Going to Paystack…"
               : `Pay ${formatGhs(subtotalGhs)}`}
           </button>
         </form>
       </div>
 
-      <aside className="tech-frame h-fit border border-white/10 bg-base-panel p-8">
-        <span className="tech-anchor-bl" aria-hidden="true" />
-        <span className="tech-anchor-br" aria-hidden="true" />
-        <h2 className="font-heading text-xl font-bold uppercase text-white">
-          Order Summary
+      <aside className="brochure-card h-fit">
+        <h2 className="font-heading text-2xl font-medium text-white">
+          Order summary
         </h2>
         <ul className="mt-6 space-y-4">
           {lines.map((line) => (
@@ -171,7 +171,7 @@ export default function CheckoutClient() {
               key={line.product.id}
               className="flex justify-between gap-4 border-b border-white/10 pb-4 text-sm"
             >
-              <span className="text-gray-300">
+              <span className="text-white/70">
                 {line.product.name} × {line.quantity}
               </span>
               <span className="text-white">
@@ -180,9 +180,9 @@ export default function CheckoutClient() {
             </li>
           ))}
         </ul>
-        <div className="mt-6 flex justify-between font-heading text-lg font-bold text-white">
+        <div className="mt-6 flex justify-between font-heading text-lg text-white">
           <span>Total</span>
-          <span className="text-gold">{formatGhs(subtotalGhs)}</span>
+          <span>{formatGhs(subtotalGhs)}</span>
         </div>
       </aside>
     </div>

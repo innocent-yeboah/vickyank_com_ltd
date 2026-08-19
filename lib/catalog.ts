@@ -35,8 +35,7 @@ export const products: CatalogProduct[] = [
     description:
       "Heavy-duty undercarriage track roller for mid-to-large crawler excavators. Hardened race and sealed bearings.",
     priceGhs: 1850,
-    image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/spare-parts-inventory.png",
     inStock: true,
     specs: ["Fits 20–30 tonne class", "Sealed bearing", "OEM-compatible"],
   },
@@ -48,8 +47,7 @@ export const products: CatalogProduct[] = [
     description:
       "Ground-engaging bucket teeth kit with pins. Built for abrasive mining and earthworks conditions.",
     priceGhs: 620,
-    image:
-      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/spare-parts-inventory.png",
     inStock: true,
     specs: ["5-piece set", "Includes pins", "Wear-resistant alloy"],
   },
@@ -73,8 +71,7 @@ export const products: CatalogProduct[] = [
     description:
       "Oil, fuel, and hydraulic filter set for scheduled excavator maintenance — reduces unplanned downtime.",
     priceGhs: 450,
-    image:
-      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/spare-parts-inventory.png",
     inStock: true,
     specs: ["Oil + fuel + hydraulic", "Service interval kit"],
   },
@@ -86,8 +83,7 @@ export const products: CatalogProduct[] = [
     description:
       "Linkage pins and bushings for boom, stick, and bucket joints. Precision-machined for tight fit.",
     priceGhs: 1250,
-    image:
-      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/spare-parts-inventory.png",
     inStock: true,
   },
   {
@@ -98,8 +94,7 @@ export const products: CatalogProduct[] = [
     description:
       "Rock breaker attachment for mid-size excavators. Ideal for quarry and demolition support work.",
     priceGhs: 28500,
-    image:
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/cat-390fl.png",
     inStock: true,
     specs: ["Mid-size excavator fit", "Includes tool bits", "Sale or lease"],
   },
@@ -123,8 +118,7 @@ export const products: CatalogProduct[] = [
     description:
       "Site compaction unit for roadworks and foundation prep. Available for purchase or short-term hire.",
     priceGhs: 6400,
-    image:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/volvo-l250h.png",
     inStock: false,
     specs: ["Roadworks & foundations", "Hire options available"],
   },
