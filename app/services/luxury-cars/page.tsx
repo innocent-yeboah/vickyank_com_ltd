@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import InquiryForm from "@/components/forms/InquiryForm";
 import CarFilm from "@/components/services/CarFilm";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import { luxuryFleet } from "@/lib/catalog";
 import { site } from "@/lib/site";
 
@@ -119,14 +120,17 @@ export default function LuxuryCarsPage() {
             it belongs to you.
           </p>
           <div className="mt-12 grid gap-12 sm:grid-cols-3 sm:gap-10">
-            {forWhom.map((item) => (
-              <article key={item.title}>
-                <span aria-hidden="true" className="mb-5 block h-px w-8 bg-gold" />
+            {forWhom.map((item, index) => (
+              <ScrollReveal key={item.title} as="article" delayMs={index * 120}>
+                <span
+                  aria-hidden="true"
+                  className="scroll-reveal-rule mb-5 block h-px w-8 bg-gold"
+                />
                 <h3 className="font-heading text-2xl text-white">{item.title}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
                   {item.body}
                 </p>
-              </article>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -141,7 +145,7 @@ export default function LuxuryCarsPage() {
           </p>
           <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {method.map((step, index) => (
-              <li key={step.title}>
+              <ScrollReveal key={step.title} as="li" delayMs={index * 120}>
                 <p className="text-xs tracking-[0.18em] text-gold">
                   {String(index + 1).padStart(2, "0")}
                 </p>
@@ -149,7 +153,7 @@ export default function LuxuryCarsPage() {
                 <p className="mt-3 text-sm leading-relaxed text-white/65">
                   {step.body}
                 </p>
-              </li>
+              </ScrollReveal>
             ))}
           </ol>
         </div>

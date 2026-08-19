@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ShopClient from "@/components/shop/ShopClient";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Parts & Equipment Shop",
@@ -69,7 +70,7 @@ export default function ShopPage() {
           </p>
           <ol className="mt-14 grid gap-10 sm:grid-cols-3">
             {method.map((step, index) => (
-              <li key={step.title}>
+              <ScrollReveal key={step.title} as="li" delayMs={index * 120}>
                 <p className="text-xs tracking-[0.18em] text-gold">
                   {String(index + 1).padStart(2, "0")}
                 </p>
@@ -77,7 +78,7 @@ export default function ShopPage() {
                 <p className="mt-3 text-sm leading-relaxed text-white/65">
                   {step.body}
                 </p>
-              </li>
+              </ScrollReveal>
             ))}
           </ol>
         </div>

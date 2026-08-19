@@ -3,6 +3,7 @@ import Image from "next/image";
 import CtaBanner from "@/components/ui/CtaBanner";
 import { aboutCopy } from "@/content/brochure";
 import { site } from "@/lib/site";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -33,12 +34,15 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:gap-12">
-            {aboutCopy.differentiators.map((item) => (
-              <article key={item.title}>
-                <span aria-hidden="true" className="mb-5 block h-px w-8 bg-gold" />
+            {aboutCopy.differentiators.map((item, index) => (
+              <ScrollReveal key={item.title} as="article" delayMs={index * 120}>
+                <span
+                  aria-hidden="true"
+                  className="scroll-reveal-rule mb-5 block h-px w-8 bg-gold"
+                />
                 <h2 className="font-heading text-xl text-white">{item.title}</h2>
                 <p className="mt-3 leading-relaxed text-white/65">{item.body}</p>
-              </article>
+              </ScrollReveal>
             ))}
           </div>
         </div>

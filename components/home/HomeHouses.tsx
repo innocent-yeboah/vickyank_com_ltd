@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { brochureServices } from "@/content/brochure";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const outcomes: Record<
   string,
@@ -39,14 +40,14 @@ const outcomes: Record<
 export default function HomeHouses() {
   return (
     <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-5 lg:gap-4">
-      {brochureServices.map((service) => {
+      {brochureServices.map((service, index) => {
         const outcome = outcomes[service.href];
         return (
-          <Link
-            key={service.href}
-            href={service.href}
-            className="group relative aspect-[16/10] overflow-hidden bg-navy sm:aspect-[4/5] lg:aspect-[2/3]"
-          >
+          <ScrollReveal key={service.href} delayMs={index * 90}>
+            <Link
+              href={service.href}
+              className="group relative block aspect-[16/10] overflow-hidden bg-navy sm:aspect-[4/5] lg:aspect-[2/3]"
+            >
             <Image
               src={service.image}
               alt={service.imageAlt}
@@ -70,6 +71,7 @@ export default function HomeHouses() {
               </span>
             </div>
           </Link>
+          </ScrollReveal>
         );
       })}
     </div>

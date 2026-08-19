@@ -63,6 +63,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} overflow-x-hidden`}>
       <body className="flex min-h-screen flex-col overflow-x-hidden bg-navy">
+        <noscript>
+          <style>{`.scroll-reveal{opacity:1;transform:none}.scroll-reveal .scroll-reveal-rule{transform:none}`}</style>
+        </noscript>
         <JsonLd />
         <CartProvider>
           <Navbar />
