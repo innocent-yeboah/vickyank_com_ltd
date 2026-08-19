@@ -12,9 +12,13 @@ import { CloseIcon, MenuIcon } from "@/components/ui/Icons";
  */
 export default function Navbar() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(!isHome);
+  const sitsOnHero =
+    pathname === "/" ||
+    pathname === "/newsletter" ||
+    /^\/services\/(mining|gold-trading|equipment|spare-parts|luxury-cars|shop)$/.test(
+      pathname
+    );
 
   useEffect(() => {
     setOpen(false);
@@ -27,35 +31,13 @@ export default function Navbar() {
     };
   }, [open]);
 
-  useEffect(() => {
-    if (!isHome) {
-      setScrolled(true);
-      return;
-    }
-
-    const onScroll = () => {
-      setScrolled(window.scrollY > 12);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isHome]);
-
-  const frosted = !isHome || scrolled || open;
-
   return (
     <>
-      <header
-        className={`fixed inset-x-0 top-0 z-[60] transition-[background-color,border-color,backdrop-filter] duration-300 motion-reduce:transition-none ${
-          frosted
-            ? "border-b border-white/10 bg-navy/55 backdrop-blur-xl"
-            : "border-b border-transparent bg-transparent"
-        }`}
-      >
+      <header className="fixed inset-x-0 top-0 z-[60] border-b border-transparent bg-transparent">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:h-24 sm:gap-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex min-w-0 shrink items-center gap-2 sm:gap-3.5"
+          className="flex min-w-0 shrink items-center gap-1.5 sm:gap-3.5"
           aria-label={site.name}
         >
           <Image
@@ -63,11 +45,11 @@ export default function Navbar() {
             alt=""
             width={865}
             height={475}
-            className="h-[2.25rem] w-auto shrink-0 brightness-125 contrast-110 sm:h-[4.06rem]"
+            className="h-6 w-auto shrink-0 brightness-125 contrast-110 sm:h-[4.06rem]"
             priority
           />
           <span className="min-w-0 leading-tight">
-            <span className="block font-heading text-base text-white sm:text-2xl">
+            <span className="block font-heading text-sm text-white sm:text-2xl">
               {site.shortName}
             </span>
             <span className="mt-0.5 block text-[10px] tracking-[0.06em] text-white/55 sm:text-sm">
@@ -122,7 +104,7 @@ export default function Navbar() {
       {open ? (
         <nav
           id="mobile-menu"
-          className="fixed inset-x-0 bottom-0 top-20 z-[59] flex flex-col bg-navy/80 backdrop-blur-2xl sm:top-24 lg:hidden"
+          className="fixed inset-x-0 bottom-0 top-20 z-[59] flex flex-col bg-navy sm:top-24 lg:hidden"
           aria-label="Mobile"
         >
           <div className="flex flex-1 flex-col justify-center overflow-y-auto px-6 py-8">
@@ -174,7 +156,9 @@ export default function Navbar() {
         </nav>
       ) : null}
 
-      {!isHome ? <div className="h-20 sm:h-24" aria-hidden="true" /> : null}
+      {sitsOnHero ? null : (
+        <div className="h-20 sm:h-24" aria-hidden="true" />
+      )}
     </>
   );
 }
