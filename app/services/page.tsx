@@ -16,7 +16,7 @@ export default function ServicesHubPage() {
           <h1 className="page-title">Our Business</h1>
           <p className="mt-5 max-w-2xl text-base text-white/70 sm:text-lg">
             Mining, gold, machinery, parts, executive cars — and a working shop
-            for genuine equipment. Choose a house to begin.
+            for genuine equipment. Choose what you need to begin.
           </p>
           <BusinessServiceGrid
             sixth={{

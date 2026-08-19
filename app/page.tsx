@@ -18,11 +18,12 @@ export default function HomePage() {
     <>
       <CoverHero />
 
-      <section id="houses" className="bg-navy page-section">
+      <section id="work" className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="page-title">Choose a house</h2>
+          <h2 className="page-title">What do you need?</h2>
           <p className="mt-4 max-w-lg text-base text-white/60">
-            Five doors. One standard. Pick the work you came for.
+            Mining, gold, machines, parts, or a car. Tap the one that matches —
+            we take it from there.
           </p>
           <HomeHouses />
         </div>

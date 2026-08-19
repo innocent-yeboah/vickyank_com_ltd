@@ -29,8 +29,8 @@ export default function CoverHero() {
           <Link href="/contact" className="btn-gold">
             Enquire
           </Link>
-          <Link href="#houses" className="btn-outline-light">
-            Choose a house
+          <Link href="#work" className="btn-outline-light">
+            What do you need?
           </Link>
         </div>
       </div>
