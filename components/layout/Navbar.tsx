@@ -45,7 +45,7 @@ export default function Navbar() {
             alt=""
             width={865}
             height={475}
-            className="h-10 w-auto shrink-0 brightness-125 contrast-110 sm:h-[4.06rem]"
+            className="h-[2.25rem] w-auto shrink-0 brightness-125 contrast-110 sm:h-[4.06rem]"
             priority
           />
           <span className="min-w-0 leading-none">
