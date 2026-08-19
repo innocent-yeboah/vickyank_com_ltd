@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * Muted looping hero film, with a still fallback if the clip cannot play.
+ * iOS Safari only autoplays muted, inline H.264 — we bind those flags on the
+ * element and retry play after the clip is ready, not treat the first reject as pause.
  */
 export default function HeroReel() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -23,16 +25,42 @@ export default function HeroReel() {
   useEffect(() => {
     const node = videoRef.current;
     if (!node || failed) return;
+
+    node.muted = true;
+    node.defaultMuted = true;
+    node.playsInline = true;
+    node.setAttribute("playsinline", "");
+    node.setAttribute("webkit-playsinline", "");
+    node.setAttribute("muted", "");
+
     if (paused || reduceMotion) {
       node.pause();
       return;
     }
-    const play = node.play();
-    if (play) {
-      play.catch(() => {
-        setPaused(true);
-      });
-    }
+
+    const tryPlay = () => {
+      const attempt = node.play();
+      if (attempt) {
+        void attempt.catch(() => {
+          /* iOS often rejects until canplay / first gesture — keep retrying. */
+        });
+      }
+    };
+
+    tryPlay();
+    node.addEventListener("loadeddata", tryPlay);
+    node.addEventListener("canplay", tryPlay);
+    document.addEventListener("visibilitychange", tryPlay);
+    window.addEventListener("pageshow", tryPlay);
+    window.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+
+    return () => {
+      node.removeEventListener("loadeddata", tryPlay);
+      node.removeEventListener("canplay", tryPlay);
+      document.removeEventListener("visibilitychange", tryPlay);
+      window.removeEventListener("pageshow", tryPlay);
+      window.removeEventListener("touchstart", tryPlay);
+    };
   }, [paused, reduceMotion, failed]);
 
   const showFilm = !failed && !reduceMotion;
@@ -44,6 +72,7 @@ export default function HeroReel() {
           <video
             ref={videoRef}
             className="h-full w-full object-cover brightness-[0.9] contrast-[1.06]"
+            src="/videos/hero.mp4"
             autoPlay
             muted
             loop
@@ -51,9 +80,7 @@ export default function HeroReel() {
             preload="auto"
             poster="/images/jaguar-xe.png"
             onError={() => setFailed(true)}
-          >
-            <source src="/videos/hero.mp4" type="video/mp4" />
-          </video>
+          />
         ) : (
           <Image
             src="/images/jaguar-xe.png"

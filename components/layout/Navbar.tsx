@@ -37,7 +37,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-3 px-4 sm:h-24 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2.5 sm:gap-3.5"
+          className="flex min-w-0 items-center gap-2.5 rounded-md border border-white/15 bg-navy/45 px-2.5 py-1.5 backdrop-blur-md sm:gap-3.5 sm:px-3.5 sm:py-2"
           aria-label={site.name}
         >
           <Image
@@ -88,7 +88,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/30 text-white lg:hidden"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/15 bg-navy/45 text-white backdrop-blur-md lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-menu"
