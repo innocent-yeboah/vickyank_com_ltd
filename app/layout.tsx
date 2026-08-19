@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Libre_Baskerville, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
@@ -14,6 +14,13 @@ const playfair = Playfair_Display({
   display: "swap",
   weight: ["500", "600", "700"],
   style: ["normal", "italic"],
+});
+
+const lockup = Libre_Baskerville({
+  subsets: ["latin"],
+  variable: "--font-lockup",
+  display: "swap",
+  weight: ["400", "700"],
 });
 
 const inter = Inter({
@@ -61,7 +68,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} overflow-x-hidden`}>
+    <html lang="en" className={`${playfair.variable} ${lockup.variable} ${inter.variable} overflow-x-hidden`}>
       <body className="flex min-h-screen flex-col overflow-x-hidden bg-navy">
         <noscript>
           <style>{`.scroll-reveal{opacity:1;transform:none}.scroll-reveal .scroll-reveal-rule{transform:none}`}</style>

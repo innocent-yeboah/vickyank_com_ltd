@@ -34,10 +34,10 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-[60] bg-transparent">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-24 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-3 px-4 sm:h-24 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2 sm:gap-3.5"
+          className="flex min-w-0 items-center gap-2.5 sm:gap-3.5"
           aria-label={site.name}
         >
           <Image
@@ -45,14 +45,14 @@ export default function Navbar() {
             alt=""
             width={865}
             height={475}
-            className="h-8 w-auto shrink-0 brightness-125 contrast-110 sm:h-[4.06rem]"
+            className="h-10 w-auto shrink-0 brightness-125 contrast-110 sm:h-[4.06rem]"
             priority
           />
           <span className="min-w-0 leading-none">
-            <span className="block font-heading text-[0.95rem] font-semibold tracking-tight text-white sm:text-2xl sm:font-medium">
+            <span className="block font-lockup text-[1.35rem] font-bold tracking-[-0.02em] text-white sm:text-[1.85rem]">
               {site.shortName}
             </span>
-            <span className="mt-1 block text-[8px] font-medium uppercase tracking-[0.22em] text-white/55 sm:mt-0.5 sm:text-sm sm:font-normal sm:normal-case sm:tracking-[0.06em]">
+            <span className="mt-1.5 block font-body text-[11px] font-medium uppercase tracking-[0.18em] text-white/65 sm:mt-1 sm:text-xs">
               Limited Company
             </span>
           </span>
@@ -88,7 +88,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-white/30 text-white lg:hidden"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/30 text-white lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -106,7 +106,7 @@ export default function Navbar() {
       {open ? (
         <nav
           id="mobile-menu"
-          className="fixed inset-x-0 bottom-0 top-16 z-[59] flex flex-col bg-navy sm:top-24 lg:hidden"
+          className="fixed inset-x-0 bottom-0 top-[4.5rem] z-[59] flex flex-col bg-navy sm:top-24 lg:hidden"
           aria-label="Mobile"
         >
           <div className="flex flex-1 flex-col justify-center overflow-y-auto px-6 py-8">
@@ -159,7 +159,7 @@ export default function Navbar() {
       ) : null}
 
       {sitsOnHero ? null : (
-        <div className="h-16 sm:h-24" aria-hidden="true" />
+        <div className="h-[4.5rem] sm:h-24" aria-hidden="true" />
       )}
     </>
   );

@@ -35,6 +35,7 @@ const config: Config = {
       },
       fontFamily: {
         heading: ["var(--font-heading)", "Playfair Display", "Georgia", "serif"],
+        lockup: ["var(--font-lockup)", "Libre Baskerville", "Georgia", "serif"],
         body: ["var(--font-body)", "Inter", "sans-serif"],
       },
       backgroundImage: {
