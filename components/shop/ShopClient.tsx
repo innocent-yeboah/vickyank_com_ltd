@@ -80,7 +80,9 @@ export default function ShopClient() {
                   {product.description}
                 </p>
                 <p className="mt-5 text-base text-white/85">
-                  {formatGhs(product.priceGhs)}
+                  {product.inStock
+                    ? formatGhs(product.priceGhs)
+                    : "Price on enquiry"}
                 </p>
                 {product.inStock ? (
                   <button
@@ -92,7 +94,11 @@ export default function ShopClient() {
                   </button>
                 ) : (
                   <Link
-                    href="/services/spare-parts#enquire"
+                    href={
+                      product.category === "equipment"
+                        ? "/services/equipment#enquire"
+                        : "/services/spare-parts#enquire"
+                    }
                     className="btn-outline-light mt-5 w-full"
                   >
                     Ask the desk

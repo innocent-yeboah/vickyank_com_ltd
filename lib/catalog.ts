@@ -35,7 +35,7 @@ export const products: CatalogProduct[] = [
     description:
       "Heavy-duty undercarriage track roller for mid-to-large crawler excavators. Hardened race and sealed bearings.",
     priceGhs: 1850,
-    image: "/images/spare-parts-inventory.png",
+    image: "/images/track-roller-assembly.png",
     inStock: true,
     specs: ["Fits 20–30 tonne class", "Sealed bearing", "OEM-compatible"],
   },
@@ -47,7 +47,7 @@ export const products: CatalogProduct[] = [
     description:
       "Ground-engaging bucket teeth kit with pins. Built for abrasive mining and earthworks conditions.",
     priceGhs: 620,
-    image: "/images/spare-parts-inventory.png",
+    image: "/images/bucket-teeth-set.png",
     inStock: true,
     specs: ["5-piece set", "Includes pins", "Wear-resistant alloy"],
   },
@@ -59,7 +59,7 @@ export const products: CatalogProduct[] = [
     description:
       "High-pressure hydraulic hose assembly kit for boom and stick circuits. Pressure-tested before dispatch.",
     priceGhs: 980,
-    image: "/images/spare-parts-inventory.png",
+    image: "/images/hydraulic-hose-kit.png",
     inStock: true,
     specs: ["High-pressure rated", "Fittings included", "Pressure tested"],
   },
@@ -71,7 +71,7 @@ export const products: CatalogProduct[] = [
     description:
       "Oil, fuel, and hydraulic filter set for scheduled excavator maintenance — reduces unplanned downtime.",
     priceGhs: 450,
-    image: "/images/spare-parts-inventory.png",
+    image: "/images/excavator-filter-pack.png",
     inStock: true,
     specs: ["Oil + fuel + hydraulic", "Service interval kit"],
   },
@@ -94,7 +94,7 @@ export const products: CatalogProduct[] = [
     description:
       "Rock breaker attachment for mid-size excavators. Ideal for quarry and demolition support work.",
     priceGhs: 28500,
-    image: "/images/cat-390fl.png",
+    image: "/images/hydraulic-breaker-attachment.png",
     inStock: true,
     specs: ["Mid-size excavator fit", "Includes tool bits", "Sale or lease"],
   },
@@ -106,7 +106,7 @@ export const products: CatalogProduct[] = [
     description:
       "Reinforced digging bucket for mining and bulk earthworks. Available in multiple width options.",
     priceGhs: 8900,
-    image: "/images/volvo-ec550e.png",
+    image: "/images/heavy-duty-digging-bucket.png",
     inStock: true,
     specs: ["Reinforced cutting edge", "Multiple widths"],
   },
@@ -118,9 +118,69 @@ export const products: CatalogProduct[] = [
     description:
       "Site compaction unit for roadworks and foundation prep. Available for purchase or short-term hire.",
     priceGhs: 6400,
-    image: "/images/volvo-l250h.png",
+    image: "/images/plate-compactor.png",
     inStock: false,
     specs: ["Roadworks & foundations", "Hire options available"],
+  },
+  {
+    id: "eq-haul-truck",
+    slug: "rigid-haul-truck",
+    name: "Rigid Haul Truck",
+    category: "equipment",
+    description:
+      "Off-highway dump truck for quarry and mining haul. Class and availability confirmed with the desk.",
+    priceGhs: 0,
+    image: "/images/shop-haul-truck.png",
+    inStock: false,
+    specs: ["Quarry and mine haul", "Confirm class on enquiry"],
+  },
+  {
+    id: "eq-crawler-line",
+    slug: "crawler-excavators",
+    name: "Crawler Excavators",
+    category: "equipment",
+    description:
+      "New tracked excavators ready for site. Hire or buy — we confirm what is actually free.",
+    priceGhs: 0,
+    image: "/images/shop-crawler-excavators.png",
+    inStock: false,
+    specs: ["Tracked class", "Hire or purchase"],
+  },
+  {
+    id: "eq-heavy-excavators",
+    slug: "heavy-crawler-excavators",
+    name: "Heavy Crawler Excavators",
+    category: "equipment",
+    description:
+      "Heavy mining and bulk earthworks class. Inspected before it leaves us.",
+    priceGhs: 0,
+    image: "/images/shop-heavy-excavators.png",
+    inStock: false,
+    specs: ["Heavy earthworks class", "Inspected before delivery"],
+  },
+  {
+    id: "eq-breaker-work",
+    slug: "breaker-on-site",
+    name: "Breaker on Site",
+    category: "equipment",
+    description:
+      "Hydraulic breaker work for rock, quarry, and coastal ground. Machine and tool together.",
+    priceGhs: 0,
+    image: "/images/shop-breaker-work.png",
+    inStock: false,
+    specs: ["Rock and quarry", "Machine with breaker"],
+  },
+  {
+    id: "eq-loading-site",
+    slug: "loading-and-haul",
+    name: "Loading and Haul",
+    category: "equipment",
+    description:
+      "Excavator and dump truck working as a pair. Ask for the class you need on the ground.",
+    priceGhs: 0,
+    image: "/images/shop-loading-site.png",
+    inStock: false,
+    specs: ["Load and haul", "Confirm class on enquiry"],
   },
 ];
 
@@ -239,11 +299,12 @@ export const luxuryFleet: FleetItem[] = [
 ];
 
 export function formatGhs(amount: number): string {
+  const value = Number.isFinite(amount) ? amount : 0;
   return new Intl.NumberFormat("en-GH", {
     style: "currency",
     currency: "GHS",
     maximumFractionDigits: 0,
-  }).format(amount);
+  }).format(value);
 }
 
 export function getProductBySlug(slug: string): CatalogProduct | undefined {
