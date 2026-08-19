@@ -6,21 +6,21 @@ import ShopClient from "@/components/shop/ShopClient";
 export const metadata: Metadata = {
   title: "Parts & Equipment Shop",
   description:
-    "Order genuine excavator parts and select equipment from VickYank Limited. Pay securely in Ghana Cedis. Enquire if the item is not listed.",
+    "Pre-order genuine excavator parts and select equipment from VickYank Limited. Prices available upon request.",
 };
 
 const method = [
   {
-    title: "Choose what is listed",
-    body: "Parts and select equipment we are ready to sell. What you see is what we will fulfil — or we will say it is on order.",
+    title: "Choose the line",
+    body: "Parts and equipment we work with. What you see is what you can pre-order — or we will say if we need to source it.",
   },
   {
-    title: "Pay in Ghana Cedis",
-    body: "Checkout through Paystack. No theatre. A reference you can keep.",
+    title: "Ask for the number",
+    body: "Prices are available upon request. A specialist replies within one business day, plainly.",
   },
   {
-    title: "We send it, or we source it",
-    body: "Ready items leave the desk. If your line is not here, ask — the parts desk still answers.",
+    title: "We confirm, then we fulfil",
+    body: "No checkout on this page. The desk agrees the item, the time, and the price before anything moves.",
   },
 ] as const;
 
@@ -43,12 +43,11 @@ export default function ShopPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-sm text-gold">The shop</p>
           <h1 className="mt-3 max-w-3xl font-heading text-[2rem] font-medium leading-[1.12] text-white sm:text-5xl lg:text-6xl">
-            Order what is ready. Ask for the rest.
+            Pre-order what you need. Prices upon request.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
-            Genuine excavator parts and select equipment, paid in Ghana Cedis.
-            If the item is not on this list, the desk will still take the
-            enquiry.
+            Genuine excavator parts and select equipment. Every line is a
+            pre-order. A specialist confirms availability and the number.
           </p>
           <div className="mt-10 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <a href="#catalogue" className="btn-gold">
@@ -65,8 +64,8 @@ export default function ShopPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">How this shop works</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-            A short order room — not a catalogue window that pretends every
-            machine part on earth is in a box behind us.
+            A short order room. Nothing is sitting in a cart. You ask, we quote,
+            then we fulfil.
           </p>
           <ol className="mt-14 grid gap-10 sm:grid-cols-3">
             {method.map((step, index) => (

@@ -36,7 +36,7 @@ export const products: CatalogProduct[] = [
       "Heavy-duty undercarriage track roller for mid-to-large crawler excavators. Hardened race and sealed bearings.",
     priceGhs: 1850,
     image: "/images/track-roller-assembly.png",
-    inStock: true,
+    inStock: false,
     specs: ["Fits 20–30 tonne class", "Sealed bearing", "OEM-compatible"],
   },
   {
@@ -48,7 +48,7 @@ export const products: CatalogProduct[] = [
       "Ground-engaging bucket teeth kit with pins. Built for abrasive mining and earthworks conditions.",
     priceGhs: 620,
     image: "/images/bucket-teeth-set.png",
-    inStock: true,
+    inStock: false,
     specs: ["5-piece set", "Includes pins", "Wear-resistant alloy"],
   },
   {
@@ -60,7 +60,7 @@ export const products: CatalogProduct[] = [
       "High-pressure hydraulic hose assembly kit for boom and stick circuits. Pressure-tested before dispatch.",
     priceGhs: 980,
     image: "/images/hydraulic-hose-kit.png",
-    inStock: true,
+    inStock: false,
     specs: ["High-pressure rated", "Fittings included", "Pressure tested"],
   },
   {
@@ -72,7 +72,7 @@ export const products: CatalogProduct[] = [
       "Oil, fuel, and hydraulic filter set for scheduled excavator maintenance — reduces unplanned downtime.",
     priceGhs: 450,
     image: "/images/excavator-filter-pack.png",
-    inStock: true,
+    inStock: false,
     specs: ["Oil + fuel + hydraulic", "Service interval kit"],
   },
   {
@@ -84,7 +84,7 @@ export const products: CatalogProduct[] = [
       "Linkage pins and bushings for boom, stick, and bucket joints. Precision-machined for tight fit.",
     priceGhs: 1250,
     image: "/images/spare-parts-inventory.png",
-    inStock: true,
+    inStock: false,
   },
   {
     id: "eq-breaker",
@@ -95,7 +95,7 @@ export const products: CatalogProduct[] = [
       "Rock breaker attachment for mid-size excavators. Ideal for quarry and demolition support work.",
     priceGhs: 28500,
     image: "/images/hydraulic-breaker-attachment.png",
-    inStock: true,
+    inStock: false,
     specs: ["Mid-size excavator fit", "Includes tool bits", "Sale or lease"],
   },
   {
@@ -107,7 +107,7 @@ export const products: CatalogProduct[] = [
       "Reinforced digging bucket for mining and bulk earthworks. Available in multiple width options.",
     priceGhs: 8900,
     image: "/images/heavy-duty-digging-bucket.png",
-    inStock: true,
+    inStock: false,
     specs: ["Reinforced cutting edge", "Multiple widths"],
   },
   {

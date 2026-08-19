@@ -100,8 +100,8 @@ export default function SparePartsServicePage() {
             The machine should not sit waiting on a part.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
-            Genuine excavator parts from a house that runs this iron. Shop what
-            is ready. Enquire for what we will source.
+            Genuine excavator parts from a house that runs this iron. Pre-order
+            from the shop. Enquire for what we will source.
           </p>
           <div className="mt-10 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <a href="#enquire" className="btn-gold">
@@ -210,10 +210,11 @@ export default function SparePartsServicePage() {
           </div>
           <div>
             <p className="text-sm text-gold">The shop</p>
-            <h2 className="mt-3 page-title">Some parts are ready to order.</h2>
+            <h2 className="mt-3 page-title">Some parts can be pre-ordered.</h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-white/65 sm:text-lg">
-              Pay in Ghana Cedis. What is not listed is not a dead end — send
-              the model and we will say what we can do.
+              The shop lists what we work with. Prices are available upon
+              request. What is not listed is not a dead end — send the model
+              and we will say what we can do.
             </p>
             <Link href="/services/shop" className="btn-gold mt-8">
               Open the shop
