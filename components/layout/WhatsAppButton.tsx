@@ -1,20 +1,55 @@
 import { site } from "@/lib/site";
-import { WhatsAppIcon } from "@/components/ui/Icons";
 
 /**
- * Floating WhatsApp action button, visible on every page.
- * Opens a chat with the company line (+233 55 700 4112).
+ * Floating “Talk to us” action — opens WhatsApp to the company line.
  */
+function TalkMark() {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      className="h-6 w-6"
+      aria-hidden="true"
+      fill="none"
+    >
+      <rect
+        x="3.2"
+        y="11.2"
+        width="14.5"
+        height="9.6"
+        rx="4.8"
+        transform="rotate(-38 10.45 16)"
+        stroke="#2F6BFF"
+        strokeWidth="3.15"
+      />
+      <rect
+        x="14.3"
+        y="11.2"
+        width="14.5"
+        height="9.6"
+        rx="4.8"
+        transform="rotate(38 21.55 16)"
+        stroke="#FF7A1A"
+        strokeWidth="3.15"
+      />
+    </svg>
+  );
+}
+
 export default function WhatsAppButton() {
   return (
     <a
       href={site.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with VickYank Limited on WhatsApp"
-      className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/30 transition-transform hover:scale-105 motion-reduce:transition-none sm:bottom-6 sm:right-6 sm:h-14 sm:w-14"
+      aria-label="Talk to us on WhatsApp"
+      className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-50 flex items-center gap-2.5 rounded-full bg-navy py-1.5 pl-1.5 pr-5 shadow-lg shadow-black/35 transition-transform hover:scale-[1.03] motion-reduce:transition-none motion-reduce:hover:scale-100 sm:bottom-6 sm:right-6"
     >
-      <WhatsAppIcon className="h-7 w-7" />
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white">
+        <TalkMark />
+      </span>
+      <span className="font-body text-sm font-bold tracking-tight text-white">
+        Talk to us
+      </span>
     </a>
   );
 }
