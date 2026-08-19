@@ -14,10 +14,15 @@ const INTERESTS = [
 const labelClass =
   "mb-1 block text-xs font-medium text-gray-300 sm:mb-2 sm:text-sm";
 
+type NewsletterFormProps = {
+  /** Email plus Subscribe only — for the homepage closer. */
+  compact?: boolean;
+};
+
 /**
  * Newsletter signup for VickYank Limited — email plus optional name and interests.
  */
-export default function NewsletterForm() {
+export default function NewsletterForm({ compact = false }: NewsletterFormProps) {
   const [state, setState] = useState<"idle" | "submitting" | "success" | "error">(
     "idle"
   );
@@ -61,6 +66,13 @@ export default function NewsletterForm() {
   }
 
   if (state === "success") {
+    if (compact) {
+      return (
+        <p className="text-base text-white/80" role="status">
+          You are on the list. Quiet notes, when they matter.
+        </p>
+      );
+    }
     return (
       <div className="flex flex-col items-center justify-center border border-gold/30 bg-navy-dark p-6 text-center sm:p-10">
         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 text-gold">
@@ -73,6 +85,42 @@ export default function NewsletterForm() {
           Thank you. We will send considered updates — no pressure, no clutter.
         </p>
       </div>
+    );
+  }
+
+  if (compact) {
+    return (
+      <form onSubmit={handleSubmit} className="space-y-3">
+        <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-stretch">
+          <label htmlFor="nl-home-email" className="sr-only">
+            Email
+          </label>
+          <input
+            id="nl-home-email"
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            placeholder="Your email"
+            className="form-apparatus min-h-11 flex-1"
+          />
+          <button
+            type="submit"
+            disabled={state === "submitting"}
+            className="btn-gold w-full sm:w-auto"
+          >
+            {state === "submitting" ? "Subscribing…" : "Subscribe"}
+          </button>
+        </div>
+        {(state === "error" || errorMsg) && (
+          <p className="text-sm text-red-400" role="alert">
+            {errorMsg || "Let's try that again together?"}
+          </p>
+        )}
+        <p className="text-[11px] leading-snug text-white/40 sm:text-xs">
+          Occasional notes only. You can leave the list whenever you wish.
+        </p>
+      </form>
     );
   }
 

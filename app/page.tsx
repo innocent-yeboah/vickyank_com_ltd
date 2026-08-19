@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import CoverHero from "@/components/home/CoverHero";
 import HomeHouses from "@/components/home/HomeHouses";
-import CtaBanner from "@/components/ui/CtaBanner";
+import HomeNewsletter from "@/components/home/HomeNewsletter";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Three beats only: arrive, choose, begin.
+ * Three beats only: arrive, choose, stay informed.
  * Proof lives on About. Catalogues live inside each house.
  */
 export default function HomePage() {
@@ -28,10 +28,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CtaBanner
-        title="When you are ready"
-        description="A specialist replies within one business day — or now, on WhatsApp."
-      />
+      <HomeNewsletter />
     </>
   );
 }
