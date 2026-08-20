@@ -31,8 +31,28 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/shop/checkout",
+        destination: "/services/shop",
+        permanent: true,
+      },
+      {
+        source: "/shop/success",
+        destination: "/services/shop",
+        permanent: true,
+      },
+      {
+        source: "/services/shop/checkout",
+        destination: "/services/shop",
+        permanent: true,
+      },
+      {
+        source: "/services/shop/success",
+        destination: "/services/shop",
+        permanent: true,
+      },
+      {
         source: "/shop/:path*",
-        destination: "/services/shop/:path*",
+        destination: "/services/shop",
         permanent: true,
       },
     ];

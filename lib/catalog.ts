@@ -1,6 +1,6 @@
 /**
  * Product and fleet catalog for VickYank Limited Company.
- * Replace placeholder imagery and pricing with live inventory before launch.
+ * Pre-order catalogue — prices available upon request. Replace imagery with live inventory before launch.
  */
 
 export type ProductCategory = "spare-parts" | "equipment";
@@ -11,7 +11,6 @@ export type CatalogProduct = {
   name: string;
   category: ProductCategory;
   description: string;
-  priceGhs: number;
   image: string;
   inStock: boolean;
   specs?: string[];
@@ -34,7 +33,6 @@ export const products: CatalogProduct[] = [
     category: "spare-parts",
     description:
       "Heavy-duty undercarriage track roller for mid-to-large crawler excavators. Hardened race and sealed bearings.",
-    priceGhs: 1850,
     image: "/images/track-roller-assembly.png",
     inStock: false,
     specs: ["Fits 20–30 tonne class", "Sealed bearing", "OEM-compatible"],
@@ -46,7 +44,6 @@ export const products: CatalogProduct[] = [
     category: "spare-parts",
     description:
       "Ground-engaging bucket teeth kit with pins. Built for abrasive mining and earthworks conditions.",
-    priceGhs: 620,
     image: "/images/bucket-teeth-set.png",
     inStock: false,
     specs: ["5-piece set", "Includes pins", "Wear-resistant alloy"],
@@ -58,7 +55,6 @@ export const products: CatalogProduct[] = [
     category: "spare-parts",
     description:
       "High-pressure hydraulic hose assembly kit for boom and stick circuits. Pressure-tested before dispatch.",
-    priceGhs: 980,
     image: "/images/hydraulic-hose-kit.png",
     inStock: false,
     specs: ["High-pressure rated", "Fittings included", "Pressure tested"],
@@ -70,7 +66,6 @@ export const products: CatalogProduct[] = [
     category: "spare-parts",
     description:
       "Oil, fuel, and hydraulic filter set for scheduled excavator maintenance — reduces unplanned downtime.",
-    priceGhs: 450,
     image: "/images/excavator-filter-pack.png",
     inStock: false,
     specs: ["Oil + fuel + hydraulic", "Service interval kit"],
@@ -82,7 +77,6 @@ export const products: CatalogProduct[] = [
     category: "spare-parts",
     description:
       "Linkage pins and bushings for boom, stick, and bucket joints. Precision-machined for tight fit.",
-    priceGhs: 1250,
     image: "/images/spare-parts-inventory.png",
     inStock: false,
   },
@@ -93,7 +87,6 @@ export const products: CatalogProduct[] = [
     category: "equipment",
     description:
       "Rock breaker attachment for mid-size excavators. Ideal for quarry and demolition support work.",
-    priceGhs: 28500,
     image: "/images/hydraulic-breaker-attachment.png",
     inStock: false,
     specs: ["Mid-size excavator fit", "Includes tool bits", "Sale or lease"],
@@ -105,7 +98,6 @@ export const products: CatalogProduct[] = [
     category: "equipment",
     description:
       "Reinforced digging bucket for mining and bulk earthworks. Available in multiple width options.",
-    priceGhs: 8900,
     image: "/images/heavy-duty-digging-bucket.png",
     inStock: false,
     specs: ["Reinforced cutting edge", "Multiple widths"],
@@ -117,7 +109,6 @@ export const products: CatalogProduct[] = [
     category: "equipment",
     description:
       "Site compaction unit for roadworks and foundation prep. Available for purchase or short-term hire.",
-    priceGhs: 6400,
     image: "/images/plate-compactor.png",
     inStock: false,
     specs: ["Roadworks & foundations", "Hire options available"],
@@ -129,7 +120,6 @@ export const products: CatalogProduct[] = [
     category: "equipment",
     description:
       "Off-highway dump truck for quarry and mining haul. Class and availability confirmed with the desk.",
-    priceGhs: 0,
     image: "/images/shop-haul-truck.png",
     inStock: false,
     specs: ["Quarry and mine haul", "Confirm class on enquiry"],
@@ -141,7 +131,6 @@ export const products: CatalogProduct[] = [
     category: "equipment",
     description:
       "New tracked excavators ready for site. Hire or buy — we confirm what is actually free.",
-    priceGhs: 0,
     image: "/images/shop-crawler-excavators.png",
     inStock: false,
     specs: ["Tracked class", "Hire or purchase"],
@@ -153,7 +142,6 @@ export const products: CatalogProduct[] = [
     category: "equipment",
     description:
       "Heavy mining and bulk earthworks class. Inspected before it leaves us.",
-    priceGhs: 0,
     image: "/images/shop-heavy-excavators.png",
     inStock: false,
     specs: ["Heavy earthworks class", "Inspected before delivery"],
@@ -165,7 +153,6 @@ export const products: CatalogProduct[] = [
     category: "equipment",
     description:
       "Hydraulic breaker work for rock, quarry, and coastal ground. Machine and tool together.",
-    priceGhs: 0,
     image: "/images/shop-breaker-work.png",
     inStock: false,
     specs: ["Rock and quarry", "Machine with breaker"],
@@ -177,7 +164,6 @@ export const products: CatalogProduct[] = [
     category: "equipment",
     description:
       "Excavator and dump truck working as a pair. Ask for the class you need on the ground.",
-    priceGhs: 0,
     image: "/images/shop-loading-site.png",
     inStock: false,
     specs: ["Load and haul", "Confirm class on enquiry"],
@@ -297,15 +283,6 @@ export const luxuryFleet: FleetItem[] = [
     type: "luxury-car",
   },
 ];
-
-export function formatGhs(amount: number): string {
-  const value = Number.isFinite(amount) ? amount : 0;
-  return new Intl.NumberFormat("en-GH", {
-    style: "currency",
-    currency: "GHS",
-    maximumFractionDigits: 0,
-  }).format(value);
-}
 
 export function getProductBySlug(slug: string): CatalogProduct | undefined {
   return products.find((p) => p.slug === slug);

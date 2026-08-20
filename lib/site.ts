@@ -73,6 +73,6 @@ export const serviceLinks = [
   {
     href: "/services/shop",
     label: "Parts & Equipment Shop",
-    description: "Order genuine spare parts and equipment online.",
+    description: "Browse genuine spare parts and equipment. Pre-order — prices upon request.",
   },
 ] as const;

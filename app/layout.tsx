@@ -3,7 +3,6 @@ import { Inter, Libre_Baskerville, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
-import { CartProvider } from "@/components/shop/CartProvider";
 import JsonLd from "@/components/seo/JsonLd";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -74,12 +73,10 @@ export default function RootLayout({
           <style>{`.scroll-reveal{opacity:1;transform:none}.scroll-reveal .scroll-reveal-rule{transform:none}`}</style>
         </noscript>
         <JsonLd />
-        <CartProvider>
-          <Navbar />
-          <main className="relative flex-1">{children}</main>
-          <Footer />
-          <WhatsAppButton />
-        </CartProvider>
+        <Navbar />
+        <main className="relative flex-1">{children}</main>
+        <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

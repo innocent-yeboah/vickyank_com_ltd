@@ -22,7 +22,7 @@ export default function ServicesHubPage() {
             sixth={{
               href: "/services/shop",
               title: "Parts & Equipment Shop",
-              body: "Order genuine spare parts and select equipment online. Secure checkout in Ghana Cedis.",
+              body: "Browse genuine spare parts and equipment. Pre-order only — prices available upon request.",
               image: "/images/spare-parts-inventory.png",
               imageAlt: "Spare parts and equipment available in the shop",
             }}
