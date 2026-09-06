@@ -1,37 +1,108 @@
+"use client";
+
+import Image from "next/image";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { site } from "@/lib/site";
+
 /**
- * Sitewide white construction banner with looping cartoon figures.
- * Soft, friendly motion — respects prefers-reduced-motion.
+ * Full-page construction lock on the homepage — no access to the site beneath.
+ * Soft cartoon motion; respects prefers-reduced-motion.
  */
 export default function ConstructionBanner() {
+  const pathname = usePathname();
+  const locked = pathname === "/";
+
+  useEffect(() => {
+    if (!locked) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [locked]);
+
+  if (!locked) return null;
+
   return (
     <div
-      role="status"
-      aria-live="polite"
-      className="fixed inset-x-0 top-0 z-[70] h-[3.25rem] overflow-hidden border-b border-navy/10 bg-white text-navy sm:h-14"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="construction-title"
+      aria-describedby="construction-copy"
+      className="fixed inset-0 z-[200] flex min-h-[100svh] flex-col overflow-hidden bg-white text-navy"
     >
-      <div className="relative mx-auto flex h-full max-w-7xl items-center justify-center px-4 sm:px-6">
-        <p className="relative z-10 rounded-sm bg-white/85 px-3 py-1 text-center font-body text-[11px] font-semibold tracking-[0.12em] text-navy sm:text-xs sm:tracking-[0.16em]">
-          <span className="sm:hidden">SITE UNDER CONSTRUCTION</span>
-          <span className="hidden sm:inline">
-            THIS PROJECT IS UNDER CONSTRUCTION — WE&apos;RE FINISHING THE HOUSE
-          </span>
+      <div
+        className="pointer-events-none absolute inset-x-0 top-[12%] flex w-max opacity-90 animate-construction-parade motion-reduce:animate-none"
+        aria-hidden="true"
+      >
+        <CartoonStrip large />
+        <CartoonStrip large />
+      </div>
+
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-[18%] flex w-max opacity-80 animate-construction-parade motion-reduce:animate-none [animation-direction:reverse] [animation-duration:22s]"
+        aria-hidden="true"
+      >
+        <CartoonStrip />
+        <CartoonStrip />
+      </div>
+
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
+        <Image
+          src="/images/vickyank-mark.png"
+          alt=""
+          width={865}
+          height={475}
+          className="h-12 w-auto brightness-110 contrast-110 sm:h-14"
+          priority
+        />
+        <p className="mt-4 font-lockup text-2xl font-bold tracking-[-0.02em] text-navy sm:text-3xl">
+          {site.shortName}
+        </p>
+        <p className="mt-1 font-body text-[11px] font-medium uppercase tracking-[0.2em] text-navy/55">
+          Limited Company
         </p>
 
-        <div
-          className="pointer-events-none absolute inset-y-0 left-0 flex w-max items-end gap-10 pb-1 opacity-90 animate-construction-parade motion-reduce:animate-none"
-          aria-hidden="true"
+        <h1
+          id="construction-title"
+          className="mt-10 max-w-xl font-heading text-3xl font-medium leading-tight text-navy sm:text-5xl"
         >
-          <CartoonStrip />
-          <CartoonStrip />
+          This project is under construction
+        </h1>
+        <p
+          id="construction-copy"
+          className="mt-4 max-w-md text-base leading-relaxed text-navy/65 sm:text-lg"
+        >
+          We&apos;re finishing the house. The full site will open here soon —
+          thank you for your patience.
+        </p>
+
+        <div className="mt-10 flex flex-col items-center gap-3 text-sm text-navy/70">
+          <a
+            href={site.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-navy underline decoration-gold decoration-2 underline-offset-4 transition-colors hover:text-gold-dark"
+          >
+            Talk to us on WhatsApp
+          </a>
+          <a
+            href={`tel:${site.phoneInternational}`}
+            className="transition-colors hover:text-navy"
+          >
+            {site.phoneDisplay}
+          </a>
         </div>
       </div>
     </div>
   );
 }
 
-function CartoonStrip() {
+function CartoonStrip({ large = false }: { large?: boolean }) {
+  const scale = large ? "scale-125 sm:scale-150" : "";
   return (
-    <div className="flex shrink-0 items-end gap-10 pr-10">
+    <div className={`flex shrink-0 items-end gap-12 pr-12 sm:gap-16 sm:pr-16 ${scale}`}>
       <WorkerCartoon />
       <ConeCartoon />
       <ExcavatorCartoon />
@@ -46,7 +117,7 @@ function WorkerCartoon({ wave = false }: { wave?: boolean }) {
   return (
     <svg
       viewBox="0 0 48 56"
-      className={`h-10 w-auto motion-reduce:animate-none sm:h-11 ${
+      className={`h-14 w-auto motion-reduce:animate-none sm:h-16 ${
         wave ? "animate-construction-bob-delay" : "animate-construction-bob"
       }`}
       fill="none"
@@ -90,7 +161,7 @@ function ExcavatorCartoon() {
   return (
     <svg
       viewBox="0 0 72 40"
-      className="h-9 w-auto animate-construction-roll motion-reduce:animate-none sm:h-10"
+      className="h-12 w-auto animate-construction-roll motion-reduce:animate-none sm:h-14"
       fill="none"
     >
       <ellipse cx="36" cy="38" rx="22" ry="2" fill="#1A1A2E" opacity="0.12" />
@@ -114,7 +185,7 @@ function ConeCartoon({ delay = false }: { delay?: boolean }) {
   return (
     <svg
       viewBox="0 0 28 40"
-      className={`h-8 w-auto motion-reduce:animate-none sm:h-9 ${
+      className={`h-11 w-auto motion-reduce:animate-none sm:h-12 ${
         delay ? "animate-construction-hop-delay" : "animate-construction-hop"
       }`}
       fill="none"
@@ -132,7 +203,7 @@ function HardHatCartoon() {
   return (
     <svg
       viewBox="0 0 36 28"
-      className="h-7 w-auto animate-construction-float motion-reduce:animate-none sm:h-8"
+      className="h-10 w-auto animate-construction-float motion-reduce:animate-none sm:h-11"
       fill="none"
     >
       <ellipse cx="18" cy="26" rx="10" ry="1.5" fill="#1A1A2E" opacity="0.1" />

@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-[3.25rem] z-[60] bg-transparent sm:top-14">
+      <header className="fixed inset-x-0 top-0 z-[60] bg-transparent">
       <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-3 px-4 sm:h-24 sm:px-6 lg:px-8">
         <Link
           href="/"
@@ -106,7 +106,7 @@ export default function Navbar() {
       {open ? (
         <nav
           id="mobile-menu"
-          className="fixed inset-x-0 bottom-0 top-[calc(3.25rem+4.5rem)] z-[59] flex flex-col bg-navy sm:top-[calc(3.5rem+6rem)] lg:hidden"
+          className="fixed inset-x-0 bottom-0 top-[4.5rem] z-[59] flex flex-col bg-navy sm:top-24 lg:hidden"
           aria-label="Mobile"
         >
           <div className="flex flex-1 flex-col justify-center overflow-y-auto px-6 py-8">
@@ -159,7 +159,7 @@ export default function Navbar() {
       ) : null}
 
       {sitsOnHero ? null : (
-        <div className="h-[calc(3.25rem+4.5rem)] sm:h-[calc(3.5rem+6rem)]" aria-hidden="true" />
+        <div className="h-[4.5rem] sm:h-24" aria-hidden="true" />
       )}
     </>
   );
