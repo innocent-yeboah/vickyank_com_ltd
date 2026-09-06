@@ -53,10 +53,52 @@ const config: Config = {
           from: { transform: "scale(1)" },
           to: { transform: "scale(1.1)" },
         },
+        "construction-parade": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        "construction-bob": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-3px)" },
+        },
+        "construction-hop": {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "50%": { transform: "translateY(-5px) rotate(-4deg)" },
+        },
+        "construction-float": {
+          "0%, 100%": { transform: "translateY(0) rotate(-6deg)" },
+          "50%": { transform: "translateY(-6px) rotate(6deg)" },
+        },
+        "construction-wave": {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "50%": { transform: "rotate(-18deg)" },
+        },
+        "construction-arm": {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "50%": { transform: "rotate(-12deg)" },
+        },
+        "construction-legs": {
+          "0%, 100%": { transform: "translateX(0)" },
+          "25%": { transform: "translateX(-1px)" },
+          "75%": { transform: "translateX(1px)" },
+        },
       },
       animation: {
         filmstrip: "filmstrip 55s linear infinite",
         "cinematic-still": "cinematic-still 32s ease-out forwards",
+        "construction-parade": "construction-parade 18s linear infinite",
+        "construction-bob": "construction-bob 0.7s ease-in-out infinite",
+        "construction-bob-delay":
+          "construction-bob 0.7s ease-in-out 0.35s infinite",
+        "construction-hop": "construction-hop 0.9s ease-in-out infinite",
+        "construction-hop-delay":
+          "construction-hop 0.9s ease-in-out 0.45s infinite",
+        "construction-float": "construction-float 1.4s ease-in-out infinite",
+        "construction-wave": "construction-wave 0.8s ease-in-out infinite",
+        "construction-arm":
+          "construction-arm 1.6s ease-in-out infinite",
+        "construction-legs": "construction-legs 0.45s ease-in-out infinite",
+        "construction-roll": "construction-bob 0.55s ease-in-out infinite",
       },
     },
   },

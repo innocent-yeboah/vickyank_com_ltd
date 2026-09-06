@@ -23,7 +23,7 @@ export default function CoverHero() {
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-navy-cover/55 to-transparent sm:h-36"
       />
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16 sm:pt-32 lg:px-8 lg:pb-24">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-36 sm:px-6 sm:pb-16 sm:pt-40 lg:px-8 lg:pb-24">
         <h1 className="max-w-xl font-heading text-[2.125rem] font-medium leading-[1.12] text-white sm:max-w-2xl sm:text-5xl lg:max-w-3xl lg:text-6xl lg:leading-[1.08]">
           <span className="block">{taglineLead}</span>
           <span className="block">{taglineClose ?? ""}</span>

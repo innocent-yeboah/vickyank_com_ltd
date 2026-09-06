@@ -18,9 +18,9 @@
   }
 }
 
-/* Offset anchor targets below the fixed navbar. */
+/* Offset anchor targets below the fixed construction banner + navbar. */
 section[id] {
-  scroll-margin-top: 6.5rem;
+  scroll-margin-top: 8.5rem;
 }
 
 html {
