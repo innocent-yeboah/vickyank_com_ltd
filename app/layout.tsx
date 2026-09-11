@@ -3,6 +3,7 @@ import { Inter, Libre_Baskerville, Montserrat } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import ConstructionBanner from "@/components/layout/ConstructionBanner";
 import JsonLd from "@/components/seo/JsonLd";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -75,6 +76,7 @@ export default function RootLayout({
           <style>{`.scroll-reveal{opacity:1;transform:none}.scroll-reveal .scroll-reveal-rule{transform:none}`}</style>
         </noscript>
         <JsonLd />
+        <ConstructionBanner />
         <Navbar />
         <main className="relative flex-1">{children}</main>
         <Footer />
