@@ -17,16 +17,16 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div>
             <h1 className="page-title">Enquire</h1>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-white/70 sm:text-lg">
+            <p className="mt-5 max-w-md text-base leading-relaxed text-charcoal sm:text-lg">
               A specialist replies within one business day. Call or WhatsApp if
               you need us sooner.
             </p>
 
-            <div className="relative mx-auto mt-10 aspect-[3/4] max-w-sm overflow-hidden bg-white lg:mx-0">
+            <div className="relative mx-auto mt-10 aspect-[3/4] max-w-sm overflow-hidden bg-soft lg:mx-0">
               <Image
                 src="/images/contact-specialist.png"
                 alt="VickYank specialist ready to take your enquiry"
@@ -37,14 +37,14 @@ export default function ContactPage() {
               />
             </div>
 
-            <ul className="mt-10 space-y-4 text-sm text-white/75">
+            <ul className="mt-10 space-y-4 text-sm text-navy/80">
               {site.phones.map((phone) => (
                 <li key={phone.raw}>
                   <a
                     href={`tel:${phone.international}`}
-                    className="inline-flex items-center gap-3 transition-colors hover:text-white"
+                    className="inline-flex items-center gap-3 transition-colors hover:text-navy"
                   >
-                    <PhoneIcon className="h-4 w-4 shrink-0 text-gold" />
+                    <PhoneIcon className="h-4 w-4 shrink-0 text-gold-dark" />
                     {phone.display}
                   </a>
                 </li>
@@ -55,9 +55,9 @@ export default function ContactPage() {
                     href={phone.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 transition-colors hover:text-white"
+                    className="inline-flex items-center gap-3 transition-colors hover:text-navy"
                   >
-                    <WhatsAppIcon className="h-4 w-4 shrink-0 text-gold" />
+                    <WhatsAppIcon className="h-4 w-4 shrink-0 text-gold-dark" />
                     WhatsApp · {phone.display}
                   </a>
                 </li>
@@ -65,14 +65,14 @@ export default function ContactPage() {
               <li>
                 <a
                   href={`mailto:${site.email}`}
-                  className="inline-flex items-center gap-3 break-all transition-colors hover:text-white"
+                  className="inline-flex items-center gap-3 break-all transition-colors hover:text-navy"
                 >
-                  <MailIcon className="h-4 w-4 shrink-0 text-gold" />
+                  <MailIcon className="h-4 w-4 shrink-0 text-gold-dark" />
                   {site.email}
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <MapPinIcon className="h-4 w-4 shrink-0 text-gold" />
+                <MapPinIcon className="h-4 w-4 shrink-0 text-gold-dark" />
                 {site.location}
               </li>
             </ul>
@@ -84,11 +84,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-navy-darker page-section">
+      <section className="border-t border-navy/10 bg-soft page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">Find us</h2>
-          <p className="mt-4 max-w-xl text-white/65">{site.location}</p>
-          <div className="mt-10 aspect-[4/3] w-full overflow-hidden border border-white/10 sm:aspect-[16/9] lg:aspect-[16/7]">
+          <p className="mt-4 max-w-xl text-charcoal">{site.location}</p>
+          <div className="mt-10 aspect-[4/3] w-full overflow-hidden border border-navy/10 sm:aspect-[16/9] lg:aspect-[16/7]">
             <iframe
               title="VickYank Limited Company location map"
               src="https://maps.google.com/maps?q=Agona+Nkwanta,+Ahanta+West,+Ghana&z=13&output=embed"

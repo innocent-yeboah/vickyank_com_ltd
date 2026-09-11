@@ -78,10 +78,10 @@ export default function MiningServicePage() {
         </div>
       </section>
 
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">Who this is for</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-charcoal">
             If one of these is you, we should talk. If none of them is you, the
             next page will serve you better.
           </p>
@@ -92,8 +92,8 @@ export default function MiningServicePage() {
                   aria-hidden="true"
                   className="scroll-reveal-rule mb-5 block h-px w-8 bg-gold"
                 />
-                <h3 className="font-heading text-2xl text-white">{item.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+                <h3 className="font-heading text-2xl text-navy">{item.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-charcoal sm:text-base">
                   {item.body}
                 </p>
               </ScrollReveal>
@@ -102,7 +102,7 @@ export default function MiningServicePage() {
         </div>
       </section>
 
-      <section className="bg-navy">
+      <section className="bg-white">
         <div className="grid grid-cols-1 sm:grid-cols-3">
           {fieldShots.map((shot, index) => (
             <ScrollReveal
@@ -122,10 +122,10 @@ export default function MiningServicePage() {
         </div>
       </section>
 
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">What you can hold us to</h2>
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-white/70 sm:text-lg">
+          <div className="mt-8 space-y-6 text-base leading-relaxed text-charcoal sm:text-lg">
             <p>
               We run our own heavy equipment. That means a parked machine is our
               problem as much as yours — so we maintain it before it reaches your
@@ -141,17 +141,17 @@ export default function MiningServicePage() {
               months in the fog.
             </p>
           </div>
-          <p className="mt-10 text-sm text-white/45">
+          <p className="mt-10 text-sm text-navy/45">
             {site.tagline}
           </p>
         </div>
       </section>
 
-      <section id="enquire" className="border-t border-white/10 bg-navy-ink page-section">
+      <section id="enquire" className="border-t border-navy/10 bg-soft page-section">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div>
             <h2 className="page-title">Tell us about the ground</h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-white/65 sm:text-lg">
+            <p className="mt-5 max-w-md text-base leading-relaxed text-charcoal sm:text-lg">
               Site, timeline, and how you want to partner. Operations replies
               within one business day — or now, on WhatsApp.
             </p>
@@ -159,9 +159,9 @@ export default function MiningServicePage() {
               href={site.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-block text-sm text-gold hover:text-gold-soft"
+              className="mt-8 inline-block text-sm font-medium text-navy hover:text-gold-dark"
             >
-              WhatsApp the desk
+              WhatsApp · {site.whatsappDisplay}
             </a>
           </div>
           <div className="brochure-card">

@@ -8,13 +8,13 @@ type SectionHeadingProps = {
 };
 
 /**
- * Editorial section header — white Playfair, optional quiet kicker.
+ * Editorial section header — Montserrat title, optional quiet kicker.
  */
 export default function SectionHeading({
   eyebrow,
   title,
   description,
-  dark = true,
+  dark = false,
   align = "left",
 }: SectionHeadingProps) {
   return (
@@ -28,7 +28,7 @@ export default function SectionHeading({
       {description && (
         <p
           className={`mt-5 text-base leading-relaxed sm:text-lg ${
-            dark ? "text-white/80" : "text-gray-600"
+            dark ? "text-white/80" : "text-charcoal"
           }`}
         >
           {description}

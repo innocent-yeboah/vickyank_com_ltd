@@ -10,24 +10,29 @@ export const metadata: Metadata = {
 };
 
 /**
- * Arrive, understand the five lines, then go deeper via Our Business.
+ * Arrive on hero, then light band names the five lines (Rules A + V3).
  */
 export default function HomePage() {
   return (
     <>
       <CoverHero />
 
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">What we do</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-charcoal sm:text-lg">
             Mining. Gold trading. Digging machines. Spare parts. Fancy cars.
             One house — open Our Business to learn each line, then enquire when
             you are ready.
           </p>
-          <Link href="/services" className="btn-gold mt-8">
-            Our Business
-          </Link>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/services" className="btn-gold">
+              Our Business
+            </Link>
+            <Link href="/contact" className="btn-outline-dark">
+              Enquire
+            </Link>
+          </div>
         </div>
       </section>
 

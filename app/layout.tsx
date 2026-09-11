@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Libre_Baskerville, Playfair_Display } from "next/font/google";
+import { Inter, Libre_Baskerville, Montserrat } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
@@ -7,12 +7,11 @@ import JsonLd from "@/components/seo/JsonLd";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-heading",
   display: "swap",
   weight: ["500", "600", "700"],
-  style: ["normal", "italic"],
 });
 
 const lockup = Libre_Baskerville({
@@ -58,7 +57,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1A1A2E",
+  themeColor: "#FFFFFF",
   width: "device-width",
   initialScale: 1,
 };
@@ -67,8 +66,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${lockup.variable} ${inter.variable} overflow-x-hidden`}>
-      <body className="flex min-h-screen flex-col overflow-x-hidden bg-navy">
+    <html
+      lang="en"
+      className={`${montserrat.variable} ${lockup.variable} ${inter.variable} overflow-x-hidden`}
+    >
+      <body className="flex min-h-screen flex-col overflow-x-hidden bg-white">
         <noscript>
           <style>{`.scroll-reveal{opacity:1;transform:none}.scroll-reveal .scroll-reveal-rule{transform:none}`}</style>
         </noscript>

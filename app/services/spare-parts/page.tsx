@@ -93,7 +93,7 @@ export default function SparePartsServicePage() {
         </div>
       </section>
 
-      <section className="bg-navy">
+      <section className="bg-white">
         <div className="grid grid-cols-1 sm:grid-cols-3">
           {yardShots.map((shot) => (
             <div
@@ -112,10 +112,10 @@ export default function SparePartsServicePage() {
         </div>
       </section>
 
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">Who this desk is for</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-charcoal">
             Spare parts is not a catalogue window. It is how a working machine
             stays a working machine.
           </p>
@@ -126,8 +126,8 @@ export default function SparePartsServicePage() {
                   aria-hidden="true"
                   className="scroll-reveal-rule mb-5 block h-px w-8 bg-gold"
                 />
-                <h3 className="font-heading text-2xl text-white">{item.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+                <h3 className="font-heading text-2xl text-navy">{item.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-charcoal sm:text-base">
                   {item.body}
                 </p>
               </ScrollReveal>
@@ -136,10 +136,10 @@ export default function SparePartsServicePage() {
         </div>
       </section>
 
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">What we keep on the desk</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-charcoal">
             The families these machines wear through. If your line is not named
             here, still enquire — we source beyond the shelf.
           </p>
@@ -150,8 +150,8 @@ export default function SparePartsServicePage() {
                   aria-hidden="true"
                   className="scroll-reveal-rule mb-5 block h-px w-8 bg-gold"
                 />
-                <h3 className="font-heading text-2xl text-white">{item.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+                <h3 className="font-heading text-2xl text-navy">{item.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-charcoal sm:text-base">
                   {item.body}
                 </p>
               </ScrollReveal>
@@ -160,7 +160,7 @@ export default function SparePartsServicePage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-navy-darker page-section">
+      <section className="border-t border-navy/10 bg-soft page-section">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/10]">
             <Image
@@ -172,23 +172,23 @@ export default function SparePartsServicePage() {
             />
           </div>
           <div>
-            <p className="text-sm text-gold">Heavy equipment</p>
+            <p className="kicker">Heavy equipment</p>
             <h2 className="mt-3 page-title">Need a machine as well?</h2>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-white/65 sm:text-lg">
+            <p className="mt-6 max-w-md text-base leading-relaxed text-charcoal sm:text-lg">
               Hire or buy inspected excavators from the same house. Delivery to
               site, with an operator if you need one.
             </p>
-            <Link href="/services/equipment" className="btn-outline-light mt-8">
+            <Link href="/services/equipment" className="btn-outline-dark mt-8">
               See digging machines
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">What you can hold us to</h2>
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-white/70 sm:text-lg">
+          <div className="mt-8 space-y-6 text-base leading-relaxed text-charcoal sm:text-lg">
             <p>
               We stock what these classes eat because we run them. A near-fit is
               not a fit. If we are not sure, we say so before you pay.
@@ -203,26 +203,26 @@ export default function SparePartsServicePage() {
               the part.
             </p>
           </div>
-          <p className="mt-10 text-sm text-white/45">{site.tagline}</p>
+          <p className="mt-10 text-sm text-navy/45">{site.tagline}</p>
         </div>
       </section>
 
       <section
         id="enquire"
-        className="border-t border-white/10 bg-navy-ink page-section"
+        className="border-t border-navy/10 bg-soft page-section"
       >
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div>
             <h2 className="page-title">Ask for a part</h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-white/65 sm:text-lg">
+            <p className="mt-5 max-w-md text-base leading-relaxed text-charcoal sm:text-lg">
               Machine class or model, part number if you have it, and what
               failed. We reply within one business day.
             </p>
-            <div className="mt-8 space-y-3 text-sm text-white/60">
+            <div className="mt-8 space-y-3 text-sm text-navy/70">
               <p>
                 <a
                   href={`tel:${site.phoneInternational}`}
-                  className="text-gold hover:text-gold-soft"
+                  className="font-medium text-navy hover:text-gold-dark"
                 >
                   {site.phoneDisplay}
                 </a>
@@ -232,13 +232,16 @@ export default function SparePartsServicePage() {
                   href={site.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gold hover:text-gold-soft"
+                  className="font-medium text-navy hover:text-gold-dark"
                 >
                   WhatsApp · {site.whatsappDisplay}
                 </a>
               </p>
               <p>
-                <Link href="/services/equipment" className="text-gold hover:text-gold-soft">
+                <Link
+                  href="/services/equipment"
+                  className="font-medium text-navy hover:text-gold-dark"
+                >
                   Need the machine itself?
                 </Link>
               </p>

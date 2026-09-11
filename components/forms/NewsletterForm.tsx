@@ -11,7 +11,7 @@ const INTERESTS = [
 ] as const;
 
 const labelClass =
-  "mb-1 block text-xs font-medium text-gray-300 sm:mb-2 sm:text-sm";
+  "mb-1 block text-xs font-medium text-navy/70 sm:mb-2 sm:text-sm";
 
 type NewsletterFormProps = {
   /** Email plus Subscribe only — for the homepage closer. */
@@ -67,18 +67,18 @@ export default function NewsletterForm({ compact = false }: NewsletterFormProps)
   if (state === "success") {
     if (compact) {
       return (
-        <p className="text-base text-white/80" role="status">
+        <p className="text-base text-charcoal" role="status">
           You are on the list. Quiet notes, when they matter.
         </p>
       );
     }
     return (
       <div role="status">
-        <p className="text-sm text-gold">The list</p>
-        <h3 className="mt-3 font-heading text-2xl font-medium text-white">
+        <p className="kicker">The list</p>
+        <h3 className="mt-3 font-heading text-2xl font-medium text-navy">
           You are on the list
         </h3>
-        <p className="mt-3 max-w-sm text-base leading-relaxed text-white/65">
+        <p className="mt-3 max-w-sm text-base leading-relaxed text-charcoal">
           Quiet notes, when they matter. No pressure. No clutter.
         </p>
       </div>
@@ -114,7 +114,7 @@ export default function NewsletterForm({ compact = false }: NewsletterFormProps)
             {errorMsg || "Let's try that again together?"}
           </p>
         )}
-        <p className="text-[11px] leading-snug text-white/40 sm:text-xs">
+        <p className="text-[11px] leading-snug text-navy/45 sm:text-xs">
           Occasional notes only. You can leave the list whenever you wish.
         </p>
       </form>
@@ -156,7 +156,7 @@ export default function NewsletterForm({ compact = false }: NewsletterFormProps)
           {INTERESTS.map((interest) => (
             <label
               key={interest}
-              className="flex min-h-11 items-center gap-2 text-sm text-white/80"
+              className="flex min-h-11 items-center gap-2 text-sm text-navy/80"
             >
               <input
                 type="checkbox"

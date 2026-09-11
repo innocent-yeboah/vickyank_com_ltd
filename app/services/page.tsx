@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 export default function ServicesHubPage() {
   return (
     <>
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="page-title">Our Business</h1>
-          <p className="mt-5 max-w-2xl text-base text-white/70 sm:text-lg">
+          <p className="mt-5 max-w-2xl text-base text-charcoal sm:text-lg">
             Mining. Gold trading. Digging machines. Spare parts. Fancy cars.
             Choose a line to learn what we do — then enquire when you are ready.
           </p>

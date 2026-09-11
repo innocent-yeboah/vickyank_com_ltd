@@ -18,7 +18,7 @@ type InquiryFormProps = {
 };
 
 const labelClass =
-  "mb-1 block text-xs font-medium text-gray-300 sm:mb-2 sm:text-sm";
+  "mb-1 block text-xs font-medium text-navy/70 sm:mb-2 sm:text-sm";
 
 /**
  * Reusable lead-capture form for VickYank Limited.
@@ -70,18 +70,18 @@ export default function InquiryForm({
 
   if (state === "success") {
     return (
-      <div className="flex flex-col items-center justify-center border border-gold/30 bg-navy-dark p-6 text-center sm:p-10">
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 text-gold">
+      <div className="flex flex-col items-center justify-center border border-navy/10 bg-soft p-6 text-center sm:p-10">
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold/20 text-navy">
           <CheckIcon className="h-8 w-8" />
         </span>
-        <h3 className="mt-6 font-heading text-2xl font-bold uppercase text-white">
+        <h3 className="mt-6 font-heading text-2xl font-semibold text-navy">
           {successTitle}
         </h3>
-        <p className="mt-3 max-w-sm text-gray-300">{successMessage}</p>
+        <p className="mt-3 max-w-sm text-charcoal">{successMessage}</p>
         <button
           type="button"
           onClick={() => setState("idle")}
-          className="mt-8 border border-white/20 px-6 py-3 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:border-gold hover:text-gold"
+          className="btn-outline-dark mt-8"
         >
           Send Another
         </button>
@@ -169,7 +169,7 @@ export default function InquiryForm({
               name="tradeType"
               required
               defaultValue=""
-              className="form-apparatus [&>option]:bg-navy [&>option]:text-white"
+              className="form-apparatus bg-white"
             >
               <option value="" disabled>
                 Select…
@@ -235,7 +235,7 @@ export default function InquiryForm({
             name="service"
             required
             defaultValue=""
-            className="form-apparatus [&>option]:bg-navy [&>option]:text-white"
+            className="form-apparatus bg-white"
           >
             <option value="" disabled>
               Select a subject…

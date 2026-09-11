@@ -72,10 +72,10 @@ export default function EquipmentPage() {
 
       <EquipmentFilm />
 
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">Who this iron is for</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-charcoal">
             A machine is not a brochure. It is a decision: hire, buy, or put a
             person in the seat.
           </p>
@@ -86,8 +86,8 @@ export default function EquipmentPage() {
                   aria-hidden="true"
                   className="scroll-reveal-rule mb-5 block h-px w-8 bg-gold"
                 />
-                <h3 className="font-heading text-2xl text-white">{item.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+                <h3 className="font-heading text-2xl text-navy">{item.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-charcoal sm:text-base">
                   {item.body}
                 </p>
               </ScrollReveal>
@@ -96,7 +96,7 @@ export default function EquipmentPage() {
         </div>
       </section>
 
-      <section id="fleet" className="bg-navy">
+      <section id="fleet" className="bg-white">
         {excavatorFleet.map((machine) => (
           <article
             key={machine.id}
@@ -126,7 +126,7 @@ export default function EquipmentPage() {
                 </p>
                 <a
                   href="#enquire"
-                  className="mt-8 inline-block text-sm text-gold hover:text-gold-soft"
+                  className="mt-8 inline-block text-sm font-medium text-white hover:text-gold"
                 >
                   Ask for this class
                 </a>
@@ -136,7 +136,7 @@ export default function EquipmentPage() {
         ))}
       </section>
 
-      <section className="bg-navy-darker page-section">
+      <section className="bg-soft page-section">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/10]">
             <Image
@@ -148,23 +148,23 @@ export default function EquipmentPage() {
             />
           </div>
           <div>
-            <p className="text-sm text-gold">Keep it working</p>
+            <p className="kicker">Keep it working</p>
             <h2 className="mt-3 page-title">Idle iron is the expensive kind.</h2>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-white/65 sm:text-lg">
+            <p className="mt-6 max-w-md text-base leading-relaxed text-charcoal sm:text-lg">
               We stock what these classes eat — because we run them. Genuine
               parts, so the fleet does not sit waiting on a pump.
             </p>
-            <Link href="/services/spare-parts" className="btn-outline-light mt-8">
+            <Link href="/services/spare-parts" className="btn-outline-dark mt-8">
               Need parts for this machine?
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">What you can hold us to</h2>
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-white/70 sm:text-lg">
+          <div className="mt-8 space-y-6 text-base leading-relaxed text-charcoal sm:text-lg">
             <p>
               We run this iron on our own mining work. A machine that will not
               start is our problem first — so we inspect it before it reaches
@@ -180,26 +180,26 @@ export default function EquipmentPage() {
               the whole of the luxury: the machine works, and someone answers.
             </p>
           </div>
-          <p className="mt-10 text-sm text-white/45">{site.tagline}</p>
+          <p className="mt-10 text-sm text-navy/45">{site.tagline}</p>
         </div>
       </section>
 
       <section
         id="enquire"
-        className="border-t border-white/10 bg-navy-ink page-section"
+        className="border-t border-navy/10 bg-soft page-section"
       >
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div>
             <h2 className="page-title">Ask for a machine</h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-white/65 sm:text-lg">
+            <p className="mt-5 max-w-md text-base leading-relaxed text-charcoal sm:text-lg">
               Class, site, hire or buy, and whether you need an operator. We
               reply within one business day with what is actually available.
             </p>
-            <div className="mt-8 space-y-3 text-sm text-white/60">
+            <div className="mt-8 space-y-3 text-sm text-navy/70">
               <p>
                 <a
                   href={`tel:${site.phoneInternational}`}
-                  className="text-gold hover:text-gold-soft"
+                  className="font-medium text-navy hover:text-gold-dark"
                 >
                   {site.phoneDisplay}
                 </a>
@@ -209,7 +209,7 @@ export default function EquipmentPage() {
                   href={site.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gold hover:text-gold-soft"
+                  className="font-medium text-navy hover:text-gold-dark"
                 >
                   WhatsApp · {site.whatsappDisplay}
                 </a>

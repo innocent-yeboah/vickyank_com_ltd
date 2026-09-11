@@ -113,7 +113,7 @@ export default function NewsletterPage() {
         </div>
       </section>
 
-      <section className="bg-navy">
+      <section className="bg-white">
         <div className="grid grid-cols-1 sm:grid-cols-3">
           {houseShots.map((shot) => (
             <div
@@ -132,10 +132,10 @@ export default function NewsletterPage() {
         </div>
       </section>
 
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">Who this letter is for</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-charcoal">
             Principals, contractors, and families who prefer a quiet desk to a
             loud inbox.
           </p>
@@ -146,8 +146,8 @@ export default function NewsletterPage() {
                   aria-hidden="true"
                   className="scroll-reveal-rule mb-5 block h-px w-8 bg-gold"
                 />
-                <h3 className="font-heading text-2xl text-white">{item.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+                <h3 className="font-heading text-2xl text-navy">{item.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-charcoal sm:text-base">
                   {item.body}
                 </p>
               </ScrollReveal>
@@ -158,11 +158,11 @@ export default function NewsletterPage() {
 
       <section
         id="topics"
-        className="border-t border-white/10 bg-navy-darker page-section"
+        className="border-t border-navy/10 bg-soft page-section"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">What the notes cover</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-charcoal">
             The same houses you already know. Written in the same voice.
           </p>
           <div className="mt-12 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -172,8 +172,8 @@ export default function NewsletterPage() {
                   aria-hidden="true"
                   className="scroll-reveal-rule mb-5 block h-px w-8 bg-gold"
                 />
-                <h3 className="font-heading text-2xl text-white">{item.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+                <h3 className="font-heading text-2xl text-navy">{item.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-charcoal sm:text-base">
                   {item.body}
                 </p>
               </ScrollReveal>
@@ -182,20 +182,20 @@ export default function NewsletterPage() {
         </div>
       </section>
 
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">How the list works</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-charcoal">
             Four movements. None of them a trick.
           </p>
           <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {method.map((step, index) => (
               <ScrollReveal key={step.title} as="li" delayMs={index * 120}>
-                <p className="text-xs tracking-[0.18em] text-gold">
+                <p className="kicker">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-4 font-heading text-xl text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">
+                <h3 className="mt-4 font-heading text-xl text-navy">{step.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-charcoal">
                   {step.body}
                 </p>
               </ScrollReveal>
@@ -204,10 +204,10 @@ export default function NewsletterPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-navy page-section">
+      <section className="border-t border-navy/10 bg-white page-section">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">What you can hold us to</h2>
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-white/70 sm:text-lg">
+          <div className="mt-8 space-y-6 text-base leading-relaxed text-charcoal sm:text-lg">
             <p>
               Your email is for this letter. Not a list we sell. Not a drip of
               urgency. If we have nothing useful to say, we stay quiet.
@@ -221,18 +221,18 @@ export default function NewsletterPage() {
               works — clearly, and only when it counts.
             </p>
           </div>
-          <p className="mt-10 text-sm text-white/45">{site.tagline}</p>
+          <p className="mt-10 text-sm text-navy/45">{site.tagline}</p>
         </div>
       </section>
 
       <section
         id="subscribe"
-        className="border-t border-white/10 bg-navy-ink page-section"
+        className="border-t border-navy/10 bg-soft page-section"
       >
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div>
             <h2 className="page-title">Join the list</h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-white/65 sm:text-lg">
+            <p className="mt-5 max-w-md text-base leading-relaxed text-charcoal sm:text-lg">
               Share your email. Name the houses you care about, if you wish. We
               will not fill your week.
             </p>

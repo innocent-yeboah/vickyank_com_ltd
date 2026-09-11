@@ -93,10 +93,10 @@ export default function LuxuryCarsPage() {
 
       <CarFilm />
 
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">Who this is for</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-charcoal">
             A hire is not a brochure of badges. It is a day that has to look like
             it belongs to you.
           </p>
@@ -107,8 +107,8 @@ export default function LuxuryCarsPage() {
                   aria-hidden="true"
                   className="scroll-reveal-rule mb-5 block h-px w-8 bg-gold"
                 />
-                <h3 className="font-heading text-2xl text-white">{item.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+                <h3 className="font-heading text-2xl text-navy">{item.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-charcoal sm:text-base">
                   {item.body}
                 </p>
               </ScrollReveal>
@@ -117,7 +117,7 @@ export default function LuxuryCarsPage() {
         </div>
       </section>
 
-      <section id="fleet" className="bg-navy">
+      <section id="fleet" className="bg-white">
         {fleet.map((car) => (
           <article
             key={car.id}
@@ -145,7 +145,7 @@ export default function LuxuryCarsPage() {
                 </p>
                 <a
                   href="#enquire"
-                  className="mt-8 inline-block text-sm text-gold hover:text-gold-soft"
+                  className="mt-8 inline-block text-sm font-medium text-white hover:text-gold"
                 >
                   Reserve this car
                 </a>
@@ -155,10 +155,10 @@ export default function LuxuryCarsPage() {
         ))}
       </section>
 
-      <section className="bg-navy page-section">
+      <section className="bg-white page-section">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">What you can hold us to</h2>
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-white/70 sm:text-lg">
+          <div className="mt-8 space-y-6 text-base leading-relaxed text-charcoal sm:text-lg">
             <p>
               The car you are promised is the car that arrives. Availability is
               said in the open. We do not sell a photograph of a class that is
@@ -176,26 +176,26 @@ export default function LuxuryCarsPage() {
               nothing missing.
             </p>
           </div>
-          <p className="mt-10 text-sm text-white/45">{site.tagline}</p>
+          <p className="mt-10 text-sm text-navy/45">{site.tagline}</p>
         </div>
       </section>
 
       <section
         id="enquire"
-        className="border-t border-white/10 bg-navy-ink page-section"
+        className="border-t border-navy/10 bg-soft page-section"
       >
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div>
             <h2 className="page-title">Reserve a car</h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-white/65 sm:text-lg">
+            <p className="mt-5 max-w-md text-base leading-relaxed text-charcoal sm:text-lg">
               The car, the dates, and whether you want a chauffeur. We confirm
               what is actually free within one business day.
             </p>
-            <div className="mt-8 space-y-3 text-sm text-white/60">
+            <div className="mt-8 space-y-3 text-sm text-navy/70">
               <p>
                 <a
                   href={`tel:${site.phoneInternational}`}
-                  className="text-gold hover:text-gold-soft"
+                  className="font-medium text-navy hover:text-gold-dark"
                 >
                   {site.phoneDisplay}
                 </a>
@@ -205,9 +205,9 @@ export default function LuxuryCarsPage() {
                   href={site.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gold hover:text-gold-soft"
+                  className="font-medium text-navy hover:text-gold-dark"
                 >
-                  WhatsApp the desk
+                  WhatsApp · {site.whatsappDisplay}
                 </a>
               </p>
             </div>

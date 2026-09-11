@@ -8,20 +8,25 @@ import { navLinks, site } from "@/lib/site";
 import { CloseIcon, MenuIcon } from "@/components/ui/Icons";
 
 /**
- * Fixed site navigation — Contact highlighted in gold.
+ * Dual-mode nav (Rule V1): Hero = white on photo; Light = navy on white bar.
  */
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const sitsOnHero =
+  const [scrolledPastHero, setScrolledPastHero] = useState(false);
+
+  const canUseHeroMode =
     pathname === "/" ||
     pathname === "/newsletter" ||
     /^\/services\/(mining|gold-trading|equipment|spare-parts|luxury-cars)$/.test(
       pathname
     );
 
+  const heroMode = canUseHeroMode && !scrolledPastHero && !open;
+
   useEffect(() => {
     setOpen(false);
+    setScrolledPastHero(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -31,13 +36,33 @@ export default function Navbar() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!canUseHeroMode) return;
+    const onScroll = () => {
+      setScrolledPastHero(window.scrollY > window.innerHeight * 0.65);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [canUseHeroMode, pathname]);
+
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-[60] bg-transparent">
+      <header
+        className={`fixed inset-x-0 top-0 z-[60] transition-colors duration-300 ${
+          heroMode
+            ? "bg-transparent"
+            : "border-b border-navy/10 bg-white/95 backdrop-blur-md"
+        }`}
+      >
         <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-3 px-4 sm:h-24 sm:px-6 lg:px-8">
           <Link
             href="/"
-            className="flex min-w-0 items-center gap-2.5 rounded-md border border-white/15 bg-navy/45 px-2.5 py-1.5 backdrop-blur-md"
+            className={`flex min-w-0 items-center gap-2.5 rounded-md px-2.5 py-1.5 ${
+              heroMode
+                ? "border border-white/15 bg-navy/45 backdrop-blur-md"
+                : "border border-navy/10 bg-soft"
+            }`}
             aria-label={site.name}
           >
             <Image
@@ -49,10 +74,18 @@ export default function Navbar() {
               priority
             />
             <span className="min-w-0 leading-none">
-              <span className="block font-lockup text-[1.35rem] font-bold tracking-[-0.02em] text-white">
+              <span
+                className={`block font-lockup text-[1.35rem] font-bold tracking-[-0.02em] ${
+                  heroMode ? "text-white" : "text-navy"
+                }`}
+              >
                 {site.shortName}
               </span>
-              <span className="mt-1.5 block font-body text-[11px] font-medium uppercase tracking-[0.18em] text-white/65">
+              <span
+                className={`mt-1.5 block font-body text-[11px] font-medium uppercase tracking-[0.18em] ${
+                  heroMode ? "text-white/65" : "text-navy/55"
+                }`}
+              >
                 Limited Company
               </span>
             </span>
@@ -68,12 +101,18 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`whitespace-nowrap text-sm transition-colors ${
+                  className={`whitespace-nowrap text-sm font-medium transition-colors ${
                     isContact
-                      ? "text-gold hover:text-gold-soft"
-                      : active
-                        ? "text-white"
-                        : "text-white/60 hover:text-white"
+                      ? heroMode
+                        ? "text-gold hover:text-gold-soft"
+                        : "font-semibold text-navy hover:text-gold-dark"
+                      : heroMode
+                        ? active
+                          ? "text-white"
+                          : "text-white/65 hover:text-white"
+                        : active
+                          ? "text-navy"
+                          : "text-navy/60 hover:text-navy"
                   }`}
                   aria-current={active ? "page" : undefined}
                 >
@@ -85,7 +124,11 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/15 bg-navy/45 text-white backdrop-blur-md lg:hidden"
+            className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border lg:hidden ${
+              heroMode
+                ? "border-white/15 bg-navy/45 text-white backdrop-blur-md"
+                : "border-navy/15 bg-soft text-navy"
+            }`}
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -103,7 +146,7 @@ export default function Navbar() {
       {open ? (
         <nav
           id="mobile-menu"
-          className="fixed inset-x-0 bottom-0 top-[4.5rem] z-[59] flex flex-col bg-navy sm:top-24 lg:hidden"
+          className="fixed inset-x-0 bottom-0 top-[4.5rem] z-[59] flex flex-col bg-white sm:top-24 lg:hidden"
           aria-label="Mobile"
         >
           <div className="flex flex-1 flex-col justify-center overflow-y-auto px-6 py-8">
@@ -116,10 +159,10 @@ export default function Navbar() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className={`block py-3.5 font-heading text-[1.75rem] leading-tight transition-colors ${
+                      className={`block py-3.5 font-heading text-[1.75rem] font-semibold leading-tight transition-colors ${
                         active || link.href === "/contact"
-                          ? "text-gold"
-                          : "text-white hover:text-white/80"
+                          ? "text-navy"
+                          : "text-navy/70 hover:text-navy"
                       }`}
                       aria-current={active ? "page" : undefined}
                     >
@@ -131,14 +174,14 @@ export default function Navbar() {
             </ul>
           </div>
 
-          <div className="border-t border-white/10 px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-6">
+          <div className="border-t border-navy/10 px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-6">
             <Link href="/contact" className="btn-gold w-full">
               Enquire
             </Link>
-            <div className="mt-5 flex flex-col items-center gap-2 text-sm text-white/50">
+            <div className="mt-5 flex flex-col items-center gap-2 text-sm text-navy/60">
               <a
                 href={`tel:${site.phoneInternational}`}
-                className="transition-colors hover:text-white"
+                className="transition-colors hover:text-navy"
               >
                 {site.phoneDisplay}
               </a>
@@ -146,7 +189,7 @@ export default function Navbar() {
                 href={site.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gold transition-colors hover:text-gold-soft"
+                className="font-medium text-navy transition-colors hover:text-gold-dark"
               >
                 WhatsApp · {site.whatsappDisplay}
               </a>
@@ -155,7 +198,7 @@ export default function Navbar() {
         </nav>
       ) : null}
 
-      {sitsOnHero ? null : (
+      {canUseHeroMode ? null : (
         <div className="h-[4.5rem] sm:h-24" aria-hidden="true" />
       )}
     </>
