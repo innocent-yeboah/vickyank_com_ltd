@@ -32,7 +32,7 @@ export const brochureServices = [
   {
     num: "01",
     href: "/services/mining",
-    title: "Mining Operations",
+    title: "Mining",
     body: "Professional extraction with experienced crews and modern heavy machinery. Safety-first site management from ground to gold.",
     image: "/images/cat-loading-haul.png",
     imageAlt: "Excavator loading a haul truck on a mining site",
@@ -40,7 +40,7 @@ export const brochureServices = [
   {
     num: "02",
     href: "/services/gold-trading",
-    title: "Gold Trading",
+    title: "Gold trading",
     body: "Buy and sell raw and refined gold with transparent weighing, market-aligned valuation, and full documentation.",
     image: "/images/gold-bars.jpg",
     imageAlt: "Refined gold bars prepared for trade",
@@ -48,7 +48,7 @@ export const brochureServices = [
   {
     num: "03",
     href: "/services/equipment",
-    title: "Excavator Machines",
+    title: "Digging machines",
     body: "Flexible rental and outright sale of excavators for mining and construction — inspected before every deployment.",
     image: "/images/volvo-ec550e.png",
     imageAlt: "Volvo EC550E excavator on site",
@@ -56,7 +56,7 @@ export const brochureServices = [
   {
     num: "04",
     href: "/services/spare-parts",
-    title: "Spare Parts",
+    title: "Spare parts",
     body: "Genuine undercarriage, hydraulics, filters, and ground-engaging tools sourced to minimise fleet downtime.",
     image: "/images/spare-parts-inventory.png",
     imageAlt: "Hydraulic pumps and excavator spare parts inventory",
@@ -64,7 +64,7 @@ export const brochureServices = [
   {
     num: "05",
     href: "/services/luxury-cars",
-    title: "Luxury Car Rental",
+    title: "Fancy cars",
     body: "Executive sedans, SUVs, and statement vehicles — chauffeured or self-drive for business, events, and VIP travel.",
     image: "/images/land-cruiser.png",
     imageAlt: "Land Cruiser from the VickYank executive fleet",

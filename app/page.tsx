@@ -1,32 +1,33 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CoverHero from "@/components/home/CoverHero";
-import HomeHouses from "@/components/home/HomeHouses";
 import HomeNewsletter from "@/components/home/HomeNewsletter";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Home",
-  description: `${site.name} — ${site.tagline} Mining, gold trading, heavy equipment, and luxury car rental in Ghana.`,
+  description: `${site.name} — ${site.tagline} Mining, gold trading, digging machines, spare parts, and luxury car rental in Ghana.`,
 };
 
 /**
- * Three beats only: arrive, choose, stay informed.
- * Proof lives on About. Catalogues live inside each house.
+ * Arrive, understand the five lines, then go deeper via Our Business.
  */
 export default function HomePage() {
   return (
     <>
       <CoverHero />
 
-      <section id="work" className="bg-navy page-section">
+      <section className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="page-title">Tell us what you need</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-            Gold, a machine, parts, a crew, or a car — pick the line that
-            matches. One enquiry reaches a specialist. You hear back within one
-            business day with availability and a clear next step.
+          <h2 className="page-title">What we do</h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70">
+            Mining. Gold trading. Digging machines. Spare parts. Fancy cars.
+            One house — open Our Business to learn each line, then enquire when
+            you are ready.
           </p>
-          <HomeHouses />
+          <Link href="/services" className="btn-gold mt-8">
+            Our Business
+          </Link>
         </div>
       </section>
 

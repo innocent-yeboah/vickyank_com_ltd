@@ -26,8 +26,8 @@ export default function Footer() {
             <p className="mt-3 text-sm leading-snug text-white/70 md:mt-5 md:leading-relaxed">
               <span className="md:hidden">{site.tagline}</span>
               <span className="hidden md:inline">
-                {site.tagline} Mining, gold trading, heavy equipment, spare
-                parts, and luxury car rental in Ghana.
+                {site.tagline} Mining, gold trading, digging machines, spare
+                parts, and fancy car rental in Ghana.
               </span>
             </p>
           </div>
@@ -84,17 +84,19 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href={site.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 transition-colors hover:text-gold"
-                >
-                  <WhatsAppIcon className="h-4 w-4 shrink-0 text-gold" />
-                  WhatsApp Us
-                </a>
-              </li>
+              {site.phones.map((phone) => (
+                <li key={`wa-${phone.raw}`}>
+                  <a
+                    href={phone.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 transition-colors hover:text-gold"
+                  >
+                    <WhatsAppIcon className="h-4 w-4 shrink-0 text-gold" />
+                    WhatsApp · {phone.display}
+                  </a>
+                </li>
+              ))}
               <li>
                 <a
                   href={`mailto:${site.email}`}

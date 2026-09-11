@@ -2,32 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { brochureServices } from "@/content/brochure";
 
-type SixthCard = {
-  href: string;
-  title: string;
-  body: string;
-  image: string;
-  imageAlt: string;
-};
-
 /**
- * Image-first business tiles — photography leads, copy sits on the image.
+ * Image-first business tiles — five houses only (no shop).
  */
-export default function BusinessServiceGrid({ sixth }: { sixth: SixthCard }) {
-  const tiles = [
-    ...brochureServices.map((service) => ({
-      href: service.href,
-      title: service.title,
-      body: service.body,
-      image: service.image,
-      imageAlt: service.imageAlt,
-    })),
-    sixth,
-  ];
-
+export default function BusinessServiceGrid() {
   return (
     <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-4 lg:grid-cols-3 lg:gap-5">
-      {tiles.map((tile) => (
+      {brochureServices.map((tile) => (
         <Link
           key={tile.href}
           href={tile.href}

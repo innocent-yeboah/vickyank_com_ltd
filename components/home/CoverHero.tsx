@@ -5,7 +5,7 @@ import HeroReel from "@/components/home/HeroReel";
 const [taglineLead, taglineClose] = site.tagline.split(/(?<=\.)\s+/);
 
 /**
- * Arrival screen — make the house obvious, and Enquire the easy next step.
+ * Arrival screen — understand the house first (Rule A), then Enquire.
  */
 export default function CoverHero() {
   return (
@@ -29,15 +29,15 @@ export default function CoverHero() {
           <span className="block">{taglineClose ?? ""}</span>
         </h1>
         <p className="mt-5 max-w-lg text-sm font-medium leading-relaxed text-white drop-shadow-[0_2px_12px_rgba(26,26,46,0.9)] sm:mt-6 sm:text-lg">
-          Need gold, a machine, a site, or a car? Enquire once — a specialist
-          replies within one business day.
+          VickYank works in mining, gold trading, digging machines, spare parts,
+          and fancy car rental in Ghana.
         </p>
         <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row">
-          <Link href="/contact" className="btn-gold">
-            Enquire
+          <Link href="/services" className="btn-gold">
+            Our Business
           </Link>
-          <Link href="#work" className="btn-outline-light">
-            Tell us what you need
+          <Link href="/contact" className="btn-outline-light">
+            Enquire
           </Link>
         </div>
       </div>

@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/equipment",
     "/services/spare-parts",
     "/services/luxury-cars",
-    "/services/shop",
     "/newsletter",
     "/contact",
   ];
@@ -20,8 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
     url: `${base}${route}`,
     lastModified: new Date(),
-    changeFrequency:
-      route === "" || route === "/services/shop" ? "weekly" : "monthly",
+    changeFrequency: route === "" ? "weekly" : "monthly",
     priority: route === "" ? 1 : route.startsWith("/services/") ? 0.8 : 0.7,
   }));
 }

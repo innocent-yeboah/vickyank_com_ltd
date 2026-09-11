@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Excavator Spare Parts",
   description:
-    "Genuine excavator spare parts from VickYank Limited in Ghana — undercarriage, hydraulics, filters, and ground tools. Shop what is ready, or enquire for what we will source.",
+    "Genuine excavator spare parts from VickYank Limited in Ghana — undercarriage, hydraulics, filters, and ground tools. Enquire for what we hold or will source.",
 };
 
 const forWhom = [
@@ -23,25 +23,6 @@ const forWhom = [
   {
     title: "You have a number, or you do not",
     body: "Model and part number if you have them. If you only have a photograph and a class, we still start from there.",
-  },
-] as const;
-
-const method = [
-  {
-    title: "You name the machine and the fault",
-    body: "Class, model if you know it, and what stopped. A photograph of the part helps. We reply within one business day.",
-  },
-  {
-    title: "We confirm stock or source",
-    body: "What we hold is said plainly. What we do not hold, we source through channels we already trust.",
-  },
-  {
-    title: "You order, or we quote",
-    body: "Ready items go through the shop. Special order comes as a clear quote — no fog on price or time.",
-  },
-  {
-    title: "The iron can work again",
-    body: "The part reaches you. The machine is no longer a parked bill.",
   },
 ] as const;
 
@@ -101,16 +82,13 @@ export default function SparePartsServicePage() {
             The machine should not sit waiting on a part.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
-            Genuine excavator parts from a house that runs this iron. Pre-order
-            from the shop. Enquire for what we will source.
+            Genuine excavator parts from a house that runs this iron. Enquire
+            for what we hold or will source.
           </p>
           <div className="mt-10 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <a href="#enquire" className="btn-gold">
               Ask for a part
             </a>
-            <Link href="/services/shop" className="btn-outline-light">
-              Open the shop
-            </Link>
           </div>
         </div>
       </section>
@@ -158,28 +136,6 @@ export default function SparePartsServicePage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-navy-darker page-section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="page-title">How a part is found</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-            Four movements. None of them a promise we cannot keep.
-          </p>
-          <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {method.map((step, index) => (
-              <ScrollReveal key={step.title} as="li" delayMs={index * 120}>
-                <p className="text-xs tracking-[0.18em] text-gold">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-4 font-heading text-xl text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">
-                  {step.body}
-                </p>
-              </ScrollReveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       <section className="bg-navy page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">What we keep on the desk</h2>
@@ -208,23 +164,22 @@ export default function SparePartsServicePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/10]">
             <Image
-              src="/images/spare-parts-inventory.png"
-              alt="Hydraulic components prepared for dispatch"
+              src="/images/cat-390fl.png"
+              alt="CAT excavator on site — the iron these parts keep working"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </div>
           <div>
-            <p className="text-sm text-gold">The shop</p>
-            <h2 className="mt-3 page-title">Some parts can be pre-ordered.</h2>
+            <p className="text-sm text-gold">Heavy equipment</p>
+            <h2 className="mt-3 page-title">Need a machine as well?</h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-white/65 sm:text-lg">
-              The shop lists what we work with. Prices are available upon
-              request. What is not listed is not a dead end — send the model
-              and we will say what we can do.
+              Hire or buy inspected excavators from the same house. Delivery to
+              site, with an operator if you need one.
             </p>
-            <Link href="/services/shop" className="btn-gold mt-8">
-              Open the shop
+            <Link href="/services/equipment" className="btn-outline-light mt-8">
+              See digging machines
             </Link>
           </div>
         </div>
@@ -279,7 +234,7 @@ export default function SparePartsServicePage() {
                   rel="noopener noreferrer"
                   className="text-gold hover:text-gold-soft"
                 >
-                  WhatsApp the desk
+                  WhatsApp · {site.whatsappDisplay}
                 </a>
               </p>
               <p>

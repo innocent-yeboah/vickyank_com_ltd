@@ -8,7 +8,7 @@ import { excavatorFleet } from "@/lib/catalog";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Heavy Equipment",
+  title: "Digging machines",
   description:
     "Hire or buy inspected excavators from VickYank Limited in Ghana — site delivery, operators on request, and machines we run on our own work.",
 };
@@ -25,25 +25,6 @@ const forWhom = [
   {
     title: "You need a driver with the machine",
     body: "A parked excavator without a competent operator is still idle. We arrange the person with the iron when you ask.",
-  },
-] as const;
-
-const method = [
-  {
-    title: "You name the class and the site",
-    body: "What the ground needs, where it is, how long, and whether you are hiring or buying.",
-  },
-  {
-    title: "We say what is actually free",
-    body: "Availability and condition, stated plainly — not a catalogue that pretends every machine is waiting.",
-  },
-  {
-    title: "We inspect before it leaves",
-    body: "Serviced, checked, and ready to start. A machine that fails on day one is our failure.",
-  },
-  {
-    title: "We deliver",
-    body: "To your site. An operator if you asked. Someone to call if the iron stops.",
   },
 ] as const;
 
@@ -115,29 +96,6 @@ export default function EquipmentPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-navy-darker page-section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="page-title">How a machine reaches your site</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-            Four movements. The iron does not leave the yard until the first
-            three are true.
-          </p>
-          <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {method.map((step, index) => (
-              <ScrollReveal key={step.title} as="li" delayMs={index * 120}>
-                <p className="text-xs tracking-[0.18em] text-gold">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-4 font-heading text-xl text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">
-                  {step.body}
-                </p>
-              </ScrollReveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       <section id="fleet" className="bg-navy">
         {excavatorFleet.map((machine) => (
           <article
@@ -197,7 +155,7 @@ export default function EquipmentPage() {
               parts, so the fleet does not sit waiting on a pump.
             </p>
             <Link href="/services/spare-parts" className="btn-outline-light mt-8">
-              Spare parts
+              Need parts for this machine?
             </Link>
           </div>
         </div>
@@ -253,7 +211,7 @@ export default function EquipmentPage() {
                   rel="noopener noreferrer"
                   className="text-gold hover:text-gold-soft"
                 >
-                  WhatsApp the desk
+                  WhatsApp · {site.whatsappDisplay}
                 </a>
               </p>
             </div>

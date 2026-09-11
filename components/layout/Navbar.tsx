@@ -8,7 +8,7 @@ import { navLinks, site } from "@/lib/site";
 import { CloseIcon, MenuIcon } from "@/components/ui/Icons";
 
 /**
- * Fixed site navigation — quiet type, gold only on Enquire.
+ * Fixed site navigation — Contact highlighted in gold.
  */
 export default function Navbar() {
   const pathname = usePathname();
@@ -16,7 +16,7 @@ export default function Navbar() {
   const sitsOnHero =
     pathname === "/" ||
     pathname === "/newsletter" ||
-    /^\/services\/(mining|gold-trading|equipment|spare-parts|luxury-cars|shop)$/.test(
+    /^\/services\/(mining|gold-trading|equipment|spare-parts|luxury-cars)$/.test(
       pathname
     );
 
@@ -34,74 +34,71 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-[60] bg-transparent">
-      <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-3 px-4 sm:h-24 sm:px-6 lg:px-8">
-        <Link
-          href="/"
-          className="flex min-w-0 items-center gap-2.5 rounded-md border border-white/15 bg-navy/45 px-2.5 py-1.5 backdrop-blur-md"
-          aria-label={site.name}
-        >
-          <Image
-            src="/images/vickyank-mark.png"
-            alt=""
-            width={865}
-            height={475}
-            className="h-[2.025rem] w-auto shrink-0 brightness-125 contrast-110"
-            priority
-          />
-          <span className="min-w-0 leading-none">
-            <span className="block font-lockup text-[1.35rem] font-bold tracking-[-0.02em] text-white">
-              {site.shortName}
-            </span>
-            <span className="mt-1.5 block font-body text-[11px] font-medium uppercase tracking-[0.18em] text-white/65">
-              Limited Company
-            </span>
-          </span>
-        </Link>
-
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
-          {navLinks
-            .filter((link) => link.href !== "/contact")
-            .map((link) => {
-            const active =
-              pathname === link.href ||
-              (link.href !== "/" && pathname.startsWith(link.href));
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`whitespace-nowrap text-sm transition-colors ${
-                  active ? "text-white" : "text-white/60 hover:text-white"
-                }`}
-                aria-current={active ? "page" : undefined}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+        <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-3 px-4 sm:h-24 sm:px-6 lg:px-8">
           <Link
-            href="/contact"
-            className="whitespace-nowrap text-sm text-gold transition-colors hover:text-gold-soft"
+            href="/"
+            className="flex min-w-0 items-center gap-2.5 rounded-md border border-white/15 bg-navy/45 px-2.5 py-1.5 backdrop-blur-md"
+            aria-label={site.name}
           >
-            Enquire
+            <Image
+              src="/images/vickyank-mark.png"
+              alt=""
+              width={865}
+              height={475}
+              className="h-[2.025rem] w-auto shrink-0 brightness-125 contrast-110"
+              priority
+            />
+            <span className="min-w-0 leading-none">
+              <span className="block font-lockup text-[1.35rem] font-bold tracking-[-0.02em] text-white">
+                {site.shortName}
+              </span>
+              <span className="mt-1.5 block font-body text-[11px] font-medium uppercase tracking-[0.18em] text-white/65">
+                Limited Company
+              </span>
+            </span>
           </Link>
-        </nav>
 
-        <button
-          type="button"
-          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/15 bg-navy/45 text-white backdrop-blur-md lg:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
-        >
-          {open ? (
-            <CloseIcon className="h-5 w-5" />
-          ) : (
-            <MenuIcon className="h-5 w-5" />
-          )}
-        </button>
-      </div>
-    </header>
+          <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
+            {navLinks.map((link) => {
+              const active =
+                pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(link.href));
+              const isContact = link.href === "/contact";
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`whitespace-nowrap text-sm transition-colors ${
+                    isContact
+                      ? "text-gold hover:text-gold-soft"
+                      : active
+                        ? "text-white"
+                        : "text-white/60 hover:text-white"
+                  }`}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          <button
+            type="button"
+            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/15 bg-navy/45 text-white backdrop-blur-md lg:hidden"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+          >
+            {open ? (
+              <CloseIcon className="h-5 w-5" />
+            ) : (
+              <MenuIcon className="h-5 w-5" />
+            )}
+          </button>
+        </div>
+      </header>
 
       {open ? (
         <nav
@@ -111,9 +108,7 @@ export default function Navbar() {
         >
           <div className="flex flex-1 flex-col justify-center overflow-y-auto px-6 py-8">
             <ul className="space-y-1">
-              {navLinks
-                .filter((link) => link.href !== "/contact")
-                .map((link) => {
+              {navLinks.map((link) => {
                 const active =
                   pathname === link.href ||
                   (link.href !== "/" && pathname.startsWith(link.href));
@@ -122,7 +117,9 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       className={`block py-3.5 font-heading text-[1.75rem] leading-tight transition-colors ${
-                        active ? "text-gold" : "text-white hover:text-white/80"
+                        active || link.href === "/contact"
+                          ? "text-gold"
+                          : "text-white hover:text-white/80"
                       }`}
                       aria-current={active ? "page" : undefined}
                     >
@@ -151,7 +148,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="text-gold transition-colors hover:text-gold-soft"
               >
-                WhatsApp
+                WhatsApp · {site.whatsappDisplay}
               </a>
             </div>
           </div>

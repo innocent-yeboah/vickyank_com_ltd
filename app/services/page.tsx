@@ -5,7 +5,7 @@ import BusinessServiceGrid from "@/components/ui/BusinessServiceGrid";
 export const metadata: Metadata = {
   title: "Our Business",
   description:
-    "Industrial solutions for mining, gold trading, excavator machines, spare parts, and luxury car rental from VickYank Limited.",
+    "Mining, gold trading, digging machines, spare parts, and fancy car rental from VickYank Limited Company.",
 };
 
 export default function ServicesHubPage() {
@@ -15,18 +15,10 @@ export default function ServicesHubPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="page-title">Our Business</h1>
           <p className="mt-5 max-w-2xl text-base text-white/70 sm:text-lg">
-            Mining, gold, machinery, parts, executive cars — and a working shop
-            for genuine equipment. Choose what you need to begin.
+            Mining. Gold trading. Digging machines. Spare parts. Fancy cars.
+            Choose a line to learn what we do — then enquire when you are ready.
           </p>
-          <BusinessServiceGrid
-            sixth={{
-              href: "/services/shop",
-              title: "Parts & Equipment Shop",
-              body: "Browse genuine spare parts and equipment. Pre-order only — prices available upon request.",
-              image: "/images/spare-parts-inventory.png",
-              imageAlt: "Spare parts and equipment available in the shop",
-            }}
-          />
+          <BusinessServiceGrid />
         </div>
       </section>
       <CtaBanner

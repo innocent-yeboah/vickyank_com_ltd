@@ -38,7 +38,7 @@ export const serviceDetails = [
     eyebrow: "Service 04",
     title: "Excavator Spare Parts",
     short:
-      "Genuine spare parts keeping fleets running with minimal downtime — shop online or enquire.",
+      "Genuine spare parts keeping fleets running with minimal downtime — enquire for stock or sourcing.",
     image: "/images/spare-parts-inventory.png",
     imageAlt: "Hydraulic pumps and excavator spare parts inventory",
   },

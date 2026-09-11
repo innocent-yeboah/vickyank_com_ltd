@@ -11,7 +11,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: `Contact ${site.name} — call ${site.phoneAltDisplay} or ${site.phoneDisplay}, WhatsApp, or send an enquiry.`,
+  description: `Contact ${site.name} — call ${site.phoneDisplay} or ${site.phoneAltDisplay}, WhatsApp, or send an enquiry.`,
 };
 
 export default function ContactPage() {
@@ -38,26 +38,30 @@ export default function ContactPage() {
             </div>
 
             <ul className="mt-10 space-y-4 text-sm text-white/75">
-              <li>
-                <a
-                  href={`tel:${site.phoneInternational}`}
-                  className="inline-flex items-center gap-3 transition-colors hover:text-white"
-                >
-                  <PhoneIcon className="h-4 w-4 shrink-0 text-gold" />
-                  {site.phoneDisplay} / {site.phoneAltDisplay}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 transition-colors hover:text-white"
-                >
-                  <WhatsAppIcon className="h-4 w-4 shrink-0 text-gold" />
-                  WhatsApp {site.phoneDisplay}
-                </a>
-              </li>
+              {site.phones.map((phone) => (
+                <li key={phone.raw}>
+                  <a
+                    href={`tel:${phone.international}`}
+                    className="inline-flex items-center gap-3 transition-colors hover:text-white"
+                  >
+                    <PhoneIcon className="h-4 w-4 shrink-0 text-gold" />
+                    {phone.display}
+                  </a>
+                </li>
+              ))}
+              {site.phones.map((phone) => (
+                <li key={`wa-${phone.raw}`}>
+                  <a
+                    href={phone.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 transition-colors hover:text-white"
+                  >
+                    <WhatsAppIcon className="h-4 w-4 shrink-0 text-gold" />
+                    WhatsApp · {phone.display}
+                  </a>
+                </li>
+              ))}
               <li>
                 <a
                   href={`mailto:${site.email}`}
@@ -83,13 +87,11 @@ export default function ContactPage() {
       <section className="border-t border-white/10 bg-navy-darker page-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="page-title">Find us</h2>
-          <p className="mt-4 max-w-xl text-white/65">
-            Headquarters, Agona-Nkwanta, Ghana.
-          </p>
+          <p className="mt-4 max-w-xl text-white/65">{site.location}</p>
           <div className="mt-10 aspect-[4/3] w-full overflow-hidden border border-white/10 sm:aspect-[16/9] lg:aspect-[16/7]">
             <iframe
               title="VickYank Limited Company location map"
-              src="https://maps.google.com/maps?q=Agona-Nkwanta,Ghana&z=13&output=embed"
+              src="https://maps.google.com/maps?q=Agona+Nkwanta,+Ahanta+West,+Ghana&z=13&output=embed"
               className="h-full w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

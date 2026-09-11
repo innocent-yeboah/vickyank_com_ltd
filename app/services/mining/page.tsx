@@ -26,25 +26,6 @@ const forWhom = [
   },
 ] as const;
 
-const method = [
-  {
-    title: "We walk the ground",
-    body: "Before a machine moves, we see the site with you. What is possible, what is not, and what it will take.",
-  },
-  {
-    title: "We agree the model",
-    body: "Partnership, contract, or a defined scope. Written in language both sides can stand behind.",
-  },
-  {
-    title: "We put the operation on site",
-    body: "Crews, supervisors, and our own heavy equipment. Safety first — because a stopped site costs everyone.",
-  },
-  {
-    title: "You see the work",
-    body: "Progress you can measure. Questions answered. No fog when it is time to report.",
-  },
-] as const;
-
 const fieldShots = [
   {
     src: "/images/cat-loading-haul.png",
@@ -118,29 +99,6 @@ export default function MiningServicePage() {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="border-t border-white/10 bg-navy-darker page-section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="page-title">How the work is done</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-            Serious mining is a sequence. We do not skip the first step to look
-            busy on the last.
-          </p>
-          <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {method.map((step, index) => (
-              <ScrollReveal key={step.title} as="li" delayMs={index * 120}>
-                <p className="text-xs tracking-[0.18em] text-gold">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-4 font-heading text-xl text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">
-                  {step.body}
-                </p>
-              </ScrollReveal>
-            ))}
-          </ol>
         </div>
       </section>
 

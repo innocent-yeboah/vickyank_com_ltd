@@ -25,25 +25,6 @@ const forWhom = [
   },
 ] as const;
 
-const method = [
-  {
-    title: "You tell us the intent",
-    body: "Buy or sell, raw or refined, roughly how much, and when. A specialist answers within one business day.",
-  },
-  {
-    title: "We weigh in the open",
-    body: "The metal is weighed and assessed with you able to witness. Nothing important happens off-stage.",
-  },
-  {
-    title: "You see the number",
-    body: "Valuation against the market, stated plainly, before anyone is asked to commit.",
-  },
-  {
-    title: "We settle and file",
-    body: "Secure settlement, and documents you can keep — for your records, and for sleep.",
-  },
-] as const;
-
 const vaultShots = [
   {
     src: "/images/gold-bars.jpg",
@@ -136,29 +117,6 @@ export default function GoldTradingPage() {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="border-t border-white/10 bg-navy-darker page-section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="page-title">How a trade is done</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-            Four movements. None of them hidden. None of them rushed to look like
-            a favour.
-          </p>
-          <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {method.map((step, index) => (
-              <ScrollReveal key={step.title} as="li" delayMs={index * 120}>
-                <p className="text-xs tracking-[0.18em] text-gold">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-4 font-heading text-xl text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">
-                  {step.body}
-                </p>
-              </ScrollReveal>
-            ))}
-          </ol>
         </div>
       </section>
 

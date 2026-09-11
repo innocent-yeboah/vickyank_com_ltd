@@ -27,25 +27,6 @@ const forWhom = [
   },
 ] as const;
 
-const method = [
-  {
-    title: "You name the day",
-    body: "Occasion, dates, city, and whether you want a chauffeur. A specialist answers within one business day.",
-  },
-  {
-    title: "We say what is actually free",
-    body: "The exact car, not a class that might appear. If it is not available, we say so — and offer the next right metal.",
-  },
-  {
-    title: "The car is prepared",
-    body: "Detailed to showroom standard. Fuel, papers, and insurance in order before it moves.",
-  },
-  {
-    title: "You arrive",
-    body: "Collection or delivery. A driver if you asked. Quiet from the first kilometre.",
-  },
-] as const;
-
 const fleetOrder = [
   "car-escalade",
   "car-gle",
@@ -133,29 +114,6 @@ export default function LuxuryCarsPage() {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="border-t border-white/10 bg-navy-darker page-section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="page-title">How a hire is done</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-            Four movements. The car does not leave the yard until it is ready
-            to be seen.
-          </p>
-          <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {method.map((step, index) => (
-              <ScrollReveal key={step.title} as="li" delayMs={index * 120}>
-                <p className="text-xs tracking-[0.18em] text-gold">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-4 font-heading text-xl text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">
-                  {step.body}
-                </p>
-              </ScrollReveal>
-            ))}
-          </ol>
         </div>
       </section>
 
