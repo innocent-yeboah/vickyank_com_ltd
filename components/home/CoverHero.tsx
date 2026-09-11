@@ -13,15 +13,15 @@ export default function CoverHero() {
       <HeroReel />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-navy-cover from-10% via-navy-cover/80 to-navy-cover/25"
+        className="absolute inset-0 bg-gradient-to-t from-navy-cover/90 from-5% via-navy-cover/35 to-transparent"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-navy-cover/85 via-navy-cover/40 to-transparent sm:w-3/4 lg:w-1/2"
+        className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-navy-cover/55 via-navy-cover/20 to-transparent sm:w-2/3 lg:w-[42%]"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-navy-cover/55 to-transparent sm:h-36"
+        className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-navy-cover/35 to-transparent sm:h-36"
       />
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16 sm:pt-32 lg:px-8 lg:pb-24">
         <h1 className="max-w-xl font-heading text-[2.125rem] font-medium leading-[1.12] text-white sm:max-w-2xl sm:text-5xl lg:max-w-3xl lg:text-6xl lg:leading-[1.08]">
