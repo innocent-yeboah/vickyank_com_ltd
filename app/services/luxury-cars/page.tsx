@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import InquiryForm from "@/components/forms/InquiryForm";
 import CarFilm from "@/components/services/CarFilm";
+import LuxuryCarReel from "@/components/services/LuxuryCarReel";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { luxuryFleet } from "@/lib/catalog";
 import { site } from "@/lib/site";
@@ -59,19 +60,12 @@ export default function LuxuryCarsPage() {
   return (
     <>
       <section className="page-hero bg-navy-cover lg:min-h-[85svh]">
-        <Image
-          src="/images/cadillac-escalade.png"
-          alt="Cadillac Escalade prepared for hire"
-          fill
-          priority
-          className="object-cover object-[center_60%] brightness-[0.72] motion-safe:animate-cinematic-still"
-          sizes="100vw"
-        />
+        <LuxuryCarReel />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-navy-cover via-navy-cover/45 to-navy-cover/10"
+          className="absolute inset-0 bg-gradient-to-t from-navy-cover/80 via-navy-cover/35 to-transparent"
         />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-sm text-gold">Luxury cars</p>
           <h1 className="mt-3 max-w-3xl font-heading text-[2rem] font-medium leading-[1.12] text-white sm:text-5xl lg:text-6xl">
             Arrive the way you intend.
