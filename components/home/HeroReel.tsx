@@ -71,7 +71,7 @@ export default function HeroReel() {
         {showFilm ? (
           <video
             ref={videoRef}
-            className="h-full w-full object-cover brightness-[1.08] contrast-[1.04]"
+            className="h-full w-full object-cover brightness-[1.16] contrast-[1.02]"
             src="/videos/hero.mp4"
             autoPlay
             muted
@@ -89,7 +89,7 @@ export default function HeroReel() {
             priority
             quality={95}
             sizes="100vw"
-            className="object-cover object-[center_58%] brightness-[1.08] contrast-[1.04]"
+            className="object-cover object-[center_58%] brightness-[1.16] contrast-[1.02]"
           />
         )}
       </div>
